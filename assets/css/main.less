@@ -1,0 +1,535 @@
+// main: style.less, sourcemap: false, compress: true
+
+/*
+Theme Name: Material for Coders
+Theme URI: http://www.emm-gfx.net/
+Author: Josep Viciana
+Author URI: http://www.emm-gfx.net/
+Version: 0.9
+License: GNU General Public License v2 or later
+License URI: http://opensource.org/licenses/MIT
+Tags: pink, green, blue, turquoise, clean, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments, spanish, español
+Description: Material for Coders is a free Wordpress Theme developed by Josep Viciana (@emmgfx). The theme was designed by me, doing my own adaptation of the material design principles.
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700);
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+a,
+a:hover,
+a:focus,
+a:active{
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+.header{
+    background-color: @color-primary;
+    padding: 27px;
+
+    .title-wrapper{
+        display: inline-block;
+        color: @color-menu-1-active;
+        vertical-align: middle;
+        .overflowed-text;
+
+        .mobile-menu-toggler{
+            position: relative;
+            font-size: 17px;
+            vertical-align: middle;
+            background: fade(@color-white, 20%);
+            padding: 5px 8px;
+            border-radius: 3px;
+            margin-right: .5em;
+            color: @color-white;
+
+            &:hover{
+                background: fade(@color-white, 30%);
+            }
+        }
+
+        h1{
+            padding: 0;
+            margin: 0 20px 0 0;
+            font-size: 30px;
+            line-height: 1em;
+            display: inline-block;
+            font-weight: bold;
+            vertical-align: middle;
+            text-transform: uppercase;
+            font-family: Montserrat;
+
+            a{
+                line-height: 1em;
+                img{
+                    display:block;
+                    vertical-align: baseline;
+                }
+            }
+        }
+    }
+
+
+    ul.primary-menu{
+        display: inline-block;
+        font-family: Montserrat;
+        color: @color-menu-1-inactive;
+        margin: 0;
+
+        li:not(:last-child){
+            margin-right: 1em;
+        }
+
+        a{
+            &.active,
+            &:active,
+            &:hover,
+            &:focus{
+                color: @color-menu-1-active;
+            }
+        }
+
+        li.current-menu-item a{
+            color: @color-menu-1-active;
+        }
+
+    }
+
+    form{
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        input.search{
+            background-color: lighten(@color-primary, 5%);
+            border: none;
+            color: @color-menu-1-inactive;
+            border-radius: 4px;
+            padding: 5px 35px 5px 10px;
+            box-shadow: none;
+            width: 70%;
+            .transition(all .1s linear);
+
+            &:hover{
+                background-color: lighten(@color-primary, 10%);
+            }
+            &:focus{
+                width: 100%;
+                color: @color-primary;
+                background-color: @color-white;
+                border-color: none;
+                outline: 0;
+                // box-shadow: 0 3px 1px darken(@color-primary, 5%);
+            }
+        }
+
+        i.fa-search{
+            position: absolute;
+            font-size: 16px;
+            top: 9px;
+            right: 9px;
+            color: lighten(@color-primary, 30%);
+        }
+    }
+}
+
+.menu-2{
+    font-family: Montserrat;
+
+    ul{
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
+
+    a{
+        display: block;
+        padding: 15px;
+        padding-bottom: 12px;
+        color: @color-grey-30;
+        border-bottom: 3px solid transparent;
+
+        &:hover,
+        &:focus,
+        &.active{
+            color: @color-accent;
+            border-bottom-color:@color-accent;
+        }
+    }
+
+    li.current-menu-item a{
+        color: @color-primary;
+        border-bottom-color:@color-primary;
+    }
+}
+
+.big-title{
+    background-color: @color-grey-05;
+    color: @color-primary;
+    padding: 40px 0;
+
+    h2{
+        font-weight: 100;
+        padding: 0;
+        margin: 0;
+        font-size: 50px;
+
+        small{
+            color: inherit;
+            font-size: 20px;
+            font-weight: 100;
+            vertical-align: middle;
+        }
+    }
+}
+
+.article-wrapper{
+
+    h2{
+        color: @color-primary;
+        font-weight: 400;
+        font-size: 30px;
+        font-family: Montserrat;
+
+        a:hover,
+        a:focus{
+            border-bottom: 1px dotted @color-primary;
+        }
+    }
+
+    .context{
+        padding: 30px 0;
+        color: @color-grey-40;
+
+        a:hover,
+        a:focus,
+        a:active{
+            color: @color-primary;
+        }
+    }
+
+    img.featured{
+        margin-bottom: 30px;
+        &:first-child{
+            margin-top: 50px;
+        }
+    }
+
+    .article{
+        h1, h2, h3, h4{
+            color: @color-primary;
+            font-weight: 300;
+        }
+        p{
+            font-size: 16px;
+            line-height: 1.8em;
+            margin: 2em 0;
+            color: @color-grey-50;
+
+            &:first-child{
+                margin-top: 0;
+            }
+        }
+        pre{
+            background-color: @color-grey-05;
+            color: @color-grey-50;
+            border: none;
+            border-radius: 0;
+            padding: 40px;
+            font-size: 15px;
+            overflow-x: scroll;
+            // white-space: pre;
+
+            @media (min-width: @screen-md){
+                margin-left: -100px;
+                margin-right: -100px;
+            }
+        }
+
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+
+        a{
+            color: @color-primary;
+
+            &:hover{
+                border-bottom: 1px dotted @color-primary;
+            }
+        }
+    }
+
+    .comments{
+        margin-top: 100px;
+
+        .comment{
+            padding-left: 80px;
+            margin: 30px 0;
+
+            &:hover{
+                div.avatar img{
+                    box-shadow: 0 0 0 2px @color-white, 0 0 0 4px @color-primary;
+                    .transition(all 0.6s cubic-bezier(0, 2.1, 1, 1.33));
+
+                }
+            }
+
+            a{
+                color: @color-primary;
+
+                &:hover,
+                &:active,
+                &:focus{
+                    border-bottom: 1px dotted @color-primary;
+                }
+            }
+
+            div.avatar{
+                margin-left: -80px;
+                width: 60px;
+                float: left;
+
+                img{
+                    box-shadow: 0 0 0 0  @color-white, 0 0 0 0 @color-primary;
+                    .transition(all 0.4s linear);
+                }
+            }
+
+            h4.name{
+                font-family: Montserrat;
+                margin: 15px 0;
+                padding: 0;
+            }
+
+            div.date{
+                font-size: 13px;
+                color: @color-grey-30;
+                margin: 15px 0;
+            }
+
+            div.content{
+                color: @color-grey-50;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .comment-respond{
+        padding: 30px;
+        background: @color-grey-05;
+        border-radius: 4px;
+
+        .required{
+            color: @color-primary;
+        }
+
+        h3{
+            padding: 0 0 30px 0;
+            border-bottom: 1px solid @color-grey-10;
+            text-align: center;
+            margin: 0px 0 30px 0;
+            font-family: Montserrat;
+        }
+
+        label{
+            display: block;
+        }
+
+        input[type=text],
+        textarea{
+            border-radius: 3px;
+            border: 1px solid @color-grey-20;
+            transition: all .1s linear;
+
+            &:focus{
+                box-shadow: none;
+                border: 1px solid @color-primary;
+                box-shadow: inset 0 0 0 3px fade(@color-primary, 10%);
+                outline: none;
+            }
+        }
+
+        input[type=text]{
+            width: 50%;
+            padding: 10px 15px;
+        }
+        textarea{
+            width: 100%;
+            padding: 15px;
+            resize: vertical;
+        }
+
+        @media (max-width: 700px){
+            input[type=text],
+            textarea{
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+.menu-mobile-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: fade(@color-black, 50%);
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+
+    .menu-mobile{
+        position: absolute;
+        width: 80%;
+        max-height: 80%;
+        top: 50%;
+        left: 10%;
+        z-index: 999999;
+        background-color: @color-white;
+        border-radius: 3px;
+        transition: all .3s .3s ease-in-out;
+        opacity: 0;
+        transform: scale(1.01) translateY(-50%);
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        form{
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid @color-grey-20;
+
+            input[type=text]{
+                padding: 30px; 20px
+                border-radius: 0;
+                border: none;
+
+                &:focus{
+                    box-shadow: none;
+                    outline: none;
+                }
+            }
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                margin: 0;
+                padding: 0;
+                a{
+                    display: block;
+                    padding: 20px;
+                    font-size: 16px;
+                    font-family: Montserrat;
+                    transition: all .2s linear;
+                    color: @color-grey-80;
+
+                    &:hover,
+                    &:active,
+                    &:focus{
+                        background-color: @color-grey-10;
+                    }
+                }
+                &:first-child a{
+                    border-radius: 3px 3px 0 0;
+                }
+                &:last-child a{
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    &.opened{
+        visibility: visible;
+        opacity: 1;
+
+        .menu-mobile{
+            opacity: 1;
+            transform: scale(1) translateY(-50%);
+        }
+    }
+
+}
+
+.footer{
+    margin-top: 100px;
+    padding: 30px 0;
+    font-family: Montserrat;
+    background-color: @color-primary;
+    color: @color-white;
+
+    .widget{
+        margin: 15px 0;
+
+        @media (max-width: 768px){
+            text-align: center;
+        }
+
+        h3{
+            padding: 0;
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 20px;
+            .overflowed-text;
+        }
+
+        ul{
+            margin: 20px 0 0 0;
+            padding: 0;
+            list-style: none;
+
+            li{
+                padding: 0;
+                margin: 10px 0;
+                .overflowed-text;
+                display: block;
+
+                .subtitle,
+                .post-date{
+                    .overflowed-text;
+                    display: block;
+                    font-size: .9em;
+                    color: lighten(@color-primary, 30%);
+                }
+            }
+
+            li:not(:last-child){
+                margin-bottom: .5em;
+            }
+        }
+
+        // Widget specific styles:
+
+        ul.recentcomments{
+            li.recentcomments{
+
+            }
+        }
+    }
+
+}
+
+.license{
+    font-family: Montserrat;
+    background-color: darken(@color-primary, 10%);
+    color: @color-white;
+    text-align: center;
+    padding: 20px;
+
+    p{
+        margin: 0;
+        padding: 0;
+    }
+}

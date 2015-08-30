@@ -1,0 +1,15 @@
+// out: ../../style.css
+
+@charset "utf-8";
+
+@import "colors";
+@import "mixins";
+@import "buttons";
+
+@color-primary: @color-pink;
+@color-accent: spin(@color-primary, 100);
+
+@color-menu-1-inactive: lighten(@color-primary, 40%);
+@color-menu-1-active: @color-white;
+
+@import "main.less";
