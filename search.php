@@ -2,7 +2,7 @@
 
 <div class="big-title">
 	<div class="container">
-		<h2><?php echo sprintf( __( '%s resultados para ', '' ), $wp_query->found_posts ); echo '"'.get_search_query().'"'; ?></h2>
+		<h2><?php echo sprintf( '%s resultados para ', $wp_query->found_posts ); echo '"'.get_search_query().'"'; ?></h2>
 	</div>
 </div>
 
@@ -14,22 +14,22 @@
 
 			<div class="article-wrapper">
 				<br />
-				<h2><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h2>
+				<h2><a href="<?PHP the_permalink(); ?>"><?PHP the_title(); ?></a></h2>
 
-				<? include 'context.php'; ?>
+				<?PHP get_template_part( 'context' ); ?>
 
 				<div class="article">
-					<? the_content(); ?>
+					<?PHP the_content(); ?>
 				</div>
 				<div align="right">
-					<a href="<? the_permalink(); ?>" class="btn btn-primary">Continuar leyendo &rarr;</a>
+					<a href="<?PHP the_permalink(); ?>" class="btn btn-primary">Continuar leyendo &rarr;</a>
 				</div>
 			</div>
 			<br />
 			<hr />
 			<?php endwhile; endif; ?>
 
-
+			<?PHP get_template_part('pagination'); ?>
 		</div>
 
 		<!-- <div class="col-md-3 col-md-offset-1">

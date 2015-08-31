@@ -14,21 +14,22 @@
 
 			<div class="article-wrapper">
 				<br />
-				<h2><a href="<? the_permalink(); ?>"><? the_title(); ?></a></h2>
+				<h2><a href="<?PHP the_permalink(); ?>"><?PHP the_title(); ?></a></h2>
 
-				<? include 'context.php'; ?>
+				<?PHP get_template_part( 'context' ); ?>
 
 				<div class="article">
-					<? the_content(false); ?>
+					<?PHP the_content(false); ?>
 				</div>
 				<div align="right">
-					<a href="<? the_permalink(); ?>" class="btn btn-primary">Continuar leyendo &rarr;</a>
+					<a href="<?PHP the_permalink(); ?>" class="btn btn-primary">Continuar leyendo &rarr;</a>
 				</div>
 			</div>
 			<br />
 			<hr />
 			<?PHP endwhile; endif; ?>
 
+			<?PHP get_template_part('pagination'); ?>
 		</div>
 
 		<!-- <div class="col-md-3 col-md-offset-1">

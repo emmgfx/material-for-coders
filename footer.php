@@ -2,7 +2,7 @@
 		<div class="menu-mobile-wrapper">
 			<div class="menu-mobile">
 				<form action="<?php echo home_url(); ?>" type="get">
-					<input type="text" class="search form-control" name="s" value="<?=get_search_query();?>" placeholder="Buscar...">
+					<input type="text" class="search form-control" name="s" value="<?PHP echo get_search_query();?>" placeholder="Buscar...">
 				</form>
 				<?PHP
 				wp_nav_menu(array(
@@ -44,12 +44,12 @@
 			<div class="license">
 				<div class="container">
 					<!--EMMGFX. Contenido con licencia general Creative Commons BY-SA, excepto en lo expresamente diferenciado.-->
-					<? $footer_phrase = get_option('footer-phrase'); ?>
-					<? if( $footer_phrase === false || empty($footer_phrase) ): ?>
-						<p><?=bloginfo('name')?>, <?=date('Y')?></p>
-					<? else: ?>
-						<p><?=$footer_phrase?></p>
-					<? endif; ?>
+					<?PHP $footer_phrase = get_option('footer-phrase'); ?>
+					<?PHP if( $footer_phrase === false || empty($footer_phrase) ): ?>
+						<p><?PHP echo bloginfo('name')?>, <?PHP echo date('Y')?></p>
+					<?PHP else: ?>
+						<p><?PHP echo $footer_phrase?></p>
+					<?PHP endif; ?>
 
 				</div>
 			</div>

@@ -39,15 +39,124 @@
 }
 /*
 Theme Name: Material for Coders
-Theme URI: http://www.emm-gfx.net/
 Author: Josep Viciana
 Author URI: http://www.emm-gfx.net/
 Version: 0.9
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/MIT
-Tags: pink, green, blue, turquoise, clean, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments, spanish, español
+Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
 Description: Material for Coders is a free Wordpress Theme developed by Josep Viciana (@emmgfx). The theme was designed by me, doing my own adaptation of the material design principles.
 */
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+.sticky {
+  height: auto;
+}
+.gallery-caption {
+  height: auto;
+}
+.bypostauthor {
+  height: auto;
+}
 body {
   margin: 0;
   padding: 0;
@@ -267,55 +376,75 @@ a:active {
 .article-wrapper .article a:hover {
   border-bottom: 1px dotted #18b576;
 }
-.article-wrapper .comments {
-  margin-top: 100px;
+.article-wrapper #comments .comments {
+  margin-top: 80px;
 }
-.article-wrapper .comments .comment {
-  padding-left: 80px;
+.article-wrapper #comments .comments .pingback {
+  border: 1px solid rgba(181, 24, 87, 0.2);
+  background: rgba(181, 24, 87, 0.1);
+  padding: 15px;
+  border-radius: 3px;
+  margin: 30px 0;
+  font-weight: bold;
+}
+.article-wrapper #comments .comments .pingback a {
+  font-weight: normal;
+}
+.article-wrapper #comments .comments .pingback .edit-link {
+  color: #18b576;
+  float: right;
+  font-weight: bold;
+}
+.article-wrapper #comments .comments .comment {
   margin: 30px 0;
 }
-.article-wrapper .comments .comment:hover div.avatar img {
-  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #18b576;
-  -webkit-transition: all 0.6s cubic-bezier(0, 2.1, 1, 1.33);
-  -moz-transition: all 0.6s cubic-bezier(0, 2.1, 1, 1.33);
-  -o-transition: all 0.6s cubic-bezier(0, 2.1, 1, 1.33);
-  -ms-transition: all 0.6s cubic-bezier(0, 2.1, 1, 1.33);
-  transition: all 0.6s cubic-bezier(0, 2.1, 1, 1.33);
+.article-wrapper #comments .comments .comment .comment {
+  padding-left: 80px;
 }
-.article-wrapper .comments .comment a {
+.article-wrapper #comments .comments .comment a {
   color: #18b576;
 }
-.article-wrapper .comments .comment a:hover,
-.article-wrapper .comments .comment a:active,
-.article-wrapper .comments .comment a:focus {
+.article-wrapper #comments .comments .comment a:hover,
+.article-wrapper #comments .comments .comment a:active,
+.article-wrapper #comments .comments .comment a:focus {
   border-bottom: 1px dotted #18b576;
 }
-.article-wrapper .comments .comment div.avatar {
-  margin-left: -80px;
-  width: 60px;
+.article-wrapper #comments .comments .comment .comment-meta img.avatar {
   float: left;
+  border-radius: 999px;
+  margin-right: 20px;
 }
-.article-wrapper .comments .comment div.avatar img {
-  box-shadow: 0 0 0 0 #ffffff, 0 0 0 0 #18b576;
-  -webkit-transition: all 0.4s linear;
-  -moz-transition: all 0.4s linear;
-  -o-transition: all 0.4s linear;
-  -ms-transition: all 0.4s linear;
-  transition: all 0.4s linear;
-}
-.article-wrapper .comments .comment h4.name {
+.article-wrapper #comments .comments .comment .comment-meta .comment-author {
   font-family: Montserrat;
-  margin: 15px 0;
+  font-size: 17px;
+  margin: 20px 0;
   padding: 0;
 }
-.article-wrapper .comments .comment div.date {
+.article-wrapper #comments .comments .comment .comment-meta span.says {
+  display: none;
+}
+.article-wrapper #comments .comments .comment .comment-meta div.comment-metadata {
   font-size: 13px;
   color: #b3b3b3;
   margin: 15px 0;
 }
-.article-wrapper .comments .comment div.content {
+.article-wrapper #comments .comments .comment .comment-meta div.comment-metadata a {
+  color: inherit;
+}
+.article-wrapper #comments .comments .comment .comment-meta div.comment-metadata a:hover {
+  border-bottom: none;
+  color: #18b576;
+}
+.article-wrapper #comments .comments .comment .comment-content {
+  padding-left: 80px;
   color: #808080;
   font-size: 15px;
+}
+.article-wrapper #comments .comments .comment .reply {
+  text-align: right;
+  border-bottom: 1px solid #e6e6e6;
+  margin-left: 80px;
+  padding-bottom: 30px;
 }
 .article-wrapper .comment-respond {
   padding: 30px;
@@ -331,6 +460,9 @@ a:active {
   text-align: center;
   margin: 0px 0 30px 0;
   font-family: Montserrat;
+}
+.article-wrapper .comment-respond h3 small {
+  display: block;
 }
 .article-wrapper .comment-respond label {
   display: block;
@@ -363,6 +495,38 @@ a:active {
     width: 100%;
   }
 }
+.navigation {
+  text-align: center;
+  width: 100%;
+}
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  margin: 30px 0;
+  font-size: 15px;
+  font-family: Montserrat;
+}
+.navigation ul li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.navigation a:hover {
+  background-color: #b51857;
+  color: #ffffff;
+  transition: all .2s;
+}
+.navigation .page-numbers {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 3px;
+}
+.navigation .page-numbers.current {
+  background-color: #18b576;
+  color: #ffffff;
+}
 .menu-mobile-wrapper {
   position: fixed;
   top: 0;
@@ -383,11 +547,12 @@ a:active {
   z-index: 999999;
   background-color: #ffffff;
   border-radius: 3px;
-  transition: all 0.3s 0.3s ease-in-out;
+  transition: all 0.5s 0.3s cubic-bezier(0.22, 1.1, 0.21, 1.1);
   opacity: 0;
-  transform: scale(1.01) translateY(-50%);
+  transform: translateY(100%);
   overflow-y: scroll;
   overflow-x: hidden;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.5);
 }
 .menu-mobile-wrapper .menu-mobile form {
   margin: 0;
@@ -395,8 +560,8 @@ a:active {
   border-bottom: 1px solid #cccccc;
 }
 .menu-mobile-wrapper .menu-mobile form input[type=text] {
-  padding: 30px;
-  20pxborder-radius: 0;
+  padding: 30px 20px;
+  border-radius: 0;
   border: none;
 }
 .menu-mobile-wrapper .menu-mobile form input[type=text]:focus {
@@ -436,7 +601,7 @@ a:active {
 }
 .menu-mobile-wrapper.opened .menu-mobile {
   opacity: 1;
-  transform: scale(1) translateY(-50%);
+  transform: translateY(-50%);
 }
 .footer {
   margin-top: 100px;

@@ -4,7 +4,7 @@
 
 <div class="big-title">
 	<div class="container">
-		<h2><? the_title(); ?></h2>
+		<h2><?PHP the_title(); ?></h2>
 	</div>
 </div>
 
@@ -15,7 +15,7 @@
 
 			<div class="article-wrapper">
 
-				<? # include 'context.php'; ?>
+				<?PHP # include 'context.php'; ?>
 
 				<br />
 				
@@ -25,7 +25,7 @@
 				?>
 
 				<div class="article">
-					<? the_content(); ?>
+					<?PHP the_content(); ?>
 				</div>
 			</div>
 			<br />

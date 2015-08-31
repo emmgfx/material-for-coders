@@ -33,12 +33,12 @@
     SOFTWARE.
     -->
 
-    <title><?php bloginfo('name'); ?><?php wp_title( '/', true, 'left' ); ?></title>
+    <title><?php wp_title(''); ?></title>
     <meta charset="<?php bloginfo('charset'); ?>">
-	<link href="<?=get_template_directory_uri(); ?>/assets/img/icons/favicon.ico" rel="shortcut icon">
-	<link href="<?=get_template_directory_uri(); ?>/assets/img/icons/touch.png" rel="apple-touch-icon-precomposed">
+	<link href="<?PHP echo get_template_directory_uri(); ?>/assets/img/icons/favicon.ico" rel="shortcut icon">
+	<link href="<?PHP echo get_template_directory_uri(); ?>/assets/img/icons/touch.png" rel="apple-touch-icon-precomposed">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="<?=get_template_directory_uri(); ?>/assets/js/js.js"></script>
+    <script src="<?PHP echo get_template_directory_uri(); ?>/assets/js/js.js"></script>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?php bloginfo('description'); ?>">
@@ -46,9 +46,9 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
-    <? $color_scheme = get_option('color-scheme'); ?>
+    <?PHP $color_scheme = get_option('color-scheme'); ?>
 
-    <?
+    <?PHP
     switch($color_scheme){
         case 'Green':
             echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-green.css" />';
@@ -73,14 +73,10 @@
 
                 <div class="col-md-9 col-sm-12">
 
-                    <!-- <h1><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="<?php bloginfo('name'); ?>" /></a></h1> -->
-
                     <div class="title-wrapper">
                         <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="fa fa-fw fa-navicon"></i></a>
                         <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a></h1>
                     </div>
-
-
 
 					<?PHP
 					wp_nav_menu(array(
@@ -107,7 +103,7 @@
                 <div class="col-md-3 col-sm-12 hidden-sm hidden-xs" align="right">
                     <!-- Search form -->
                     <form action="<?php echo home_url(); ?>" type="get">
-                        <input type="text" class="search form-control" name="s" value="<?=get_search_query();?>">
+                        <input type="text" class="search form-control" name="s" value="<?PHP echo get_search_query();?>">
                         <i class="fa fa-search"></i>
                     </form>
                 </div>
@@ -118,7 +114,7 @@
 
     </div>
 
-    <? if ( is_home() || is_category() || is_tag() ){ ?>
+    <?PHP if ( is_home() || is_category() || is_tag() ){ ?>
         <div class="menu-2">
             <div class="container">
                 <?PHP
@@ -143,4 +139,4 @@
                 ?>
             </div>
         </div>
-    <? } ?>
+    <?PHP } ?>

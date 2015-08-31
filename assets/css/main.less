@@ -2,18 +2,19 @@
 
 /*
 Theme Name: Material for Coders
-Theme URI: http://www.emm-gfx.net/
 Author: Josep Viciana
 Author URI: http://www.emm-gfx.net/
 Version: 0.9
 License: GNU General Public License v2 or later
 License URI: http://opensource.org/licenses/MIT
-Tags: pink, green, blue, turquoise, clean, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments, spanish, español
+Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
 Description: Material for Coders is a free Wordpress Theme developed by Josep Viciana (@emmgfx). The theme was designed by me, doing my own adaptation of the material design principles.
 */
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700);
+
+@import "wordpress-core";
 
 body{
     margin: 0;
@@ -268,57 +269,92 @@ a:active{
         }
     }
 
-    .comments{
-        margin-top: 100px;
+    #comments{
+        .comments{
+            margin-top: 80px;
 
-        .comment{
-            padding-left: 80px;
-            margin: 30px 0;
+            .pingback{
+                border: 1px solid fade(@color-accent, 20%);
+                background: fade(@color-accent, 10%);
+                padding: 15px;
+                border-radius: 3px;
+                margin: 30px 0;
+                font-weight: bold;
 
-            &:hover{
-                div.avatar img{
-                    box-shadow: 0 0 0 2px @color-white, 0 0 0 4px @color-primary;
-                    .transition(all 0.6s cubic-bezier(0, 2.1, 1, 1.33));
+                a{
+                    font-weight: normal;
+                }
 
+                .edit-link{
+                    color: @color-primary;
+                    float: right;
+                    font-weight: bold;
                 }
             }
 
-            a{
-                color: @color-primary;
+            .comment{
+                margin: 30px 0;
 
-                &:hover,
-                &:active,
-                &:focus{
-                    border-bottom: 1px dotted @color-primary;
+                .comment{
+                    padding-left: 80px;
                 }
-            }
 
-            div.avatar{
-                margin-left: -80px;
-                width: 60px;
-                float: left;
+                a{
+                    color: @color-primary;
 
-                img{
-                    box-shadow: 0 0 0 0  @color-white, 0 0 0 0 @color-primary;
-                    .transition(all 0.4s linear);
+                    &:hover,
+                    &:active,
+                    &:focus{
+                        border-bottom: 1px dotted @color-primary;
+                    }
                 }
-            }
 
-            h4.name{
-                font-family: Montserrat;
-                margin: 15px 0;
-                padding: 0;
-            }
+                .comment-meta{
 
-            div.date{
-                font-size: 13px;
-                color: @color-grey-30;
-                margin: 15px 0;
-            }
+                    img.avatar{
+                        float: left;
+                        border-radius: 999px;
+                        margin-right: 20px;
+                    }
 
-            div.content{
-                color: @color-grey-50;
-                font-size: 15px;
+                    .comment-author{
+                        font-family: Montserrat;
+                        font-size: 17px;
+                        margin: 20px 0;
+                        padding: 0;
+                    }
+
+                    span.says{
+                        display: none;
+                    }
+
+                    div.comment-metadata{
+                        font-size: 13px;
+                        color: @color-grey-30;
+                        margin: 15px 0;
+
+                        a{
+                            color: inherit;
+                            &:hover{
+                                border-bottom: none;
+                                color: @color-primary;
+                            }
+                        }
+                    }
+                }
+
+                .comment-content{
+                    padding-left: 80px;
+                    color: @color-grey-50;
+                    font-size: 15px;
+                }
+
+                .reply{
+                    text-align: right;
+                    border-bottom: 1px solid @color-grey-10;
+                    margin-left: 80px;
+                    padding-bottom: 30px;
+                }
             }
         }
     }
@@ -338,7 +374,12 @@ a:active{
             text-align: center;
             margin: 0px 0 30px 0;
             font-family: Montserrat;
+            small{
+                display: block;
+            }
         }
+
+
 
         label{
             display: block;
@@ -378,6 +419,44 @@ a:active{
 
 }
 
+.navigation{
+    text-align: center;
+    width: 100%;
+
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        margin: 30px 0;
+        font-size: 15px;
+        font-family: Montserrat;
+
+        li{
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+    }
+
+    a:hover{
+        background-color: @color-accent;
+        color: @color-white;
+        transition: all .2s;
+    }
+
+    .page-numbers{
+        display: inline-block;
+        padding: 7px 10px;
+        border-radius: 3px;
+
+        &.current{
+            background-color: @color-primary;
+            color: @color-white;
+        }
+    }
+}
+
 .menu-mobile-wrapper{
     position: fixed;
     top: 0;
@@ -398,11 +477,13 @@ a:active{
         z-index: 999999;
         background-color: @color-white;
         border-radius: 3px;
-        transition: all .3s .3s ease-in-out;
+        transition: all .5s 0.3s cubic-bezier(0.22, 1.1, 0.21, 1.1);
         opacity: 0;
-        transform: scale(1.01) translateY(-50%);
+        // transform: scale(1.01) translateY(-50%);
+        transform: translateY(100%);
         overflow-y: scroll;
         overflow-x: hidden;
+        box-shadow: 0 5px 15px 0 fade(@color-black, 50%);
 
         form{
             margin: 0;
@@ -410,7 +491,7 @@ a:active{
             border-bottom: 1px solid @color-grey-20;
 
             input[type=text]{
-                padding: 30px; 20px
+                padding: 30px 20px;
                 border-radius: 0;
                 border: none;
 
@@ -457,7 +538,7 @@ a:active{
 
         .menu-mobile{
             opacity: 1;
-            transform: scale(1) translateY(-50%);
+            transform: translateY(-50%);
         }
     }
 

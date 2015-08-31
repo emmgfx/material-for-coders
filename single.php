@@ -4,7 +4,7 @@
 
 <div class="big-title">
 	<div class="container">
-		<h2><? the_title(); ?></h2>
+		<h2><?PHP the_title(); ?></h2>
 	</div>
 </div>
 
@@ -14,18 +14,33 @@
 
 
 			<div class="article-wrapper">
-				<? include 'context.php'; ?>
+				<?PHP get_template_part( 'context' ); ?>
 				<?PHP
 				if(has_post_thumbnail())
 					the_post_thumbnail('custom_1', array( 'class'	=> "img-rounded img-responsive center-block featured"));
 				?>
 				<div class="article">
-					<? the_content(); ?>
+					<?PHP the_content(); ?>
 				</div>
 
 				<br />
 				<hr />
 				<br />
+				<?php global $numpages; if ( is_singular() && $numpages > 1 ): ?>
+				<?php wp_link_pages(array(
+					'before'           => '<div align="right">Seguir leyendo: ',
+					'after'            => '</div>',
+					'link_before'      => '',
+					'link_after'       => '',
+					'next_or_number'   => 'number',
+					'separator'        => ', ',
+					'nextpagelink'     => 'Página siguiente',
+					'previouspagelink' => 'Página anterior',
+					'pagelink'         => '%',
+				)); ?>
+				<br />
+				<hr />
+				<?php endif; ?>
 
 				<?php comments_template(); ?>
 

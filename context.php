@@ -4,7 +4,7 @@ $max_tags = 3;
 ?>
 <ul class="context list-unstyled list-inline">
 
-	<li class="date"><i class="fa fa-calendar-o"></i> <? the_time(get_option( 'date_format' )); ?></li>
+	<li class="date"><i class="fa fa-calendar-o"></i> <?PHP the_time(get_option( 'date_format' )); ?></li>
 
 	<?PHP $categories = get_the_category(); ?>
 	<?PHP if($categories){ ?>
@@ -43,6 +43,6 @@ $max_tags = 3;
 	<?PHP } ?>
 
 	<?PHP if(get_comments_number() > 0){ ?>
-	<li><i class="fa fa-comments"></i> <a href="#"><? comments_number( 'Sin comentarios', '1 comentario', '% comentarios' ) ?></a></li>
+	<li><i class="fa fa-comments"></i> <a href="<?php the_permalink() ?>/#comments"><?PHP comments_number( 'Sin comentarios', '1 comentario', '% comentarios' ) ?></a></li>
 	<?PHP } ?>
 </ul>
