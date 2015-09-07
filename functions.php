@@ -135,10 +135,9 @@ function m4c_admin_menu() {
 if ( is_admin() ){
     add_action( 'admin_menu', 'm4c_admin_menu' );
     add_action( 'admin_init', 'register_m4c_settings' );
-} else {
-    add_action( 'init', 'm4c_menus' );
 }
 
+add_action( 'init', 'm4c_menus' );
 add_action( 'widgets_init', 'm4c_widgets' );
 
 add_theme_support( 'automatic-feed-links' );
