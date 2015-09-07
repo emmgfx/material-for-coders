@@ -19,7 +19,7 @@
 				<?PHP get_template_part( 'context' ); ?>
 
 				<div class="article">
-					<?PHP the_content(); ?>
+					<?PHP the_content(false); ?>
 				</div>
 				<div align="right">
 					<a href="<?PHP the_permalink(); ?>" class="btn btn-primary">Continuar leyendo &rarr;</a>
