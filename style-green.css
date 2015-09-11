@@ -47,11 +47,6 @@ License URI: http://opensource.org/licenses/MIT
 Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
 Description: Material for Coders is a free Wordpress Theme developed by Josep Viciana (@emmgfx). The theme was designed by me, doing my own adaptation of the material design principles.
 */
-/* =WordPress Core
--------------------------------------------------------------- */
-.alignnone {
-  margin: 5px 20px 20px 0;
-}
 .aligncenter,
 div.aligncenter {
   display: block;
@@ -59,22 +54,19 @@ div.aligncenter {
 }
 .alignright {
   float: right;
-  margin: 5px 0 20px 20px;
+  margin: 0 0 0 20px;
 }
 .alignleft {
   float: left;
-  margin: 5px 20px 20px 0;
+  margin: 0 20px 0 0;
 }
 a img.alignright {
   float: right;
-  margin: 5px 0 20px 20px;
-}
-a img.alignnone {
-  margin: 5px 20px 20px 0;
+  margin: 0 0 0 20px;
 }
 a img.alignleft {
   float: left;
-  margin: 5px 20px 20px 0;
+  margin: 0 20px 0 0;
 }
 a img.aligncenter {
   display: block;
