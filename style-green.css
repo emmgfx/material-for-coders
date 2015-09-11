@@ -37,6 +37,14 @@
 .btn.btn-default:active {
   background-color: #b3b3b3;
 }
+.form-control {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: 2px solid #18b576;
+}
+.form-control:focus {
+  border: 2px solid #b51857;
+}
 /*
 Theme Name: Material for Coders
 Author: Josep Viciana
