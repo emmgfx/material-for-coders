@@ -265,8 +265,6 @@ a:active {
 .menu-2 ul {
   margin: 0;
   padding: 0;
-  white-space: nowrap;
-  overflow-x: scroll;
 }
 .menu-2 a {
   display: block;
