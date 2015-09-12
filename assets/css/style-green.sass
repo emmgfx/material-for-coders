@@ -1,4 +1,4 @@
-// out: ../../style-green.css
+// out: ../../style-green.css, outputStyle: compressed
 
 @charset "utf-8"
 
@@ -7,7 +7,7 @@
 @import "mixins"
 
 $color-primary: $color-green
-$color-accent: spin($color-primary, 180)
+$color-accent: adjust-hue($color-primary, 100)
 
 $color-menu-1-inactive: lighten($color-primary, 40%)
 $color-menu-1-active: $color-white
