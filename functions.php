@@ -51,18 +51,6 @@ function m4c_settings() {
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( 'You do not have sufficient permissions to access this page.' );
 	}
-
-	// Auto update things:
-
-	if(function_exists('wp_get_theme')){
-	    $theme_data = wp_get_theme(get_option('template'));
-	    $theme_version = $theme_data->Version;
-	} else {
-	    $theme_data = get_theme_data( TEMPLATEPATH . '/style.css');
-	    $theme_version = $theme_data['Version'];
-	}
-	$theme_base = get_option('template');
-
     ?>
 	<div class="wrap">
         <h2>Material for coders settings</h2>
@@ -121,33 +109,94 @@ function m4c_settings() {
             <h3><span class="dashicons dashicons-format-quote"></span> Footer phrase (usually the license):</h3>
             <input style="width: 80%;" type="text" name="footer-phrase" value="<?php echo esc_attr( get_option('footer-phrase') ); ?>" />
 
-			<hr >
+			<br />
+			<hr />
+			<br />
 
-            <h3><span class="dashicons dashicons-format-quote"></span> Theme updates</h3>
-            <ul>
-				<li>
-					Current version: <?php echo $theme_version; ?>
-				</li>
-				<li>
-					<?php $last_version = get_last_commit_theme_version(); ?>
-					Last version: <?php echo $last_version; ?>
-				</li>
-				<li>
-					<?PHP
-					switch(version_compare($theme_version, $last_version)){
-						case -1:
-							echo 'Update available. <a href="update">Update &rarr;</a>';
-						break;
-						case 0:
-							echo 'Update not available';
-						break;
-						case 1:
-							echo 'What?';
-						break;
+
+			<?PHP
+			# Get the current version:
+			{
+				$theme = wp_get_theme();
+				$version_current = $theme->Version;
+			}
+
+			# Get latest version:
+			{
+
+				if(isset($_GET['update_check'])):
+					$latest_style_url = 'https://raw.githubusercontent.com/emmgfx/material-for-coders/master/style.css';
+					$latest_style_content = file_get_contents($latest_style_url);
+
+					foreach(preg_split("/((\r?\n)|(\r\n?))/", $latest_style_content) as $line){
+						if (strpos($line, 'Version') === false) {
+							# Version is not in this line.
+						} else {
+							$version_latest = trim(str_replace('Version:', '', $line));
+							break;
+						}
 					}
-					?>
-				</li>
-			</ul>
+				endif;
+			}
+			?>
+
+
+			<h3><span class="dashicons dashicons-update"></span> Updater</h3>
+
+			<?php if(isset($_GET['update_check'])): ?>
+				<?php $updated = version_compare($version_current, $version_latest); ?>
+				<?php if($updated == -1): ?>
+					<p><span class="dashicons dashicons-warning"></span> <strong>You have an outdated version</strong> (<?php echo $version_current; ?>). <a href="themes.php?page=m4c-settings&updater">Update to <?php echo $version_latest; ?></a>.</p>
+
+				<?php elseif($updated == 0): ?>
+					<p><span class="dashicons dashicons-yes"></span> You have the latest version, <?php echo $version_current; ?>.</p>
+
+				<?php elseif($updated == 1): ?>
+					<p>Mmm... something weird has happened... do you have a more recent version than the latest?</p>
+
+				<?php endif; ?>
+			<?php elseif(isset($_GET['updater'])): ?>
+
+				<ul>
+					<li>
+						Downloading...
+						<?php $downloaded = download_latest();?>
+					</li>
+					<li>
+						<?php echo ($downloaded ? 'Download complete' : 'Error downloading'); ?>
+					</li>
+					<?php if($downloaded): ?>
+						<li>
+							Unpacking...
+							<?php $unpacked = unpack_downloaded(); ?>
+						</li>
+						<li>
+							<?php echo ($unpacked ? 'Unpacked' : 'Error unpacking'); ?>
+						</li>
+						<?php if($unpacked): ?>
+							<li>
+								Installing...
+								<?php $installed = install_unpacked(); ?>
+							</li>
+							<li>
+								<?php echo ($unpacked ? 'Install complete.' : 'Error installing'); ?>
+							</li>
+						<?php endif; ?>
+					<?php endif; ?>
+				</ul>
+
+
+			<?php else: ?>
+				<p>I don't like the Wordpress update system, so I prepared an
+					auto update against the GitHub repository. You don't have
+					to download and override the theme files, only click on
+					the link down here to check for updates.</p>
+				<p><a href="themes.php?page=m4c-settings&update_check">Check for update</a></p>
+			<?php endif; ?>
+
+			<br />
+			<hr />
+			<br />
 
             <?php submit_button(); ?>
 
@@ -156,44 +205,27 @@ function m4c_settings() {
     <?PHP
 }
 
-function get_last_commit_theme_version(){
-
-	// $branches = get_content_from_github('https://api.github.com/repos/emmgfx/material-for-coders/branches');
-	//
-	// var_dump($branches);
-	//
-	// foreach($branches as $branch){
-	// 	if($branch['name'] == 'master'){
-	// 		$master = $branch;
-	// 	}
-	// }
-
-	// echo '<pre>';
-	// print_r($branch);
-	// echo '</pre>';
-
-	// echo 'https://api.github.com/repos/emmgfx/material-for-coders/commits/' . $master['commit']['sha'];
-
-	// $commit = get_content_from_github('https://api.github.com/repos/emmgfx/material-for-coders/commits/' . $master['commit']['sha']);
-
-	// echo '<pre>';
-	// print_r($commit);
-	// echo '</pre>';
-
-	// GET /repos/:owner/:repo/contents/:path
-	// $style_file = get_content_from_github('https://api.github.com/repos/emmgfx/material-for-coders/contents/style.css');
-
-	$style_file = file_get_contents('https://raw.githubusercontent.com/emmgfx/material-for-coders/master/style.css?rand='.rand(0,999));
-
-	foreach(preg_split("/((\r?\n)|(\r\n?))/", $style_file) as $line){
-	    if(strpos($line, 'Version') === false){
-		}else{
-			$remote_version = str_replace("Version: ", "", $line);
-			return trim($remote_version);
-			exit;
-		}
-	}
+function register_m4c_settings() {
+    register_setting( 'm4c-settings', 'footer-phrase' );
+    register_setting( 'm4c-settings', 'color-scheme' );
 }
+
+
+function m4c_admin_menu() {
+	add_theme_page( 'Material for coders', 'Material for coders', 'manage_options', 'm4c-settings', 'm4c_settings' );
+}
+
+if ( is_admin() ){
+    add_action( 'admin_menu', 'm4c_admin_menu' );
+    add_action( 'admin_init', 'register_m4c_settings' );
+}
+
+add_action( 'init', 'm4c_menus' );
+add_action( 'widgets_init', 'm4c_widgets' );
+
+add_theme_support( 'automatic-feed-links' );
+
+
 
 function get_content_from_github($url) {
 	try {
@@ -222,99 +254,56 @@ function get_content_from_github($url) {
 	}
 }
 
-function register_m4c_settings() {
-    register_setting( 'm4c-settings', 'footer-phrase' );
-    register_setting( 'm4c-settings', 'color-scheme' );
-}
+function download_latest(){
 
+	$destination = ABSPATH.'wp-content/themes/material-for-coders-master.zip';
+	$latest_theme_zip = 'https://github.com/emmgfx/material-for-coders/archive/master.zip';
 
-function m4c_admin_menu() {
-	add_theme_page( 'Material for coders', 'Material for coders', 'manage_options', 'm4c-settings', 'm4c_settings' );
-}
-
-if ( is_admin() ){
-    add_action( 'admin_menu', 'm4c_admin_menu' );
-    add_action( 'admin_init', 'register_m4c_settings' );
-}
-
-add_action( 'init', 'm4c_menus' );
-add_action( 'widgets_init', 'm4c_widgets' );
-
-add_theme_support( 'automatic-feed-links' );
-
-
-
-
-
-
-
-
-function mm_update_theme($themes)
-{
-    $args = array(
-            'path' => ABSPATH.'wp-content/themes/',
-            'preserve_zip' => false
-    );
-
-    foreach($themes as $theme)
-    {
-            mm_theme_download($theme['path'], $args['path'].$theme['name'].'.zip');
-            mm_theme_unpack($args, $args['path'].$theme['name'].'.zip');
-            // mm_theme_activate($theme['install']);
+	$rh = fopen($latest_theme_zip, 'rb');
+    $wh = fopen($destination, 'w+b');
+    if (!$rh || !$wh) {
+        return false;
     }
-}
-function mm_theme_download($url, $path)
-{
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $data = curl_exec($ch);
-    curl_close($ch);
-    if(file_put_contents($path, $data))
-            return true;
-    else
+
+    while (!feof($rh)) {
+        if (fwrite($wh, fread($rh, 4096)) === FALSE) {
             return false;
-}
-function mm_theme_unpack($args, $target)
-{
-    if($zip = zip_open($target))
-    {
-            while($entry = zip_read($zip))
-            {
-                    $is_file = substr(zip_entry_name($entry), -1) == '/' ? false : true;
-                    $file_path = $args['path'].zip_entry_name($entry);
-                    if($is_file)
-                    {
-                            if(zip_entry_open($zip,$entry,"r"))
-                            {
-                                    $fstream = zip_entry_read($entry, zip_entry_filesize($entry));
-                                    file_put_contents($file_path, $fstream );
-                                    chmod($file_path, 0777);
-                                    //echo "save: ".$file_path."<br />";
-                            }
-                            zip_entry_close($entry);
-                    }
-                    else
-                    {
-                            if(zip_entry_name($entry))
-                            {
-                                    mkdir($file_path);
-                                    chmod($file_path, 0777);
-                                    //echo "create: ".$file_path."<br />";
-                            }
-                    }
-            }
-            zip_close($zip);
+        }
+        echo ' ';
+        flush();
     }
-    if($args['preserve_zip'] === false)
-    {
-            unlink($target);
-    }
+
+    fclose($rh);
+    fclose($wh);
+
+    return true;
+
 }
 
-$themes = array(
-    array('name' => 'jetpack', 'path' => 'https://github.com/emmgfx/material-for-coders/archive/master.zip'),
-);
-mm_update_theme($themes);
+function unpack_downloaded(){
 
+	$zip = new ZipArchive;
+	$res = $zip->open(ABSPATH.'wp-content/themes/material-for-coders-master.zip');
+	if ($res === TRUE) {
+	  $zip->extractTo(ABSPATH.'wp-content/themes/');
+	  $zip->close();
+	  return true;
+	} else {
+	  return false;
+	}
+}
+
+function install_unpacked(){
+	deltree(ABSPATH.'wp-content/themes/material-for-coders');
+	return rename(ABSPATH.'wp-content/themes/material-for-coders-master', ABSPATH.'wp-content/themes/material-for-coders');
+}
+
+function delTree($dir) {
+	$files = array_diff(scandir($dir), array('.','..'));
+	foreach ($files as $file) {
+		(is_dir("$dir/$file")) ? delTree("$dir/$file") : unlink("$dir/$file");
+	}
+	return rmdir($dir);
+}
 
 ?>
