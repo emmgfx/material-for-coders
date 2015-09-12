@@ -51,9 +51,21 @@ function m4c_settings() {
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( 'You do not have sufficient permissions to access this page.' );
 	}
+
+	// Auto update things:
+
+	if(function_exists('wp_get_theme')){
+	    $theme_data = wp_get_theme(get_option('template'));
+	    $theme_version = $theme_data->Version;
+	} else {
+	    $theme_data = get_theme_data( TEMPLATEPATH . '/style.css');
+	    $theme_version = $theme_data['Version'];
+	}
+	$theme_base = get_option('template');
+
     ?>
 	<div class="wrap">
-        <h2>Material 4 Coders Settings</h2>
+        <h2>Material for coders settings</h2>
         <br />
 
         <form method="post" action="options.php">
@@ -104,22 +116,110 @@ function m4c_settings() {
                 </label>
             <?PHP endforeach; ?>
 
-            <hr >
-
-            <h3><span class="dashicons dashicons-star-filled"></span> Logo:</h3>
-            <p>Should be 170px width approx. and 30px height.</p>
-            <p>Coming soon.</p>
-
-            <hr >
+			<hr >
 
             <h3><span class="dashicons dashicons-format-quote"></span> Footer phrase (usually the license):</h3>
             <input style="width: 80%;" type="text" name="footer-phrase" value="<?php echo esc_attr( get_option('footer-phrase') ); ?>" />
+
+			<hr >
+
+            <h3><span class="dashicons dashicons-format-quote"></span> Theme updates</h3>
+            <ul>
+				<li>
+					Current version: <?php echo $theme_version; ?>
+				</li>
+				<li>
+					<?php $last_version = get_last_commit_theme_version(); ?>
+					Last version: <?php echo $last_version; ?>
+				</li>
+				<li>
+					<?PHP
+					switch(version_compare($theme_version, $last_version)){
+						case -1:
+							echo 'Update available. <a href="update">Update &rarr;</a>';
+						break;
+						case 0:
+							echo 'Update not available';
+						break;
+						case 1:
+							echo 'What?';
+						break;
+					}
+					?>
+				</li>
+			</ul>
 
             <?php submit_button(); ?>
 
         </form>
 	</div>
     <?PHP
+}
+
+function get_last_commit_theme_version(){
+
+	// $branches = get_content_from_github('https://api.github.com/repos/emmgfx/material-for-coders/branches');
+	//
+	// var_dump($branches);
+	//
+	// foreach($branches as $branch){
+	// 	if($branch['name'] == 'master'){
+	// 		$master = $branch;
+	// 	}
+	// }
+
+	// echo '<pre>';
+	// print_r($branch);
+	// echo '</pre>';
+
+	// echo 'https://api.github.com/repos/emmgfx/material-for-coders/commits/' . $master['commit']['sha'];
+
+	// $commit = get_content_from_github('https://api.github.com/repos/emmgfx/material-for-coders/commits/' . $master['commit']['sha']);
+
+	// echo '<pre>';
+	// print_r($commit);
+	// echo '</pre>';
+
+	// GET /repos/:owner/:repo/contents/:path
+	// $style_file = get_content_from_github('https://api.github.com/repos/emmgfx/material-for-coders/contents/style.css');
+
+	$style_file = file_get_contents('https://raw.githubusercontent.com/emmgfx/material-for-coders/master/style.css?rand='.rand(0,999));
+
+	foreach(preg_split("/((\r?\n)|(\r\n?))/", $style_file) as $line){
+	    if(strpos($line, 'Version') === false){
+		}else{
+			$remote_version = str_replace("Version: ", "", $line);
+			return trim($remote_version);
+			exit;
+		}
+	}
+}
+
+function get_content_from_github($url) {
+	try {
+	    $ch = curl_init();
+
+	    if (FALSE === $ch)
+	        throw new Exception('failed to initialize');
+
+	    curl_setopt($ch, CURLOPT_URL, $url);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 1);
+		curl_setopt($ch, CURLOPT_USERAGENT, "https://github.com/emmgfx/");
+
+	    $content = json_decode(curl_exec($ch), true);
+
+		return $content;
+
+	    if (FALSE === $content)
+	        throw new Exception(curl_error($ch), curl_errno($ch));
+
+	} catch(Exception $e) {
+	    trigger_error(sprintf('Curl failed with error #%d: %s', $e->getCode(), $e->getMessage()), E_USER_ERROR);
+	}
 }
 
 function register_m4c_settings() {
@@ -129,7 +229,7 @@ function register_m4c_settings() {
 
 
 function m4c_admin_menu() {
-	add_theme_page( 'Material 4 Coders', 'Material 4 Coders', 'manage_options', 'm4c-settings', 'm4c_settings' );
+	add_theme_page( 'Material for coders', 'Material for coders', 'manage_options', 'm4c-settings', 'm4c_settings' );
 }
 
 if ( is_admin() ){
@@ -141,4 +241,80 @@ add_action( 'init', 'm4c_menus' );
 add_action( 'widgets_init', 'm4c_widgets' );
 
 add_theme_support( 'automatic-feed-links' );
+
+
+
+
+
+
+
+
+function mm_update_theme($themes)
+{
+    $args = array(
+            'path' => ABSPATH.'wp-content/themes/',
+            'preserve_zip' => false
+    );
+
+    foreach($themes as $theme)
+    {
+            mm_theme_download($theme['path'], $args['path'].$theme['name'].'.zip');
+            mm_theme_unpack($args, $args['path'].$theme['name'].'.zip');
+            // mm_theme_activate($theme['install']);
+    }
+}
+function mm_theme_download($url, $path)
+{
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $data = curl_exec($ch);
+    curl_close($ch);
+    if(file_put_contents($path, $data))
+            return true;
+    else
+            return false;
+}
+function mm_theme_unpack($args, $target)
+{
+    if($zip = zip_open($target))
+    {
+            while($entry = zip_read($zip))
+            {
+                    $is_file = substr(zip_entry_name($entry), -1) == '/' ? false : true;
+                    $file_path = $args['path'].zip_entry_name($entry);
+                    if($is_file)
+                    {
+                            if(zip_entry_open($zip,$entry,"r"))
+                            {
+                                    $fstream = zip_entry_read($entry, zip_entry_filesize($entry));
+                                    file_put_contents($file_path, $fstream );
+                                    chmod($file_path, 0777);
+                                    //echo "save: ".$file_path."<br />";
+                            }
+                            zip_entry_close($entry);
+                    }
+                    else
+                    {
+                            if(zip_entry_name($entry))
+                            {
+                                    mkdir($file_path);
+                                    chmod($file_path, 0777);
+                                    //echo "create: ".$file_path."<br />";
+                            }
+                    }
+            }
+            zip_close($zip);
+    }
+    if($args['preserve_zip'] === false)
+    {
+            unlink($target);
+    }
+}
+
+$themes = array(
+    array('name' => 'jetpack', 'path' => 'https://github.com/emmgfx/material-for-coders/archive/master.zip'),
+);
+mm_update_theme($themes);
+
+
 ?>
