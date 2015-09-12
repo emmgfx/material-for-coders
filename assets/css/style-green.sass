@@ -1,0 +1,17 @@
+// out: ../../style-green.css
+
+@charset "utf-8"
+
+@import "wordpress-headers"
+@import "colors"
+@import "mixins"
+
+$color-primary: $color-green
+$color-accent: spin($color-primary, 180)
+
+$color-menu-1-inactive: lighten($color-primary, 40%)
+$color-menu-1-active: $color-white
+
+@import "buttons"
+@import "bootstrap-overriders"
+@import "main"

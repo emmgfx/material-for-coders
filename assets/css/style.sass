@@ -1,0 +1,17 @@
+// out: ../../style.css
+
+@charset "utf-8"
+
+@import "wordpress-headers"
+@import "colors"
+@import "mixins"
+
+$color-primary: $color-pink
+$color-accent: spin($color-primary, 100)
+
+$color-menu-1-inactive: lighten($color-primary, 40%)
+$color-menu-1-active: $color-white
+
+@import "buttons"
+@import "bootstrap-overriders"
+@import "main"
