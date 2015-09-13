@@ -440,8 +440,7 @@ a:active {
       display: inline-block; }
   .navigation a:hover {
     background-color: #b833d3;
-    color: #FFF;
-    transition: all 0.2s; }
+    color: #FFF; }
   .navigation .page-numbers {
     display: inline-block;
     padding: 7px 10px;
