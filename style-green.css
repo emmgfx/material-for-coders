@@ -315,10 +315,6 @@ a:active {
   padding: 40px;
   font-size: 15px;
   overflow-x: scroll; }
-  @media (min-width: 992px) {
-    .article-wrapper .article pre {
-      margin-left: -100px;
-      margin-right: -100px; } }
 
 .article-wrapper .article img {
   max-width: 100%;
@@ -328,6 +324,11 @@ a:active {
   color: #18B576; }
   .article-wrapper .article a:hover {
     border-bottom: 1px dotted #18B576; }
+
+@media (min-width: 992px) {
+  .article-wrapper:not(.sidebar-active) pre {
+    margin-left: -100px;
+    margin-right: -100px; } }
 
 .article-wrapper #comments .comments {
   margin-top: 80px; }
@@ -422,6 +423,15 @@ a:active {
     .article-wrapper .comment-respond input[type=text],
     .article-wrapper .comment-respond textarea {
       width: 100%; } }
+
+.sidebar {
+  padding-top: 15px; }
+  .sidebar h3 {
+    color: #18B576;
+    font-family: Montserrat;
+    border-bottom: 2px solid #4218b5;
+    padding-bottom: .5em;
+    margin-bottom: .5em; }
 
 .navigation {
   text-align: center;

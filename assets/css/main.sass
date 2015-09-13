@@ -198,9 +198,6 @@ a:active
             font-size: 15px
             overflow-x: scroll
 
-            @media (min-width: $screen-md)
-                margin-left: -100px
-                margin-right: -100px
 
         img
             max-width: 100%
@@ -211,6 +208,12 @@ a:active
 
             &:hover
                 border-bottom: 1px dotted $color-primary
+
+    &:not(.sidebar-active)
+        pre
+            @media (min-width: $screen-md)
+                margin-left: -100px
+                margin-right: -100px
 
     #comments
         .comments
@@ -357,10 +360,15 @@ a:active
             textarea
                 width: 100%
 
+.sidebar
+    padding-top: 15px
 
-
-
-
+    h3
+        color: $color-primary
+        font-family: Montserrat
+        border-bottom: 2px solid $color-accent
+        padding-bottom: .5em
+        margin-bottom: .5em
 
 .navigation
     text-align: center

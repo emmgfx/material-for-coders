@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
+<?php
+$sidebar_active = intval(get_option('sidebar-active'));
+$sidebar = ($sidebar_active == 1);
+?>
+
 <div class="big-title">
 	<div class="container">
 		<h2>Blog</h2>
@@ -8,11 +13,11 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="<?php echo ($sidebar ? 'col-md-8 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
 
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 
-			<div class="article-wrapper">
+			<div class="article-wrapper <?php echo ($sidebar ? 'sidebar-active' : ''); ?>">
 				<br />
 				<h2><a href="<?PHP the_permalink(); ?>"><?PHP the_title(); ?></a></h2>
 
@@ -32,9 +37,18 @@
 			<?PHP get_template_part('pagination'); ?>
 		</div>
 
-		<!-- <div class="col-md-3 col-md-offset-1">
-			<p>You can use this space to create a sidebar</p>
-		</div> -->
+		<?php if($sidebar): ?>
+		<div class="col-md-3 col-md-offset-1 col-sm-4 sidebar">
+			<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
+				<div class="row">
+					<?php dynamic_sidebar( 'sidebar' ); ?>
+				</div>
+			<?php else: ?>
+				<h3>Sidebar</h3>
+				<p>Add widgets to your sidebar or disable it in the theme settings.</p>
+			<?php endif; ?>
+		</div>
+		<?php endif; ?>
 
 	</div>
 </div>

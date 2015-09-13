@@ -50,6 +50,16 @@ function m4c_widgets() {
 		'after_title'   => '</h3>',
 	) );
 
+	register_sidebar( array(
+		'name'          => 'Sidebar',
+		'id'            => 'sidebar',
+		'before_widget' => '<div class="col-md-12 col-xs-10 col-xs-offset-1"><div class="widget">',
+		// 'before_widget' => '<div class="col-xs-12"><div class="widget">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+
 }
 
 
@@ -67,7 +77,7 @@ function m4c_settings() {
             <?PHP settings_fields( 'm4c-settings' ); ?>
             <?PHP do_settings_sections( 'm4c-settings' ); ?>
             <hr />
-            <h3><span class="dashicons dashicons-admin-customizer"></span> Color scheme:</h3>
+            <h3><span class="dashicons dashicons-admin-appearance"></span> Color scheme:</h3>
             <?PHP
             $schemes = array(
                 array('Pink', '#E2105D', '#b20d49', '#fbc3d8'),
@@ -113,11 +123,23 @@ function m4c_settings() {
 			<hr >
 
             <h3><span class="dashicons dashicons-format-quote"></span> Footer phrase (usually the license):</h3>
-            <input style="width: 80%;" type="text" name="footer-phrase" value="<?php echo esc_attr( get_option('footer-phrase') ); ?>" />
+            <p><input style="width: 80%;" type="text" name="footer-phrase" value="<?php echo esc_attr( get_option('footer-phrase') ); ?>" /></p>
 
-			<br />
 			<hr />
-			<br />
+
+			<?php
+			# Get the option
+			$sidebar_active = intval(get_option('sidebar-active'));
+			$sidebar = ($sidebar_active == 1);
+			?>
+
+            <h3><span class="dashicons dashicons-admin-appearance"></span> Sidebar:</h3>
+			<ul>
+				<li><label><input type="radio" name="sidebar-active" value="1" <?php echo ($sidebar ? 'checked' : '');?> /> With sidebar</label></li>
+				<li><label><input type="radio" name="sidebar-active" value="0" <?php echo ($sidebar ? '' : 'checked');?> /> Without sidebar</label></li>
+			</ul>
+
+			<hr />
 
 
 			<?PHP
@@ -214,6 +236,7 @@ function m4c_settings() {
 function register_m4c_settings() {
     register_setting( 'm4c-settings', 'footer-phrase' );
     register_setting( 'm4c-settings', 'color-scheme' );
+	register_setting( 'm4c-settings', 'sidebar-active' );
 }
 
 
