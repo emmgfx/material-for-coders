@@ -425,13 +425,16 @@ a:active {
       width: 100%; } }
 
 .sidebar {
-  padding-top: 15px; }
+  padding-top: 25px; }
   .sidebar h3 {
     color: #CC1C52;
     font-family: Montserrat;
     border-bottom: 2px solid #8dcc1c;
     padding-bottom: .5em;
-    margin-bottom: .5em; }
+    margin-bottom: .5em;
+    font-size: 20px; }
+  .sidebar .widget {
+    margin-bottom: 25px; }
 
 .navigation {
   text-align: center;
