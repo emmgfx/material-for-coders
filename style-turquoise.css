@@ -2,7 +2,7 @@
  Theme Name: Material for Coders
  Author: Josep Viciana
  Author URI: http://www.emm-gfx.net/
- Version: 1.1.0
+ Version: 1.1.1
  License: GNU General Public License v2 or later
  License URI: http://opensource.org/licenses/MIT
  Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
@@ -436,6 +436,18 @@ a:active {
     font-size: 20px; }
   .sidebar .widget {
     margin-bottom: 25px; }
+    .sidebar .widget ul,
+    .sidebar .widget ol {
+      margin: 0;
+      padding: 10px 0 0 16px; }
+      .sidebar .widget ul li,
+      .sidebar .widget ol li {
+        margin-bottom: .25em; }
+  .sidebar .blogroll li {
+    color: #b3b3b3; }
+  .sidebar .blogroll a {
+    color: gray;
+    display: block; }
   .sidebar #wp-calendar {
     width: 100%; }
     .sidebar #wp-calendar caption {
