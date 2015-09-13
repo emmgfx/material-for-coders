@@ -2,6 +2,12 @@
 
 require_once 'thumbnails.php';
 
+define('THEMES_DIR',	ABSPATH.'wp-content/themes/');
+define('THEME_DIR',		THEMES_DIR.'material-for-coders');
+define('THEME_DIR_TMP', THEMES_DIR.'material-for-coders-master');
+define('THEME_ZIP',		THEMES_DIR.'material-for-coders-master.zip');
+define('THEME_ZIP_URL',	'https://github.com/emmgfx/material-for-coders/archive/master.zip');
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 600;
 }
@@ -256,11 +262,8 @@ function get_content_from_github($url) {
 
 function download_latest(){
 
-	$destination = ABSPATH.'wp-content/themes/material-for-coders-master.zip';
-	$latest_theme_zip = 'https://github.com/emmgfx/material-for-coders/archive/master.zip';
-
-	$rh = fopen($latest_theme_zip, 'rb');
-    $wh = fopen($destination, 'w+b');
+	$rh = fopen(THEME_ZIP_URL, 'rb');
+    $wh = fopen(THEME_ZIP, 'w+b');
     if (!$rh || !$wh) {
         return false;
     }
@@ -283,9 +286,9 @@ function download_latest(){
 function unpack_downloaded(){
 
 	$zip = new ZipArchive;
-	$res = $zip->open(ABSPATH.'wp-content/themes/material-for-coders-master.zip');
+	$res = $zip->open(THEME_ZIP);
 	if ($res === TRUE) {
-	  $zip->extractTo(ABSPATH.'wp-content/themes/');
+	  $zip->extractTo(THEMES_DIR);
 	  $zip->close();
 	  return true;
 	} else {
@@ -294,8 +297,8 @@ function unpack_downloaded(){
 }
 
 function install_unpacked(){
-	deltree(ABSPATH.'wp-content/themes/material-for-coders');
-	return rename(ABSPATH.'wp-content/themes/material-for-coders-master', ABSPATH.'wp-content/themes/material-for-coders');
+	deltree(THEME_DIR);
+	return rename(THEME_DIR_TMP, THEME_DIR);
 }
 
 function delTree($dir) {
