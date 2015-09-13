@@ -435,6 +435,15 @@ a:active {
     font-size: 20px; }
   .sidebar .widget {
     margin-bottom: 25px; }
+  .sidebar #wp-calendar {
+    width: 100%; }
+    .sidebar #wp-calendar caption {
+      text-align: center;
+      font-weight: bold; }
+    .sidebar #wp-calendar tfoot {
+      text-align: center; }
+      .sidebar #wp-calendar tfoot tr td {
+        padding-top: 1em; }
 
 .navigation {
   text-align: center;
