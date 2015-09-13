@@ -425,13 +425,29 @@ a:active {
       width: 100%; } }
 
 .sidebar {
-  padding-top: 15px; }
+  padding-top: 25px;
+  color: gray; }
   .sidebar h3 {
     color: #18B576;
     font-family: Montserrat;
     border-bottom: 2px solid #4218b5;
     padding-bottom: .5em;
-    margin-bottom: .5em; }
+    margin-bottom: .5em;
+    font-size: 20px; }
+  .sidebar .widget {
+    margin-bottom: 25px; }
+  .sidebar #wp-calendar {
+    width: 100%; }
+    .sidebar #wp-calendar caption {
+      text-align: center;
+      font-weight: bold; }
+    .sidebar #wp-calendar tbody a {
+      color: #18B576;
+      font-weight: bold; }
+    .sidebar #wp-calendar tfoot {
+      text-align: center; }
+      .sidebar #wp-calendar tfoot tr td {
+        padding-top: 1em; }
 
 .navigation {
   text-align: center;

@@ -425,7 +425,8 @@ a:active {
       width: 100%; } }
 
 .sidebar {
-  padding-top: 25px; }
+  padding-top: 25px;
+  color: gray; }
   .sidebar h3 {
     color: #CC1C52;
     font-family: Montserrat;
@@ -439,6 +440,9 @@ a:active {
     width: 100%; }
     .sidebar #wp-calendar caption {
       text-align: center;
+      font-weight: bold; }
+    .sidebar #wp-calendar tbody a {
+      color: #CC1C52;
       font-weight: bold; }
     .sidebar #wp-calendar tfoot {
       text-align: center; }
