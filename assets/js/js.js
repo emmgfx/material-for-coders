@@ -33,6 +33,7 @@ $(function(){
 
 	$(document).on('click', '.mobile-menu-toggler', function(){
 		$('div.menu-mobile-wrapper').toggleClass('opened');
+		return false;
 	});
 
 	$(document).on('click', 'div.menu-mobile-wrapper', function(e){
