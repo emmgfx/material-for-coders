@@ -1,4 +1,13 @@
 $(function(){
+
+	$(".header").headroom({
+		offset: 85,
+		tolerance : {
+			up : 10,
+			down : 10
+		}
+	});
+
 	function stickyFooter(){
 
 		var	footer = $(".footer-wrapper");
@@ -17,6 +26,7 @@ $(function(){
 	}
 
 	stickyFooter();
+
 	$(window).resize(function() {
 		stickyFooter();
 	});

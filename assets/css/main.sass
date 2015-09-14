@@ -18,24 +18,42 @@ a:active
     color: inherit
     text-decoration: none
 
+.header-placeholder
+    height: 88px
+    @media (max-width: $screen-md)
+        height: 58px
+
 .header
     background-color: $color-primary
     padding: 27px
+    position: fixed
+    width: 100%
+    top: 0
+    z-index: 998
+    transition: all .2s ease-out
+
+    &.headroom--unpinned
+        transform: translateY(-100%)
+
+    @media (max-width: $screen-md)
+        padding: 1em
+        .title-wrapper
+            width: 100%
 
     .title-wrapper
         display: inline-block
         color: $color-menu-1-active
         vertical-align: middle
-        .overflowed-text
+        @include overflowed-text
 
         .mobile-menu-toggler
             position: relative
-            font-size: 17px
+            font-size: 15px
             vertical-align: middle
             background: transparentize($color-white, .8)
-            padding: 5px 8px
+            padding: 4px 8px
             border-radius: 3px
-            margin-right: .5em
+            float: right
             color: $color-white
 
             &:hover
@@ -138,11 +156,18 @@ a:active
     color: $color-primary
     padding: 40px 0
 
+    @media (max-width: 600px)
+        padding: 2em 0
+
     h2
         font-weight: 100
         padding: 0
         margin: 0
         font-size: 50px
+
+        @media (max-width: 600px)
+            font-size: 25px
+            font-weight: 300
 
         small
             color: inherit
@@ -456,6 +481,7 @@ a:active
     transition: all .3s ease-in-out
     opacity: 0
     box-shadow: 0 -100px 0 0 transparentize($color-black, .5)
+    z-index: 999
 
     .menu-mobile
         position: absolute
