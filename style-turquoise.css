@@ -2,7 +2,7 @@
  Theme Name: Material for Coders
  Author: Josep Viciana
  Author URI: http://www.emm-gfx.net/
- Version: 1.1.4
+ Version: 1.1.5
  License: GNU General Public License v2 or later
  License URI: http://opensource.org/licenses/MIT
  Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
@@ -45,6 +45,107 @@
     border: 1px solid #33b9d3;
     box-shadow: inset 0 0 0 3px rgba(51, 185, 211, 0.1);
     outline: none; }
+
+.header-placeholder {
+  height: 88px; }
+  @media (max-width: 992px) {
+    .header-placeholder {
+      height: 58px; } }
+
+.header {
+  background-color: #33b9d3;
+  padding: 27px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 998;
+  transition: all 0.2s ease-out; }
+  .header.headroom--unpinned {
+    transform: translateY(-100%);
+    opacity: 0; }
+  @media (max-width: 992px) {
+    .header {
+      padding: 1em; }
+      .header .title-wrapper {
+        width: 100%; } }
+  .header .title-wrapper {
+    display: inline-block;
+    color: #FFF;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .header .title-wrapper .mobile-menu-toggler {
+      position: relative;
+      font-size: 15px;
+      vertical-align: middle;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 8px;
+      border-radius: 3px;
+      float: right;
+      color: #FFF; }
+      .header .title-wrapper .mobile-menu-toggler:hover {
+        background: rgba(255, 255, 255, 0.3); }
+    .header .title-wrapper h1 {
+      padding: 0;
+      margin: 0 20px 0 0;
+      font-size: 30px;
+      line-height: 1em;
+      display: inline-block;
+      font-weight: bold;
+      vertical-align: middle;
+      text-transform: uppercase;
+      font-family: Montserrat; }
+      .header .title-wrapper h1 a {
+        line-height: 1em; }
+        .header .title-wrapper h1 a img {
+          display: block;
+          vertical-align: baseline; }
+  .header ul.primary-menu {
+    display: inline-block;
+    font-family: Montserrat;
+    color: #dbf3f7;
+    margin: 0; }
+    .header ul.primary-menu li:not(:last-child) {
+      margin-right: 1em; }
+    .header ul.primary-menu a.active,
+    .header ul.primary-menu a:active,
+    .header ul.primary-menu a:hover,
+    .header ul.primary-menu a:focus {
+      color: #FFF; }
+    .header ul.primary-menu li.current-menu-item a {
+      color: #FFF; }
+  .header form {
+    margin: 0;
+    padding: 0;
+    position: relative; }
+    .header form input.search {
+      background-color: #48c0d8;
+      border: none;
+      color: #dbf3f7;
+      border-radius: 4px;
+      padding: 5px 35px 5px 10px;
+      box-shadow: none;
+      width: 70%;
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      -o-transition: all 0.1s linear;
+      -ms-transition: all 0.1s linear;
+      transition: all 0.1s linear; }
+      .header form input.search:hover {
+        background-color: #5dc7dc; }
+      .header form input.search:focus {
+        width: 100%;
+        color: #33b9d3;
+        background-color: #FFF;
+        border-color: none;
+        outline: 0; }
+    .header form i.fa-search {
+      position: absolute;
+      font-size: 16px;
+      top: 9px;
+      right: 9px;
+      color: #b1e4ee; }
 
 .aligncenter,
 div.aligncenter {
@@ -158,106 +259,6 @@ a:active {
   outline: none;
   color: inherit;
   text-decoration: none; }
-
-.header-placeholder {
-  height: 88px; }
-  @media (max-width: 992px) {
-    .header-placeholder {
-      height: 58px; } }
-
-.header {
-  background-color: #33b9d3;
-  padding: 27px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 998;
-  transition: all 0.2s ease-out; }
-  .header.headroom--unpinned {
-    transform: translateY(-100%); }
-  @media (max-width: 992px) {
-    .header {
-      padding: 1em; }
-      .header .title-wrapper {
-        width: 100%; } }
-  .header .title-wrapper {
-    display: inline-block;
-    color: #FFF;
-    vertical-align: middle;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-    .header .title-wrapper .mobile-menu-toggler {
-      position: relative;
-      font-size: 15px;
-      vertical-align: middle;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 4px 8px;
-      border-radius: 3px;
-      float: right;
-      color: #FFF; }
-      .header .title-wrapper .mobile-menu-toggler:hover {
-        background: rgba(255, 255, 255, 0.3); }
-    .header .title-wrapper h1 {
-      padding: 0;
-      margin: 0 20px 0 0;
-      font-size: 30px;
-      line-height: 1em;
-      display: inline-block;
-      font-weight: bold;
-      vertical-align: middle;
-      text-transform: uppercase;
-      font-family: Montserrat; }
-      .header .title-wrapper h1 a {
-        line-height: 1em; }
-        .header .title-wrapper h1 a img {
-          display: block;
-          vertical-align: baseline; }
-  .header ul.primary-menu {
-    display: inline-block;
-    font-family: Montserrat;
-    color: #dbf3f7;
-    margin: 0; }
-    .header ul.primary-menu li:not(:last-child) {
-      margin-right: 1em; }
-    .header ul.primary-menu a.active,
-    .header ul.primary-menu a:active,
-    .header ul.primary-menu a:hover,
-    .header ul.primary-menu a:focus {
-      color: #FFF; }
-    .header ul.primary-menu li.current-menu-item a {
-      color: #FFF; }
-  .header form {
-    margin: 0;
-    padding: 0;
-    position: relative; }
-    .header form input.search {
-      background-color: #48c0d8;
-      border: none;
-      color: #dbf3f7;
-      border-radius: 4px;
-      padding: 5px 35px 5px 10px;
-      box-shadow: none;
-      width: 70%;
-      -webkit-transition: all 0.1s linear;
-      -moz-transition: all 0.1s linear;
-      -o-transition: all 0.1s linear;
-      -ms-transition: all 0.1s linear;
-      transition: all 0.1s linear; }
-      .header form input.search:hover {
-        background-color: #5dc7dc; }
-      .header form input.search:focus {
-        width: 100%;
-        color: #33b9d3;
-        background-color: #FFF;
-        border-color: none;
-        outline: 0; }
-    .header form i.fa-search {
-      position: absolute;
-      font-size: 16px;
-      top: 9px;
-      right: 9px;
-      color: #b1e4ee; }
 
 .menu-2 {
   font-family: Montserrat; }
