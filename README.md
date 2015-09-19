@@ -12,7 +12,7 @@ Only download this repo by clicking the __Download ZIP__ button on the Github si
 
 ### Updates
 
-The theme counts with an auto updater, basically sync your theme with this repo. You only have to enter on the theme settings page and follow the link to update. Wordpress validation system is too slow and I preferred to made the update system on my own. You can check the few lines refered to the updates on the [functions.php file](https://github.com/emmgfx/material-for-coders/blob/master/functions.php).
+The theme counts with an auto updater, basically sync your theme with this repo. You only have to enter on the theme settings page and follow the link to update. Wordpress validation system is too slow and I preferred to made the update system on my own. You can check the few lines refered to the updates on the [updater.php file](https://github.com/emmgfx/material-for-coders/blob/master/includes/updater.php).
 
 ### Coming soon
 
