@@ -8,7 +8,7 @@ Example of use: http://www.emm-gfx.net
 
 ### How to install
 
-Only download this repo by clicking the __Download ZIP__ button on the Github sidebar. Unzip it and rename the folder to only "__material-for-coders__" (rename the "__-master__" word that Github appends automatically). It works well if you don't rename it, but the update system may cause problems, so, do it.
+Only download this repo by clicking the __Download ZIP__ button on the Github sidebar. Unzip it and rename the folder to only "__material-for-coders__" (remove the "__-master__" word that Github appends automatically). It works well if you don't rename it, but the update system may cause problems, so, do it.
 
 ### Updates
 
