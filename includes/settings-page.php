@@ -90,6 +90,28 @@ function m4c_settings() {
 			<hr />
 
 
+            <!-- https://wordpress.org/plugins/advanced-custom-fields/ -->
+
+            <h3><span class="dashicons dashicons-align-right"></span> Portfolio:</h3>
+
+            <?php $acf_activated = is_plugin_active('advanced-custom-fields/acf.php'); ?>
+
+            <?php if($acf_activated): ?>
+                <p>
+                    Portfolio enabled. Remember that you must maintain the
+                    <a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank">Advanced Custom Fields</a>
+                    plugin activated.
+                </p>
+            <?php else: ?>
+                <p>
+                    To use the portfolio features you need to have the
+                    <a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank">Advanced Custom Fields</a>
+                    plugin activated.
+                </p>
+            <?php endif; ?>
+
+			<hr />
+
 			<?PHP
 			# Get the current version:
 			{
