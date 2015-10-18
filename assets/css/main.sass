@@ -24,7 +24,21 @@ a:active
     ul
         margin: 0
         padding: 0
+        overflow: hidden
+        transition: all .3s linear
+        height: auto
 
+        &.collapsed
+            @media (max-width: 768px)
+                height: 0
+
+        li
+            @media (max-width: 768px)
+                display: block
+
+    &.current-menu-item a
+        color: $color-primary
+        border-bottom-color:$color-primary
     a
         display: block
         padding: 15px
@@ -38,9 +52,6 @@ a:active
             color: $color-accent
             border-bottom-color:$color-accent
 
-    li.current-menu-item a
-        color: $color-primary
-        border-bottom-color:$color-primary
 
 .big-title
     background-color: $color-grey-05

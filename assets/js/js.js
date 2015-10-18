@@ -8,6 +8,12 @@ $(function(){
 		}
 	});
 
+	$(document).on('click', '.menu-2-toggler', function(){
+		$(this).find('i').toggleClass('fa-caret-down fa-caret-up');
+		$(".menu-2 #blog").toggleClass('collapsed');
+		return false;
+	});
+
 	function stickyFooter(){
 
 		var	footer = $(".footer-wrapper");
