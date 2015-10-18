@@ -469,7 +469,7 @@ a:active
             margin: 0
             text-transform: uppercase
             font-size: 20px
-            .overflowed-text
+            @include overflowed-text
 
 
         ul
@@ -480,12 +480,12 @@ a:active
             li
                 padding: 0
                 margin: 10px 0
-                .overflowed-text
+                @include overflowed-text
                 display: block
 
                 .subtitle,
                 .post-date
-                    .overflowed-text
+                    @include overflowed-text
                     display: block
                     font-size: .9em
                     color: lighten($color-primary, 30%)
