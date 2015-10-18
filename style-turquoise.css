@@ -2,7 +2,7 @@
  Theme Name: Material for Coders
  Author: Josep Viciana
  Author URI: http://www.emm-gfx.net/
- Version: 1.1.5
+ Version: 1.1.6
  License: GNU General Public License v2 or later
  License URI: http://opensource.org/licenses/MIT
  Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
@@ -597,7 +597,10 @@ a:active {
       padding: 0;
       margin: 0;
       text-transform: uppercase;
-      font-size: 20px; }
+      font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
     .footer .widget ul {
       margin: 20px 0 0 0;
       padding: 0;
@@ -605,9 +608,15 @@ a:active {
       .footer .widget ul li {
         padding: 0;
         margin: 10px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         display: block; }
         .footer .widget ul li .subtitle,
         .footer .widget ul li .post-date {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           display: block;
           font-size: .9em;
           color: #b1e4ee; }
@@ -623,3 +632,21 @@ a:active {
   .license p {
     margin: 0;
     padding: 0; }
+
+.project-meta h4 {
+  color: #33b9d3;
+  font-family: Montserrat;
+  font-size: 14px; }
+
+.project-meta ul > li > a {
+  border-radius: 99px;
+  border: 2px solid #cccccc;
+  padding: 0.3em 0.8em;
+  font-size: 12px;
+  font-family: Montserrat;
+  color: #999999;
+  line-height: 2.5em; }
+  .project-meta ul > li > a:hover {
+    color: #FFF;
+    border-color: #b833d3;
+    background-color: #b833d3; }

@@ -54,12 +54,15 @@
     switch($color_scheme){
         case 'Green':
             echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-green.css" />';
+            echo '<meta name="theme-color" content="#18B576">';
             break;
         case 'Turquoise':
             echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-turquoise.css" />';
+            echo '<meta name="theme-color" content="#33b9d3">';
             break;
         default:
             echo '<link rel="stylesheet" href="'.get_stylesheet_uri().'" />';
+            echo '<meta name="theme-color" content="#CC1C52">';
     }
     ?>
 
