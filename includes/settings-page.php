@@ -150,7 +150,7 @@ function m4c_settings() {
 					<p><span class="dashicons dashicons-yes"></span> You have the latest version, <?php echo $version_current; ?>.</p>
 
 				<?php elseif($updated == 1): ?>
-					<p>Mmm... something weird has happened... do you have a more recent version than the latest?</p>
+					<p>Mmm... something weird has happened... do you have a more recent version than the latest? <a href="themes.php?page=m4c-settings&updater">Force update to <?php echo $version_latest; ?></a>.</p>
 
 				<?php endif; ?>
 			<?php elseif(isset($_GET['updater'])): ?>
