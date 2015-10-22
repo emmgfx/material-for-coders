@@ -3,6 +3,8 @@
 <?php
 $option = array(
 	'sidebar_active' => intval(get_option('sidebar-active')) == 1,
+	'show_featured_index' => intval(get_option('show-featured-index')) == 1,
+	'show_featured_single' => intval(get_option('show-featured-single')) == 1
 );
 ?>
 
@@ -19,7 +21,15 @@ $option = array(
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 
 			<div class="article-wrapper">
-				<br />
+				<?PHP
+				if(has_post_thumbnail() && $option['show_featured_index']):
+					echo '<a href="'.get_the_permalink().'">';
+					the_post_thumbnail('custom_1', array( 'class'	=> "img-rounded img-responsive center-block featured"));
+					echo '</a>';
+				else:
+					echo '<br />';
+				endif;
+				?>
 				<h2><a href="<?PHP the_permalink(); ?>"><?PHP the_title(); ?></a></h2>
 
 				<?PHP include 'context.php'; ?>

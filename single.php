@@ -3,6 +3,8 @@
 <?php
 $option = array(
 	'sidebar_active' => intval(get_option('sidebar-active')) == 1,
+	'show_featured_index' => intval(get_option('show-featured-index')) == 1,
+	'show_featured_single' => intval(get_option('show-featured-single')) == 1
 );
 ?>
 
@@ -21,8 +23,9 @@ $option = array(
 			<div class="article-wrapper">
 				<?PHP get_template_part( 'context' ); ?>
 				<?PHP
-				if(has_post_thumbnail())
+				if(has_post_thumbnail() && $option['show_featured_single']):
 					the_post_thumbnail('custom_1', array( 'class'	=> "img-rounded img-responsive center-block featured"));
+				endif;
 				?>
 				<div class="article">
 					<?PHP the_content(); ?>
