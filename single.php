@@ -20,7 +20,7 @@ $option = array(
 	<div class="row">
 		<div class="<?php echo ($option['sidebar_active'] ? 'col-md-9 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
 
-			<div class="article-wrapper">
+			<div class="article-wrapper <?php echo ($option['sidebar_active'] ? 'sidebar-active' : ''); ?>">
 				<?PHP get_template_part( 'context' ); ?>
 				<?PHP
 				if(has_post_thumbnail() && $option['show_featured_single']):
