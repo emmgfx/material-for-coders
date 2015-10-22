@@ -3,7 +3,7 @@
 function register_m4c_settings() {
     register_setting( 'm4c-settings', 'footer-phrase' );
     register_setting( 'm4c-settings', 'color-scheme' );
-	register_setting( 'm4c-settings', 'sidebar-active' );
+    register_setting( 'm4c-settings', 'sidebar-active' );
 }
 
 
@@ -76,15 +76,15 @@ function m4c_settings() {
 			<hr />
 
 			<?php
-			# Get the option
-			$sidebar_active = intval(get_option('sidebar-active'));
-			$sidebar = ($sidebar_active == 1);
-			?>
+			# Get the options
+            $option = array(
+            	'sidebar_active' => intval(get_option('sidebar-active')) == 1,
+            );
+            ?>
 
             <h3><span class="dashicons dashicons-admin-appearance"></span> Sidebar:</h3>
 			<ul>
-				<li><label><input type="radio" name="sidebar-active" value="1" <?php echo ($sidebar ? 'checked' : '');?> /> With sidebar</label></li>
-				<li><label><input type="radio" name="sidebar-active" value="0" <?php echo ($sidebar ? '' : 'checked');?> /> Without sidebar</label></li>
+				<li><label><input type="checkbox" name="sidebar-active" value="1" <?php echo ($option['sidebar_active'] ? 'checked' : '');?> /> Show sidebar</label></li>
 			</ul>
 
 			<hr />

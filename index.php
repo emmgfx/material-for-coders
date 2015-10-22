@@ -1,8 +1,9 @@
 <?php get_header(); ?>
 
 <?php
-$sidebar_active = intval(get_option('sidebar-active'));
-$sidebar = ($sidebar_active == 1);
+$option = array(
+	'sidebar_active' => intval(get_option('sidebar-active')) == 1,
+);
 ?>
 
 <div class="big-title">
@@ -13,7 +14,7 @@ $sidebar = ($sidebar_active == 1);
 
 <div class="container">
 	<div class="row">
-		<div class="<?php echo ($sidebar ? 'col-md-9 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
+		<div class="<?php echo ($option['sidebar_active'] ? 'col-md-9 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
 
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 
@@ -37,7 +38,7 @@ $sidebar = ($sidebar_active == 1);
 			<?PHP get_template_part('pagination'); ?>
 		</div>
 
-		<?php if($sidebar): ?>
+		<?php if($option['sidebar_active']): ?>
 		<div class="col-md-3 col-sm-4 sidebar">
 			<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
 				<div class="row">
