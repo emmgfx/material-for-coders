@@ -20,7 +20,7 @@ $option = array(
 
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 
-			<div class="article-wrapper">
+			<div class="article-wrapper <?php echo ($option['sidebar_active'] ? 'sidebar-active' : ''); ?>">
 				<?PHP
 				if(has_post_thumbnail() && $option['show_featured_index']):
 					echo '<a href="'.get_the_permalink().'">';
