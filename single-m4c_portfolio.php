@@ -50,7 +50,11 @@
 				if($attachment_meta == false)
 					continue;
 
-				echo '<p>'.wp_get_attachment_image( $attachment_id, 'portfolio_1', $icon, 'img-responsive' ).'</p>';
+				echo '<p>';
+				echo wp_get_attachment_image( $attachment_id, 'portfolio_1', '', array(
+					'class' => 'img-responsive'
+				));
+				echo '</p>';
 				?>
 			<?php endforeach; ?>
 

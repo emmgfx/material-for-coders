@@ -646,21 +646,3 @@ a:active {
   .license p {
     margin: 0;
     padding: 0; }
-
-.project-meta h4 {
-  color: #18B576;
-  font-family: Montserrat;
-  font-size: 14px; }
-
-.project-meta ul > li > a {
-  border-radius: 99px;
-  border: 2px solid #cccccc;
-  padding: 0.3em 0.8em;
-  font-size: 12px;
-  font-family: Montserrat;
-  color: #999999;
-  line-height: 2.5em; }
-  .project-meta ul > li > a:hover {
-    color: #FFF;
-    border-color: #4218b5;
-    background-color: #4218b5; }

@@ -13,9 +13,14 @@ function create_post_type() {
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'project'),
 			// 'supports' => array( 'title', 'editor', 'thumbnail' ),
-			'supports' => array( 'title', 'editor' ),
+			'supports' => array( 'title', 'editor', 'thumbnail' ),
 		)
 	);
+
+	register_taxonomy( 'category', 'm4c_portfolio', array(
+		'label' => __( 'Categoría' ),
+		'rewrite' => array( 'slug' => 'projects/category' ),
+	));
 
 	register_taxonomy( 'technology', 'm4c_portfolio', array(
 		'label' => __( 'Technologies' ),

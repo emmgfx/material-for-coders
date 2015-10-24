@@ -664,3 +664,33 @@ a:active {
     color: #FFF;
     border-color: #8dcc1c;
     background-color: #8dcc1c; }
+
+.project {
+  margin-top: 50px; }
+  .project .project-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    margin: .8em 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4d4d4d; }
+  .project .project-date {
+    font-family: Montserrat;
+    font-size: 16px;
+    margin: .8em 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #b3b3b3; }
+  .project .project-categories {
+    font-family: Montserrat;
+    text-transform: uppercase;
+    color: #b3b3b3;
+    font-weight: bold; }
+    .project .project-categories a {
+      transition: all 0.1s linear; }
+    .project .project-categories a:hover,
+    .project .project-categories a:active,
+    .project .project-categories a:focus {
+      color: #CC1C52; }
