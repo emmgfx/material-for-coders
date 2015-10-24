@@ -1,24 +1,21 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+	<div class="big-title">
+		<div class="container">
+			<h2 align="center">404</h2>
+		</div>
+	</div>
 
-			<!-- article -->
-			<article id="post-404">
+	<div class="container">
 
-				<h1><?php echo 'Page not found' ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php echo 'Return home?'; ?></a>
-				</h2>
+		<br />
+		<br />
+		<br />
 
-			</article>
-			<!-- /article -->
+		<div align="center">
+			<a href="<?php echo home_url(); ?>" class="btn btn-lg btn-primary">&larr; Volver a la portada</a>
+		</div>
 
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+	</div>
 
 <?php get_footer(); ?>
