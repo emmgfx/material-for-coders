@@ -17,17 +17,17 @@ function create_post_type() {
 		)
 	);
 
-	register_taxonomy( 'category', 'm4c_portfolio', array(
-		'label' => __( 'Categoría' ),
-		'rewrite' => array( 'slug' => 'projects/category' ),
+	register_taxonomy( 'project_categories', 'm4c_portfolio', array(
+		'label' => __( 'Categories' ),
+		'rewrite' => array( 'slug' => 'projects/category'),
 	));
 
-	register_taxonomy( 'technology', 'm4c_portfolio', array(
+	register_taxonomy( 'project_technologies', 'm4c_portfolio', array(
 		'label' => __( 'Technologies' ),
 		'rewrite' => array( 'slug' => 'projects/technology' ),
 	));
 
-	register_taxonomy( 'tools', 'm4c_portfolio', array(
+	register_taxonomy( 'project_tools', 'm4c_portfolio', array(
 		'label' => __( 'Tools' ),
 		'rewrite' => array( 'slug' => 'projects/tool' ),
 	));

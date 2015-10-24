@@ -20,20 +20,30 @@
 					<?PHP the_content(); ?>
 				</div>
 
+				<?php
+				$technologies	= get_the_terms($post->ID, 'project_technologies');
+				$tools			= get_the_terms($post->ID, 'project_tools');
+				?>
+
 				<div class="project-meta">
+					<?php if($technologies != false): ?>
 					<h4>Technologies</h4>
 					<ul class="list-unstyled list-inline">
-						<? foreach (get_terms(array('technology'))  as $taxonomy ): ?>
+						<? foreach ($technologies as $taxonomy ): ?>
 							<li><a href="<?php echo get_term_link($taxonomy); ?>"><?php echo $taxonomy->name; ?></a></li>
 						<? endforeach;?>
 					</ul>
+					<?php endif; ?>
 
+					<?php if($tools != false): ?>
 					<h4>Tools</h4>
 					<ul class="list-unstyled list-inline">
-						<? foreach (get_terms(array('tools'))  as $taxonomy ): ?>
+						<? foreach ($tools as $taxonomy ): ?>
 							<li><a href="<?php echo get_term_link($taxonomy); ?>"><?php echo $taxonomy->name; ?></a></li>
 						<? endforeach;?>
 					</ul>
+					<?php endif; ?>
+
 				</div>
 			</div>
 
