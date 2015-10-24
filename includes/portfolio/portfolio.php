@@ -14,8 +14,8 @@ function create_post_type() {
 			'public' => true,
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'project'),
-			// 'supports' => array( 'title', 'editor', 'thumbnail' ),
-			'supports' => array( 'title', 'editor', 'thumbnail' ),
+			# Add 'thumbnail' support when the option were enabled.
+			'supports' => array('title', 'editor')
 		)
 	);
 
@@ -189,14 +189,13 @@ function m4c_portfolio_save_metadata( $post_id ) {
 	if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
 		return;
 
-	if (isset( $_POST['post_type'] ) && 'page' == $_POST['post_type']):
+	if(isset( $_POST['post_type'] ) && 'page' == $_POST['post_type']){
 		if(!current_user_can( 'edit_page', $post_id))
 			return;
-
-	elseif:
+	}else{
 		if(!current_user_can( 'edit_post', $post_id))
 			return;
-	endif;
+	}
 
 	if (!isset($_POST['m4c_portfolio_images_order']))
 		return;
