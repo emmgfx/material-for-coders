@@ -15,10 +15,7 @@
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
 			<div class="article-wrapper">
-				<?PHP
-				if(has_post_thumbnail())
-					the_post_thumbnail('custom_1', array( 'class'	=> "img-rounded img-responsive center-block featured"));
-				?>
+
 				<div class="article">
 					<?PHP the_content(); ?>
 				</div>
@@ -42,10 +39,21 @@
 
 		</div>
 		<div class="col-md-7 col-md-offset-1 col-sm-10 col-sm-offset-1">
-			<?php foreach(get_attached_media( 'image' ) as $image): ?>
-				<?php $image_data =  wp_get_attachment_image_src($image->ID, 'portfolio_1'); ?>
-				<p><img src="<?php echo $image_data[0]; ?>" class="img-responsive" /></p>
+			<?php
+			$images_json = get_post_meta( $post->ID, '_m4c_portfolio_images_order', true );
+			if(!is_array(@json_decode($images_json, true)))
+				$images_json = json_encode(array());
+
+			foreach(json_decode($images_json) as $attachment_id):
+
+				$attachment_meta = wp_get_attachment_metadata($attachment_id);
+				if($attachment_meta == false)
+					continue;
+
+				echo '<p>'.wp_get_attachment_image( $attachment_id, 'portfolio_1', $icon, 'img-responsive' ).'</p>';
+				?>
 			<?php endforeach; ?>
+
 		</div>
 
 	</div>
