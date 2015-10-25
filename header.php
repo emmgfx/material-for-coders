@@ -122,7 +122,7 @@
 
     <?PHP if ( is_home() || is_category() || is_tag() ){ ?>
         <div class="menu-2">
-            <a href="#" class="menu-2-toggler visible-xs"><i class="fa fa-lg fa-caret-down fa-fw"></i> Categorías</a>
+            <a href="#" class="menu-2-toggler visible-xs"><i class="fa fa-lg fa-caret-down fa-fw"></i> Categor&iacute;as</a>
             <div class="container">
                 <?PHP
                 wp_nav_menu(array(

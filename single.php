@@ -42,8 +42,8 @@ $option = array(
 					'link_after'       => '',
 					'next_or_number'   => 'number',
 					'separator'        => ', ',
-					'nextpagelink'     => 'Página siguiente',
-					'previouspagelink' => 'Página anterior',
+					'nextpagelink'     => 'P&aacute;gina siguiente',
+					'previouspagelink' => 'P&aacute;gina anterior',
 					'pagelink'         => '%',
 				)); ?>
 				<br />
