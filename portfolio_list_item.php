@@ -25,7 +25,7 @@ $project_categories = wp_get_post_terms( $post->ID, 'project_categories' );
 
 ?>
 
-<div class="col-md-4">
+<div class="col-md-4 col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0">
 	<div class="project">
 		<a href="<?php the_permalink(); ?>"><img src="<?php echo $project_poster; ?>" class="img-responsive" /></a>
 		<div class="project-date pull-right"><?php echo date('Y', get_post_time()); ?></div>

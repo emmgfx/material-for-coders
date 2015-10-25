@@ -2,7 +2,7 @@
  Theme Name: Material for Coders
  Author: Josep Viciana
  Author URI: http://www.emm-gfx.net/
- Version: 1.1.8.4
+ Version: 1.2
  License: GNU General Public License v2 or later
  License URI: http://opensource.org/licenses/MIT
  Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
@@ -646,3 +646,51 @@ a:active {
   .license p {
     margin: 0;
     padding: 0; }
+
+.project-meta h4 {
+  color: #18B576;
+  font-family: Montserrat;
+  font-size: 14px; }
+
+.project-meta ul > li > a {
+  border-radius: 99px;
+  border: 2px solid #cccccc;
+  padding: 0.3em 0.8em;
+  font-size: 12px;
+  font-family: Montserrat;
+  color: #999999;
+  line-height: 2.5em; }
+  .project-meta ul > li > a:hover {
+    color: #FFF;
+    border-color: #4218b5;
+    background-color: #4218b5; }
+
+.project {
+  margin-top: 50px; }
+  .project .project-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    margin: .8em 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4d4d4d; }
+  .project .project-date {
+    font-family: Montserrat;
+    font-size: 16px;
+    margin: .8em 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #b3b3b3; }
+  .project .project-categories {
+    font-family: Montserrat;
+    text-transform: uppercase;
+    color: #b3b3b3;
+    font-weight: bold; }
+    .project .project-categories a {
+      transition: all 0.1s linear; }
+    .project .project-categories a:hover,
+    .project .project-categories a:active,
+    .project .project-categories a:focus {
+      color: #4218b5; }
