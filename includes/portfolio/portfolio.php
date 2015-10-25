@@ -196,7 +196,7 @@ function render_m4c_portfolio_images_metabox($post){
 
 	});
 	</script>
-	<?
+	<?php
 }
 
 function m4c_portfolio_save_metadata( $post_id ) {

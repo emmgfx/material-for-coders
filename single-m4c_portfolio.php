@@ -29,18 +29,18 @@
 					<?php if($technologies != false): ?>
 					<h4>Technologies</h4>
 					<ul class="list-unstyled list-inline">
-						<? foreach ($technologies as $taxonomy ): ?>
+						<?php foreach ($technologies as $taxonomy ): ?>
 							<li><a href="<?php echo get_term_link($taxonomy); ?>"><?php echo $taxonomy->name; ?></a></li>
-						<? endforeach;?>
+						<?php endforeach;?>
 					</ul>
 					<?php endif; ?>
 
 					<?php if($tools != false): ?>
 					<h4>Tools</h4>
 					<ul class="list-unstyled list-inline">
-						<? foreach ($tools as $taxonomy ): ?>
+						<?php foreach ($tools as $taxonomy ): ?>
 							<li><a href="<?php echo get_term_link($taxonomy); ?>"><?php echo $taxonomy->name; ?></a></li>
-						<? endforeach;?>
+						<?php endforeach;?>
 					</ul>
 					<?php endif; ?>
 
