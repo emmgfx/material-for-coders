@@ -3,6 +3,7 @@
 add_action( 'init', 'create_post_type' );
 add_action( 'add_meta_boxes', 'page_meta_boxes' );
 add_action( 'save_post', 'm4c_portfolio_save_metadata' );
+add_action( 'pre_get_posts', 'm4c_modify_portfolio_posts_per_page' );
 
 function create_post_type() {
 	register_post_type( 'm4c_portfolio',
@@ -35,6 +36,26 @@ function create_post_type() {
 	));
 
 }
+
+function m4c_modify_portfolio_posts_per_page( $query ) {
+	if(
+		!is_admin() &&
+		(
+			is_tax('project_categories') ||
+			is_tax('project_technologies') ||
+			is_tax('project_tools')
+		) &&
+		$query->is_main_query()
+	){
+		$projects_per_page = intval(get_option('portfolio_projects_per_page'));
+		if($projects_per_page == false && $projects_per_page > 0)
+			$projects_per_page = get_option('posts_per_page');
+
+		$query->set('posts_per_page', $projects_per_page);
+	}
+
+}
+
 
 function page_meta_boxes(){
 

@@ -6,6 +6,7 @@ function register_m4c_settings() {
     register_setting( 'm4c-settings', 'sidebar-active' );
     register_setting( 'm4c-settings', 'show-featured-index' );
     register_setting( 'm4c-settings', 'show-featured-single' );
+    register_setting( 'm4c-settings', 'portfolio_projects_per_page' );
 }
 
 
@@ -94,6 +95,15 @@ function m4c_settings() {
 			</ul>
 
 			<hr />
+
+            <h3><span class="dashicons dashicons-admin-appearance"></span> Portfolio:</h3>
+            <?php
+            $projects_per_page = intval(get_option('portfolio_projects_per_page'));
+            if($projects_per_page == false || $projects_per_page == 0)
+                $projects_per_page = get_option('posts_per_page');
+            ?>
+			<p><label>Projects per page:</label></p>
+            <p><input type="text" name="portfolio_projects_per_page" value="<?php echo $projects_per_page; ?>" /></p>
 
 			<?PHP
 			# Get the current version:
