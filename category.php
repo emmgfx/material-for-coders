@@ -16,7 +16,7 @@ $option = array(
 
 <div class="container">
 	<div class="row">
-		<div class="<?php echo ($option['sidebar_active'] ? 'col-md-9 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
+		<div class="<?php echo ($option['sidebar_active'] ? 'col-md-8 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
 
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 
@@ -32,7 +32,7 @@ $option = array(
 				?>
 				<h2><a href="<?PHP the_permalink(); ?>"><?PHP the_title(); ?></a></h2>
 
-				<?PHP include 'context.php'; ?>
+				<?PHP get_template_part( 'context' ); ?>
 
 				<div class="article">
 					<?PHP the_content(false); ?>
