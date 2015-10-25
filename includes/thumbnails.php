@@ -4,6 +4,7 @@ add_theme_support( 'post-thumbnails' );
 $my_image_sizes = array(
 	array( 'name'=>'custom_1', 'width'=>750, 'height'=>250, 'crop'=>true ),
 	array( 'name'=>'portfolio_1', 'width'=>660, 'height'=>400, 'crop'=>true ),
+	array( 'name'=>'portfolio_2', 'width'=>660, 'height'=>99999, 'crop'=>true ),
 );
 
 function alx_thumbnail_upscale( $default, $orig_w, $orig_h, $new_w, $new_h, $crop ){

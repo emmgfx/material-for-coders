@@ -61,7 +61,7 @@
 					continue;
 
 				echo '<p>';
-				echo wp_get_attachment_image( $attachment_id, 'portfolio_1', '', array(
+				echo wp_get_attachment_image( $attachment_id, 'portfolio_2', '', array(
 					'class' => 'img-responsive'
 				));
 				echo '</p>';
