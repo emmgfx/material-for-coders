@@ -2,7 +2,7 @@
  Theme Name: Material for Coders
  Author: Josep Viciana
  Author URI: http://www.emm-gfx.net/
- Version: 1.2.3.1
+ Version: 1.2.3.2
  License: GNU General Public License v2 or later
  License URI: http://opensource.org/licenses/MIT
  Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
@@ -83,7 +83,7 @@
     text-overflow: ellipsis; }
     .header .title-wrapper .mobile-menu-toggler {
       position: relative;
-      font-size: 15px;
+      font-size: 18px;
       vertical-align: middle;
       background: rgba(255, 255, 255, 0.2);
       padding: 4px 8px;
@@ -95,7 +95,7 @@
     .header .title-wrapper h1 {
       padding: 0;
       margin: 0 20px 0 0;
-      font-size: 30px;
+      font-size: 34px;
       line-height: 1em;
       display: inline-block;
       font-weight: bold;
@@ -553,7 +553,7 @@ a:active {
     border-radius: 3px;
     transition: all 0.5s 0.3s cubic-bezier(0.22, 1.1, 0.21, 1.1);
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(-30%);
     overflow-y: scroll;
     overflow-x: hidden;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.5); }
