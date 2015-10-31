@@ -45,6 +45,8 @@
 					<?php endif; ?>
 
 				</div>
+
+				<br class="visible-xs visible-sm" />
 			</div>
 
 		</div>
