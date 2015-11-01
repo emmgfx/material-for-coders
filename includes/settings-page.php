@@ -4,6 +4,7 @@ function register_m4c_settings() {
     register_setting( 'm4c-settings', 'footer-phrase' );
     register_setting( 'm4c-settings', 'color-scheme' );
     register_setting( 'm4c-settings', 'sidebar-active' );
+    register_setting( 'm4c-settings', 'hide-sidebar-xs-window' );
     register_setting( 'm4c-settings', 'show-featured-index' );
     register_setting( 'm4c-settings', 'show-featured-single' );
     register_setting( 'm4c-settings', 'portfolio_projects_per_page' );
@@ -83,13 +84,15 @@ function m4c_settings() {
             $option = array(
             	'sidebar_active' => intval(get_option('sidebar-active')) == 1,
                 'show_featured_index' => intval(get_option('show-featured-index')) == 1,
-                'show_featured_single' => intval(get_option('show-featured-single')) == 1
+                'show_featured_single' => intval(get_option('show-featured-single')) == 1,
+                'hide_sidebar_xs_window' => intval(get_option('hide-sidebar-xs-window')) == 1
             );
             ?>
 
             <h3><span class="dashicons dashicons-admin-appearance"></span> Sidebar and featured images:</h3>
 			<ul>
 				<li><label><input type="checkbox" name="sidebar-active" value="1" <?php echo ($option['sidebar_active'] ? 'checked' : '');?> /> Show sidebar</label></li>
+                <li><label><input type="checkbox" name="hide-sidebar-xs-window" value="1" <?php echo ($option['hide_sidebar_xs_window'] ? 'checked' : '');?> /> Hide sidebar on small windows (phones).</label></li>
                 <li><label><input type="checkbox" name="show-featured-index" value="1" <?php echo ($option['show_featured_index'] ? 'checked' : '');?> /> Show featured image in index and other posts list</label></li>
 				<li><label><input type="checkbox" name="show-featured-single" value="1" <?php echo ($option['show_featured_single'] ? 'checked' : '');?> /> Show featured image in post</label></li>
 			</ul>
