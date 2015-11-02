@@ -24,7 +24,7 @@
 					the_post_thumbnail('custom_1', array( 'class'	=> "img-rounded img-responsive center-block featured"));
 				?>
 
-				<div class="article">
+				<div class="article clearfix">
 					<?PHP the_content(); ?>
 				</div>
 			</div>

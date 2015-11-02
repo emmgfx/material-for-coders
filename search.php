@@ -34,7 +34,7 @@ $option = array(
 
 				<?PHP get_template_part( 'context' ); ?>
 
-				<div class="article">
+				<div class="article clearfix">
 					<?PHP the_content(false); ?>
 				</div>
 				<div align="right">

@@ -2,7 +2,7 @@
  Theme Name: Material for Coders
  Author: Josep Viciana
  Author URI: http://www.emm-gfx.net/
- Version: 1.2.4
+ Version: 1.2.4.1
  License: GNU General Public License v2 or later
  License URI: http://opensource.org/licenses/MIT
  Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
@@ -340,33 +340,35 @@ a:active {
   .article-wrapper img.featured:first-child {
     margin-top: 50px; }
 
-.article-wrapper .article {
-  overflow: auto; }
-  .article-wrapper .article h1, .article-wrapper .article h2, .article-wrapper .article h3, .article-wrapper .article h4 {
-    color: #33b9d3;
-    font-weight: 300; }
-  .article-wrapper .article p {
-    font-size: 16px;
-    line-height: 1.8em;
-    margin: 2em 0;
-    color: gray; }
-    .article-wrapper .article p:first-child {
-      margin-top: 0; }
-  .article-wrapper .article pre {
-    background-color: #f2f2f2;
-    color: gray;
-    border: none;
-    border-radius: 0;
-    padding: 40px;
-    font-size: 15px;
-    overflow-x: scroll; }
-  .article-wrapper .article img {
-    max-width: 100%;
-    height: auto; }
-  .article-wrapper .article a {
-    color: #33b9d3; }
-    .article-wrapper .article a:hover {
-      border-bottom: 1px dotted #33b9d3; }
+.article-wrapper .article h1, .article-wrapper .article h2, .article-wrapper .article h3, .article-wrapper .article h4 {
+  color: #33b9d3;
+  font-weight: 300; }
+
+.article-wrapper .article p {
+  font-size: 16px;
+  line-height: 1.8em;
+  margin: 2em 0;
+  color: gray; }
+  .article-wrapper .article p:first-child {
+    margin-top: 0; }
+
+.article-wrapper .article pre {
+  background-color: #f2f2f2;
+  color: gray;
+  border: none;
+  border-radius: 0;
+  padding: 40px;
+  font-size: 15px;
+  overflow-x: scroll; }
+
+.article-wrapper .article img {
+  max-width: 100%;
+  height: auto; }
+
+.article-wrapper .article a {
+  color: #33b9d3; }
+  .article-wrapper .article a:hover {
+    border-bottom: 1px dotted #33b9d3; }
 
 @media (min-width: 992px) {
   .article-wrapper:not(.sidebar-active) pre {

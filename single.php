@@ -27,7 +27,7 @@ $option = array(
 					the_post_thumbnail('custom_1', array( 'class'	=> "img-rounded img-responsive center-block featured"));
 				endif;
 				?>
-				<div class="article">
+				<div class="article clearfix">
 					<?PHP the_content(); ?>
 				</div>
 

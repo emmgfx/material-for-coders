@@ -16,7 +16,7 @@
 		<div class="col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
 			<div class="article-wrapper">
 
-				<div class="article">
+				<div class="article clearfix">
 					<?PHP the_content(); ?>
 				</div>
 
