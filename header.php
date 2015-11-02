@@ -1,7 +1,3 @@
-<?php
-header("Cache-Control: must-revalidate");
-header("Expires: ".gmdate ("D, d M Y H:i:s", time() + 60*60*24*7)." GMT");
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -44,7 +40,8 @@ header("Expires: ".gmdate ("D, d M Y H:i:s", time() + 60*60*24*7)." GMT");
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?php bloginfo('description'); ?>">
-
+    <meta name="expires" content="<?php echo gmdate ("D, d M Y H:i:s", time() + 60*60*24*7); ?>">
+    <meta http-equiv="Cache-control" content="public">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
     <?PHP
