@@ -1,12 +1,15 @@
 // When the page is fully loaded:
 
-$(window).load(function() {
+jQuery(window).load(function() {
+
+	$ = jQuery;
+
 	function stickyFooter(){
-		
+
 		var	footer = $(".footer-wrapper");
-		
+
 		footer.css("position","static");
-		
+
 		if ( $(document.body).height() < $(window).height()) {
 			footer.css({
 				"position":"absolute",
@@ -27,7 +30,9 @@ $(window).load(function() {
 
 // When the dom is ready:
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
+
+	$ = jQuery;
 
 	$(".header").headroom({
 		offset: 85,
