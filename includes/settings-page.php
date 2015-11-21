@@ -34,7 +34,7 @@ function m4c_settings() {
             <?PHP
             $schemes = array(
                 array('Pink', '#E2105D', '#b20d49', '#fbc3d8'),
-                array('Turquoise', '#33b9d3', '#2597ae', '#dbf3f7'),
+                array('Blue-Grey', '#607d8b', '#2597ae', '#dbf3f7'),
                 array('Green', '#18B576', '#128859', '#a6f3d4'),
             );
             $default = $schemes[0][0];
@@ -64,9 +64,7 @@ function m4c_settings() {
             <?PHP foreach( $schemes as $scheme ): ?>
                 <input type="radio" id="scheme-<?PHP echo $scheme[0]?>" name="color-scheme" value="<?PHP echo $scheme[0]?>" <?PHP if($selected == $scheme[0]): ?>checked<?PHP endif; ?>>
                 <label class="scheme-label" for="scheme-<?PHP echo $scheme[0]?>">
-                    <div style="display: inline-block; width: 100px; height: 50px; background-color: <?PHP echo $scheme[1]?>;"></div><!--
-                    --><div style="display: inline-block; width: 50px; height: 50px; background-color: <?PHP echo $scheme[2]?>;"></div><!--
-                    --><div style="display: inline-block; width: 50px; height: 50px; background-color: <?PHP echo $scheme[3]?>;"></div>
+                    <div style="display: inline-block; width: 100px; height: 50px; background-color: <?PHP echo $scheme[1]?>;"></div>
                     <div>
                     <?PHP echo $scheme[0]?>
                     </div>

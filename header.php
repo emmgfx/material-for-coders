@@ -50,8 +50,8 @@
             echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-green.css" />';
             echo '<meta name="theme-color" content="#18B576">';
             break;
-        case 'Turquoise':
-            echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-turquoise.css" />';
+        case 'Blue-Grey':
+            echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-bluegrey.css" />';
             echo '<meta name="theme-color" content="#33b9d3">';
             break;
         default:
