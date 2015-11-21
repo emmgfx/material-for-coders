@@ -4,7 +4,8 @@
 $option = array(
 	'sidebar_active' => intval(get_option('sidebar-active')) == 1,
 	'show_featured_index' => intval(get_option('show-featured-index')) == 1,
-	'show_featured_single' => intval(get_option('show-featured-single')) == 1
+	'show_featured_single' => intval(get_option('show-featured-single')) == 1,
+	'show_excerpt_in_lists' => intval(get_option('show-excerpt-in-lists')) == 1,
 );
 ?>
 
@@ -35,7 +36,7 @@ $option = array(
 				<?PHP get_template_part( 'context' ); ?>
 
 				<div class="article clearfix">
-					<?PHP the_content(false); ?>
+					<?PHP ($option['show_excerpt_in_lists'] ? the_excerpt() : the_content(false)); ?>
 				</div>
 				<div align="right">
 					<a href="<?PHP the_permalink(); ?>" class="btn btn-primary">Continuar leyendo &rarr;</a>
