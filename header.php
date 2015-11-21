@@ -52,7 +52,7 @@
             break;
         case 'Blue-Grey':
             echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-bluegrey.css" />';
-            echo '<meta name="theme-color" content="#33b9d3">';
+            echo '<meta name="theme-color" content="#607d8b">';
             break;
         default:
             echo '<link rel="stylesheet" href="'.get_stylesheet_uri().'" />';
