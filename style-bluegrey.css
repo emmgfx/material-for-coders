@@ -292,8 +292,8 @@ a:active {
     .menu-2 a:hover,
     .menu-2 a:focus,
     .menu-2 a.active {
-      color: #8b608b;
-      border-bottom-color: #8b608b; }
+      color: #ff9800;
+      border-bottom-color: #ff9800; }
 
 .big-title {
   background-color: #f2f2f2;
@@ -378,8 +378,8 @@ a:active {
 .article-wrapper #comments .comments {
   margin-top: 80px; }
   .article-wrapper #comments .comments .pingback {
-    border: 1px solid rgba(139, 96, 139, 0.2);
-    background: rgba(139, 96, 139, 0.1);
+    border: 1px solid rgba(255, 152, 0, 0.2);
+    background: rgba(255, 152, 0, 0.1);
     padding: 15px;
     border-radius: 3px;
     margin: 30px 0;
@@ -522,7 +522,7 @@ a:active {
       padding: 0;
       display: inline-block; }
   .navigation a:hover {
-    background-color: #8b608b;
+    background-color: #ff9800;
     color: #FFF; }
   .navigation .page-numbers {
     display: inline-block;
@@ -664,8 +664,8 @@ a:active {
   line-height: 2.5em; }
   .project-meta ul > li > a:hover {
     color: #FFF;
-    border-color: #8b608b;
-    background-color: #8b608b; }
+    border-color: #ff9800;
+    background-color: #ff9800; }
 
 .project {
   margin-top: 50px; }
@@ -696,6 +696,6 @@ a:active {
       .project .project-categories a a:hover,
       .project .project-categories a a:active,
       .project .project-categories a a:focus {
-        color: #8b608b; }
+        color: #ff9800; }
 
 /*# sourceMappingURL=style-bluegrey.css.map */
