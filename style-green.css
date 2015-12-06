@@ -2,7 +2,7 @@
  Theme Name: Material for Coders
  Author: Josep Viciana
  Author URI: http://www.emm-gfx.net/
- Version: 1.2.5.2
+ Version: 1.2.6
  License: GNU General Public License v2 or later
  License URI: http://opensource.org/licenses/MIT
  Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
@@ -56,7 +56,7 @@
   height: 88px; }
   @media (max-width: 992px) {
     .header-placeholder {
-      height: 62px; } }
+      height: 60px; } }
 
 .header {
   background-color: #18B576;
@@ -71,7 +71,7 @@
     opacity: 0; }
   @media (max-width: 992px) {
     .header {
-      padding: 1em; }
+      padding: 1em 0; }
       .header .title-wrapper {
         width: 100%; } }
   .header .title-wrapper {
@@ -82,20 +82,24 @@
     overflow: hidden;
     text-overflow: ellipsis; }
     .header .title-wrapper .mobile-menu-toggler {
-      position: relative;
-      font-size: 18px;
       vertical-align: middle;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 4px 8px;
-      border-radius: 3px;
-      float: right;
-      color: #FFF; }
+      display: inline-block;
+      font-size: 24px;
+      line-height: 1;
+      width: 32px;
+      height: 32px;
+      padding: 4px 0 0 4px;
+      margin: 0 0.5em 0 0;
+      border-radius: 4em; }
       .header .title-wrapper .mobile-menu-toggler:hover {
-        background: rgba(255, 255, 255, 0.3); }
+        background-color: #1fe193; }
+      .header .title-wrapper .mobile-menu-toggler:focus,
+      .header .title-wrapper .mobile-menu-toggler:active {
+        background-color: #128859; }
     .header .title-wrapper h1 {
       padding: 0;
       margin: 0 20px 0 0;
-      font-size: 34px;
+      font-size: 32px;
       line-height: 1em;
       display: inline-block;
       font-weight: bold;
@@ -146,11 +150,10 @@
         background-color: #FFF;
         border-color: none;
         outline: 0; }
-    .header form i.fa-search {
+    .header form i {
       position: absolute;
-      font-size: 16px;
-      top: 9px;
-      right: 9px;
+      top: 6px;
+      right: 6px;
       color: #79edbe; }
 
 .aligncenter,
@@ -268,6 +271,8 @@ a:active {
 
 .menu-2 {
   font-family: Montserrat; }
+  .menu-2 .menu-2-toggler i {
+    vertical-align: middle; }
   .menu-2 ul {
     margin: 0;
     padding: 0;
@@ -330,6 +335,9 @@ a:active {
   padding: 1.5em 0;
   line-height: 2em;
   color: #999999; }
+  .article-wrapper .context i {
+    position: relative;
+    top: 6px; }
   .article-wrapper .context a:hover,
   .article-wrapper .context a:focus,
   .article-wrapper .context a:active {

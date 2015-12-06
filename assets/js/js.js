@@ -43,7 +43,13 @@ jQuery(document).ready(function() {
 	});
 
 	$(document).on('click', '.menu-2-toggler', function(){
-		$(this).find('i').toggleClass('fa-caret-down fa-caret-up');
+		var icon = $(this).find('i');
+
+		if(icon.text() == 'keyboard_arrow_right')
+			icon.text('expand_more');
+		else
+			icon.text('keyboard_arrow_right');
+
 		$(".menu-2 #blog").toggleClass('collapsed');
 		return false;
 	});
