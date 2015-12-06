@@ -74,7 +74,7 @@
                 <div class="col-md-9 col-sm-12">
 
                     <div class="title-wrapper">
-                        <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="fa fa-fw fa-navicon"></i></a>
+                        <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="material-icons">menu</i></a>
                         <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a></h1>
                     </div>
 
@@ -104,7 +104,7 @@
                     <!-- Search form -->
                     <form action="<?php echo home_url(); ?>" type="get">
                         <input type="text" class="search form-control" name="s" value="<?PHP echo get_search_query();?>">
-                        <i class="fa fa-search"></i>
+                        <i class="material-icons">search</i>
                     </form>
                 </div>
 
@@ -116,7 +116,7 @@
 
     <?PHP if ( is_home() || is_category() || is_tag() ){ ?>
         <div class="menu-2">
-            <a href="#" class="menu-2-toggler visible-xs"><i class="fa fa-lg fa-caret-down fa-fw"></i> Categor&iacute;as</a>
+            <a href="#" class="menu-2-toggler visible-xs"><i class="material-icons">keyboard_arrow_right</i> Categor&iacute;as</a>
             <div class="container">
                 <?PHP
                 wp_nav_menu(array(

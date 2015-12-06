@@ -3,7 +3,7 @@
 .header-placeholder
     height: 88px
     @media (max-width: $screen-md)
-        height: 62px
+        height: 60px
 
 .header
     background-color: $color-primary
@@ -19,7 +19,7 @@
         opacity: 0
 
     @media (max-width: $screen-md)
-        padding: 1em
+        padding: 1em 0
         .title-wrapper
             width: 100%
 
@@ -30,22 +30,27 @@
         @include overflowed-text
 
         .mobile-menu-toggler
-            position: relative
-            font-size: 18px
             vertical-align: middle
-            background: transparentize($color-white, .8)
-            padding: 4px 8px
-            border-radius: 3px
-            float: right
-            color: $color-white
+            display: inline-block
+            font-size: 24px
+            line-height: 1
+            width: 32px
+            height: 32px
+            padding: 4px 0 0 4px
+            margin: 0 .5em 0 0
+            border-radius: 4em
 
             &:hover
-                background: transparentize($color-white, .7)
+                background-color: lighten($color-primary, 10%)
+            &:focus,
+            &:active
+                background-color: darken($color-primary, 10%)
+
 
         h1
             padding: 0
             margin: 0 20px 0 0
-            font-size: 34px
+            font-size: 32px
             line-height: 1em
             display: inline-block
             font-weight: bold
@@ -103,9 +108,8 @@
                 border-color: none
                 outline: 0
 
-        i.fa-search
+        i
             position: absolute
-            font-size: 16px
-            top: 9px
-            right: 9px
+            top: 6px
+            right: 6px
             color: lighten($color-primary, 30%)

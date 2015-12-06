@@ -4,11 +4,11 @@ $max_tags = 3;
 ?>
 <ul class="context list-unstyled list-inline">
 
-	<li class="date"><i class="fa fa-calendar-o"></i> <?PHP the_time(get_option( 'date_format' )); ?></li>
+	<li class="date"><i class="material-icons">date_range</i> <?PHP the_time(get_option( 'date_format' )); ?></li>
 
 	<?PHP $categories = get_the_category(); ?>
 	<?PHP if($categories){ ?>
-		<li class="categories"><i class="fa fa-folder"></i>
+		<li class="categories"><i class="material-icons">folder_open</i>
 			<?PHP
 			foreach($categories as $index => $category) {
 				if($index < $max_categories){
@@ -26,7 +26,7 @@ $max_tags = 3;
 
 	<?PHP $posttags = get_the_tags(); ?>
 	<?PHP if($posttags){ ?>
-		<li class="tags"><i class="fa fa-tags"></i>
+		<li class="tags"><i class="material-icons">label_outline</i>
 			<?PHP
 			foreach($posttags as $index => $tag) {
 				if($index < $max_tags){
@@ -43,6 +43,6 @@ $max_tags = 3;
 	<?PHP } ?>
 
 	<?PHP if(get_comments_number() > 0){ ?>
-	<li><i class="fa fa-comments"></i> <a href="<?php the_permalink() ?>/#comments"><?PHP comments_number( 'Sin comentarios', '1 comentario', '% comentarios' ) ?></a></li>
+	<li><i class="material-icons">question_answer</i> <a href="<?php the_permalink() ?>/#comments"><?PHP comments_number( 'Sin comentarios', '1 comentario', '% comentarios' ) ?></a></li>
 	<?PHP } ?>
 </ul>
