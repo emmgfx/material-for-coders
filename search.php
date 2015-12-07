@@ -2,11 +2,11 @@
 
 <?php
 $option = array(
-	'sidebar_active' => intval(get_option('sidebar-active')) == 1,
-	'show_featured_index' => intval(get_option('show-featured-index')) == 1,
-	'show_featured_single' => intval(get_option('show-featured-single')) == 1,
-	'show_excerpt_in_lists' => intval(get_option('show-excerpt-in-lists')) == 1,
-);
+		'sidebar_active' 		=> intval(get_option('sidebar-active')) 		== 1,
+		'show_featured_index' 	=> intval(get_option('show-featured-index')) 	== 1,
+		'show_featured_single' 	=> intval(get_option('show-featured-single')) 	== 1,
+		'show_excerpt_in_lists'	=> intval(get_option('show-excerpt-in-lists'))	== 1,
+	);
 ?>
 
 <div class="big-title">
@@ -16,6 +16,9 @@ $option = array(
 </div>
 
 <div class="container">
+	<?php
+	if(have_posts()):
+	?>
 	<div class="row">
 		<div class="<?php echo ($option['sidebar_active'] ? 'col-md-9 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
 
@@ -56,6 +59,16 @@ $option = array(
 		?>
 
 	</div>
+	<?php else: ?>
+		<br />
+		<div align="center">
+			<i class="material-icons icon-empty-results">error_outline</i>
+		</div>
+		<br />
+		<div align="center">
+			<a href="<?php echo home_url(); ?>" class="btn btn-lg btn-primary">&larr; Volver a la portada</a>
+		</div>
+	<?php endif; ?>
 </div>
 
 
