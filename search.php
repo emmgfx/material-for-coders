@@ -7,7 +7,6 @@ $option = array(
 		'show_featured_single' 	=> intval(get_option('show-featured-single')) 	== 1,
 		'show_excerpt_in_lists'	=> intval(get_option('show-excerpt-in-lists'))	== 1,
 	);
-if($wp_query->found_posts === 0): $option['show_not_found'] = intval(1); endif;
 ?>
 
 <div class="big-title">
@@ -18,7 +17,7 @@ if($wp_query->found_posts === 0): $option['show_not_found'] = intval(1); endif;
 
 <div class="container">
 	<?php
-	if(!isset($option['show_not_found'])):
+	if(have_posts()):
 	?>
 	<div class="row">
 		<div class="<?php echo ($option['sidebar_active'] ? 'col-md-9 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
@@ -63,7 +62,7 @@ if($wp_query->found_posts === 0): $option['show_not_found'] = intval(1); endif;
 	<?php else: ?>
 		<br />
 		<div align="center">
-			<img src="<?php echo get_bloginfo('template_directory');?>/assets/img/cloud.svg" width="250" />
+			<i class="material-icons icon-empty-results">error_outline</i>
 		</div>
 		<br />
 		<div align="center">

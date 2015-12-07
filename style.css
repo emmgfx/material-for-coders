@@ -14,22 +14,18 @@
   border: none;
   box-shadow: none;
   font-family: Montserrat; }
-  .btn:hover,
-  .btn:active,
-  .btn:focus {
+  .btn:hover, .btn:active, .btn:focus {
     box-shadow: none;
     outline: none; }
   .btn.btn-primary {
     background-color: #CC1C52; }
-    .btn.btn-primary:hover,
-    .btn.btn-primary:focus {
+    .btn.btn-primary:hover, .btn.btn-primary:focus {
       background-color: #e4376c; }
     .btn.btn-primary:active {
       background-color: #9f1640; }
   .btn.btn-default {
     background-color: #cccccc; }
-    .btn.btn-default:hover,
-    .btn.btn-default:focus {
+    .btn.btn-default:hover, .btn.btn-default:focus {
       background-color: #e6e6e6; }
     .btn.btn-default:active {
       background-color: #b3b3b3; }
@@ -39,7 +35,7 @@
   -webkit-box-shadow: none;
   border-radius: 3px;
   border: 1px solid #cccccc;
-  transition: all 0.1s linear; }
+  transition: all .1s linear; }
   .form-control:focus {
     box-shadow: none;
     border: 1px solid #CC1C52;
@@ -65,7 +61,7 @@
   width: 100%;
   top: 0;
   z-index: 998;
-  transition: all 0.2s ease-out; }
+  transition: all .2s ease-out; }
   .header.headroom--unpinned {
     transform: translateY(-100%);
     opacity: 0; }
@@ -89,12 +85,11 @@
       width: 32px;
       height: 32px;
       padding: 4px 0 0 4px;
-      margin: 0 0.5em 0 0;
+      margin: 0 .5em 0 0;
       border-radius: 4em; }
       .header .title-wrapper .mobile-menu-toggler:hover {
         background-color: #e4376c; }
-      .header .title-wrapper .mobile-menu-toggler:focus,
-      .header .title-wrapper .mobile-menu-toggler:active {
+      .header .title-wrapper .mobile-menu-toggler:focus, .header .title-wrapper .mobile-menu-toggler:active {
         background-color: #9f1640; }
     .header .title-wrapper h1 {
       padding: 0;
@@ -109,7 +104,6 @@
       .header .title-wrapper h1 a {
         line-height: 1em; }
         .header .title-wrapper h1 a img {
-          display: block;
           vertical-align: baseline; }
   .header ul.primary-menu {
     display: inline-block;
@@ -118,10 +112,7 @@
     margin: 0; }
     .header ul.primary-menu li:not(:last-child) {
       margin-right: 1em; }
-    .header ul.primary-menu a.active,
-    .header ul.primary-menu a:active,
-    .header ul.primary-menu a:hover,
-    .header ul.primary-menu a:focus {
+    .header ul.primary-menu a.active, .header ul.primary-menu a:active, .header ul.primary-menu a:hover, .header ul.primary-menu a:focus {
       color: #FFF; }
     .header ul.primary-menu li.current-menu-item a {
       color: #FFF; }
@@ -162,7 +153,6 @@ div.aligncenter {
   margin: 5px auto 5px auto; }
 
 .alignright {
-  float: right;
   margin: 0 0 0 20px; }
 
 .alignleft {
@@ -277,7 +267,7 @@ a:active {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    transition: all 0.3s linear;
+    transition: all .3s linear;
     height: auto; }
     @media (max-width: 768px) {
       .menu-2 ul.collapsed {
@@ -294,9 +284,7 @@ a:active {
     padding-bottom: 12px;
     color: #b3b3b3;
     border-bottom: 3px solid transparent; }
-    .menu-2 a:hover,
-    .menu-2 a:focus,
-    .menu-2 a.active {
+    .menu-2 a:hover, .menu-2 a:focus, .menu-2 a.active {
       color: #8dcc1c;
       border-bottom-color: #8dcc1c; }
 
@@ -408,9 +396,7 @@ a:active {
       padding-left: 80px; }
     .article-wrapper #comments .comments .comment a {
       color: #CC1C52; }
-      .article-wrapper #comments .comments .comment a:hover,
-      .article-wrapper #comments .comments .comment a:active,
-      .article-wrapper #comments .comments .comment a:focus {
+      .article-wrapper #comments .comments .comment a:hover, .article-wrapper #comments .comments .comment a:active, .article-wrapper #comments .comments .comment a:focus {
         border-bottom: 1px dotted #CC1C52; }
     .article-wrapper #comments .comments .comment .comment-meta img.avatar {
       float: left;
@@ -462,7 +448,7 @@ a:active {
   .article-wrapper .comment-respond textarea {
     border-radius: 3px;
     border: 1px solid #cccccc;
-    transition: all 0.1s linear; }
+    transition: all .1s linear; }
     .article-wrapper .comment-respond input[type=text]:focus,
     .article-wrapper .comment-respond textarea:focus {
       box-shadow: none;
@@ -552,7 +538,7 @@ a:active {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   visibility: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
   opacity: 0;
   box-shadow: 0 -100px 0 0 rgba(0, 0, 0, 0.5);
   z-index: 999; }
@@ -593,11 +579,9 @@ a:active {
           padding: 20px;
           font-size: 16px;
           font-family: Montserrat;
-          transition: all 0.2s linear;
+          transition: all .2s linear;
           color: #333333; }
-          .menu-mobile-wrapper .menu-mobile ul li a:hover,
-          .menu-mobile-wrapper .menu-mobile ul li a:active,
-          .menu-mobile-wrapper .menu-mobile ul li a:focus {
+          .menu-mobile-wrapper .menu-mobile ul li a:hover, .menu-mobile-wrapper .menu-mobile ul li a:active, .menu-mobile-wrapper .menu-mobile ul li a:focus {
             background-color: #e6e6e6; }
         .menu-mobile-wrapper .menu-mobile ul li:first-child a {
           border-radius: 3px 3px 0 0; }
@@ -609,6 +593,12 @@ a:active {
     .menu-mobile-wrapper.opened .menu-mobile {
       opacity: 1;
       transform: translateY(-50%); }
+
+.icon-empty-results,
+.icon-404 {
+  font-size: 150px !important;
+  margin: .5em auto;
+  color: #b3b3b3; }
 
 .footer {
   margin-top: 100px;
@@ -669,7 +659,7 @@ a:active {
 .project-meta ul > li > a {
   border-radius: 99px;
   border: 2px solid #cccccc;
-  padding: 0.3em 0.8em;
+  padding: .3em .8em;
   font-size: 12px;
   font-family: Montserrat;
   color: #999999;
@@ -704,10 +694,8 @@ a:active {
     color: #b3b3b3;
     font-weight: bold; }
     .project .project-categories a {
-      transition: all 0.1s linear; }
-      .project .project-categories a:hover,
-      .project .project-categories a:active,
-      .project .project-categories a:focus {
+      transition: all .1s linear; }
+      .project .project-categories a:hover, .project .project-categories a:active, .project .project-categories a:focus {
         color: #8dcc1c; }
 
 /*# sourceMappingURL=style.css.map */

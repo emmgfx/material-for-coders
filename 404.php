@@ -9,7 +9,9 @@
 	<div class="container">
 
 		<br />
-		<br />
+		<div align="center">
+			<i class="material-icons icon-404">cloud_off</i>
+		</div>
 		<br />
 
 		<div align="center">
