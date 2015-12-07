@@ -74,7 +74,7 @@
                 <div class="col-md-9 col-sm-12">
 
                     <div class="title-wrapper">
-                        <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="material-icons">menu</i></a>
+                        <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="material-icons">&#xE5D2;</i></a>
                         <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a></h1>
                     </div>
 
@@ -104,7 +104,7 @@
                     <!-- Search form -->
                     <form action="<?php echo home_url(); ?>" type="get">
                         <input type="text" class="search form-control" name="s" value="<?PHP echo get_search_query();?>">
-                        <i class="material-icons">search</i>
+                        <i class="material-icons">&#xE8B6;</i>
                     </form>
                 </div>
 
