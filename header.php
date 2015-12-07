@@ -43,7 +43,7 @@
     <meta name="expires" content="<?php echo gmdate ("D, d M Y H:i:s", time() + 60*60*24*7); ?>">
     <meta http-equiv="Cache-control" content="public">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <?PHP
     switch(get_option('color-scheme')){
         case 'Green':
@@ -74,7 +74,7 @@
                 <div class="col-md-9 col-sm-12">
 
                     <div class="title-wrapper">
-                        <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="material-icons">menu</i></a>
+                        <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="material-icons">&#xE5D2;</i></a>
                         <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a></h1>
                     </div>
 
@@ -104,7 +104,7 @@
                     <!-- Search form -->
                     <form action="<?php echo home_url(); ?>" type="get">
                         <input type="text" class="search form-control" name="s" value="<?PHP echo get_search_query();?>">
-                        <i class="material-icons">search</i>
+                        <i class="material-icons">&#xE8B6;</i>
                     </form>
                 </div>
 
