@@ -2,10 +2,10 @@
  Theme Name: Material for Coders
  Author: Josep Viciana
  Author URI: http://www.emm-gfx.net/
- Version: 1.2.7
+ Version: 1.3
  License: GNU General Public License v2 or later
  License URI: http://opensource.org/licenses/MIT
- Tags: pink, green, blue, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
+ Tags: pink, green, blue-grey, one-column, responsive-layout, custom-menu, editor-style, featured-images,threaded-comments
  Description: Material for Coders is a free Wordpress Theme developed by Josep Viciana (@emmgfx). The theme was designed by me, doing my own adaptation of the material design principles.
  */
 @import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
@@ -86,7 +86,8 @@
       height: 32px;
       padding: 4px 0 0 4px;
       margin: 0 .5em 0 0;
-      border-radius: 4em; }
+      border-radius: 4em;
+      float: left; }
       .header .title-wrapper .mobile-menu-toggler:hover {
         background-color: #7b96a3; }
       .header .title-wrapper .mobile-menu-toggler:focus, .header .title-wrapper .mobile-menu-toggler:active {
@@ -95,15 +96,17 @@
       padding: 0;
       margin: 0 20px 0 0;
       font-size: 32px;
-      line-height: 1em;
-      display: inline-block;
+      line-height: 1;
+      display: block;
       font-weight: bold;
       vertical-align: middle;
       text-transform: uppercase;
       font-family: Montserrat; }
       .header .title-wrapper h1 a {
-        line-height: 1em; }
+        line-height: 1;
+        display: block; }
         .header .title-wrapper h1 a img {
+          display: block;
           vertical-align: baseline; }
   .header ul.primary-menu {
     display: inline-block;

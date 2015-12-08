@@ -75,7 +75,17 @@
 
                     <div class="title-wrapper">
                         <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="material-icons">&#xE5D2;</i></a>
-                        <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a></h1>
+                        <?php $logo_attachment = get_option('logo-attachment'); ?>
+                        <?php if(empty($logo_attachment)): ?>
+                            <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a></h1>
+                        <?php else: ?>
+                            <h1><a href="<?php echo home_url(); ?>"><?php
+                                echo wp_get_attachment_image( $logo_attachment, 'logo_1', false, array(
+                                    'alt' => get_bloginfo('name'),
+                                    'class' => 'img-responsive'
+                                ));
+                                ?></a></h1>
+                        <?php endif; ?>
                     </div>
 
 					<?PHP
