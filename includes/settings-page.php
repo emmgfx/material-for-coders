@@ -65,13 +65,16 @@ function m4c_settings() {
     			<?php if(isset($_GET['update_check'])): ?>
     				<?php $updated = version_compare($version_current, $version_latest); ?>
     				<?php if($updated == -1): ?>
-    					<p><span class="dashicons dashicons-warning"></span> <strong>You have an outdated version</strong> (<?php echo $version_current; ?>). <a href="themes.php?page=m4c-settings&updater">Update to <?php echo $version_latest; ?></a>.</p>
+    					<p><span class="dashicons dashicons-warning"></span> <strong>You have an outdated version</strong>: <?php echo $version_current; ?></p>
+                        <p><a href="themes.php?page=m4c-settings&updater" class="button">Update to <?php echo $version_latest; ?></a></p>
 
     				<?php elseif($updated == 0): ?>
     					<p><span class="dashicons dashicons-yes"></span> You have the latest version, <?php echo $version_current; ?>.</p>
+                        <p><a href="themes.php?page=m4c-settings&updater" class="button">Force update anyway</a></p>
 
     				<?php elseif($updated == 1): ?>
-    					<p>Mmm... something weird has happened... do you have a more recent version than the latest? <a href="themes.php?page=m4c-settings&updater">Force update to <?php echo $version_latest; ?></a>.</p>
+    					<p>Mmm... something weird has happened... do you have a more recent version than the latest?</p>
+                        <p><a href="themes.php?page=m4c-settings&updater" class="button">Force update to <?php echo $version_latest; ?></a></p>
 
     				<?php endif; ?>
     			<?php elseif(isset($_GET['updater'])): ?>
@@ -99,6 +102,10 @@ function m4c_settings() {
     							</li>
     							<li>
     								<?php echo ($unpacked ? 'Install complete.' : 'Error installing'); ?>
+                                    <?php if($unpacked): ?>
+                                        Install complete. <a href="themes.php?page=m4c-settings&update_check" class="button">Continue</a>
+                                    <?php else: ?>
+                                    <?php endif; ?>
     							</li>
     						<?php endif; ?>
     					<?php endif; ?>
