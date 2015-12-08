@@ -102,7 +102,7 @@ function m4c_settings() {
     							</li>
     							<li>
                                     <?php if($unpacked): ?>
-                                        Install complete.<p><a href="themes.php?page=m4c-settings&update_check" class="button">Continue</a></p>
+                                        Install complete.<p><a href="themes.php?page=m4c-settings" class="button">Continue</a></p>
                                     <?php else: ?>
                                         Error installing
                                     <?php endif; ?>
