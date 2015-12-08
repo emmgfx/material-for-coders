@@ -101,10 +101,10 @@ function m4c_settings() {
     								<?php $installed = install_unpacked(); ?>
     							</li>
     							<li>
-    								<?php echo ($unpacked ? 'Install complete.' : 'Error installing'); ?>
                                     <?php if($unpacked): ?>
-                                        Install complete. <a href="themes.php?page=m4c-settings&update_check" class="button">Continue</a>
+                                        Install complete.<p><a href="themes.php?page=m4c-settings&update_check" class="button">Continue</a></p>
                                     <?php else: ?>
+                                        Error installing
                                     <?php endif; ?>
     							</li>
     						<?php endif; ?>
