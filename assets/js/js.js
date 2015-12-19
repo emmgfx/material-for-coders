@@ -64,5 +64,10 @@ jQuery(document).ready(function() {
 		$('div.menu-mobile-wrapper').toggleClass('opened');
 		return false;
 	});
+	
+	$('iframe[src*="youtube.com"],iframe[src*="youtu.be"],iframe[src*="vimeo.com"]').each(function() {
+         $(this).addClass('embed-responsive-item');
+         $(this).wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
+    });
 
 });
