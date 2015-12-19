@@ -18,3 +18,17 @@
 	font-family: Roboto
 	text-transform: uppercase
 	font-weight: 500
+	border: none
+	box-shadow: none
+
+	&:hover,
+	&:active,
+	&:focus
+		box-shadow: none
+		outline: none
+
+	&.btn-primary
+		@include btn-background($color-primary)
+
+	&.btn-default
+		@include btn-background($color-grey-20)

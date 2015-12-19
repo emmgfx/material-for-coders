@@ -42,7 +42,6 @@
 	<meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="expires" content="<?php echo gmdate ("D, d M Y H:i:s", time() + 60*60*24*7); ?>">
     <meta http-equiv="Cache-control" content="public">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
     <?PHP
     switch(get_option('color-scheme')){

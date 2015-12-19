@@ -3,6 +3,7 @@
 @charset "utf-8"
 
 @import "wordpress-headers"
+@import "_bootstrap"
 @import "colors"
 @import "mixins"
 
@@ -12,7 +13,7 @@ $color-accent: adjust-hue($color-primary, 100)
 $color-menu-1-inactive: lighten($color-primary, 40%)
 $color-menu-1-active: $color-white
 
-@import "buttons"
+@import "bootstrap-importers"
 @import "bootstrap-overriders"
 @import "header"
 @import "wordpress-core"

@@ -23,10 +23,13 @@
     &:hover,
     &:focus
         background-color: lighten($background-color, 10%)
-        
+
     &:active
         background-color: darken($background-color, 10%)
 
+    &:active:focus
+        outline: none
+        background-color: darken($background-color, 10%)
 
 // Media queries breakpoints
 $screen-xs:                  480px
