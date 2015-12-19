@@ -1,0 +1,22 @@
+// main: style.sass
+
+.field
+    @extend .form-group
+
+input[type=text],
+input[type=email],
+input[type=search],
+input[type=password],
+select,
+textarea
+    @extend .form-control
+
+label
+    @extend .control-label
+
+.field .field_with_errors
+    @extend .has-error
+
+input[type=submit]
+    @extend .btn
+    @extend .btn-primary

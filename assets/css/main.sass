@@ -147,7 +147,7 @@ a:active
             max-width: 100%
             height: auto
 
-        a
+        a:not(.btn)
             color: $color-primary
 
             &:hover
@@ -494,17 +494,25 @@ a:active
         @media (max-width: 768px)
             text-align: center
 
+        input,
+        select
+            border: none
+            margin: 10px 0
+
+        .btn-primary
+            @include btn-background($color-accent)
+            margin: 10px 0
 
         h3
             padding: 0
-            margin: 0
+            margin: 0 0 20px 0
             text-transform: uppercase
             font-size: 20px
             @include overflowed-text
 
 
         ul
-            margin: 20px 0 0 0
+            margin: 0 0 0 0
             padding: 0
             list-style: none
 

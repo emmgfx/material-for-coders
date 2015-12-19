@@ -43,7 +43,6 @@
 
 			<div class="license">
 				<div class="container">
-					<!--EMMGFX. Contenido con licencia general Creative Commons BY-SA, excepto en lo expresamente diferenciado.-->
 					<?PHP $footer_phrase = get_option('footer-phrase'); ?>
 					<?PHP if( $footer_phrase === false || empty($footer_phrase) ): ?>
 						<p><?PHP echo bloginfo('name')?>, <?PHP echo date('Y')?>. Theme <a href="https://github.com/emmgfx/material-for-coders" target="_blank">Material for Coders</a></p>
