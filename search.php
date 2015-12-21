@@ -42,7 +42,7 @@ $option = array(
 					<?PHP ($option['show_excerpt_in_lists'] ? the_excerpt() : the_content(false)); ?>
 				</div>
 				<div align="right">
-					<a href="<?PHP the_permalink(); ?>" class="btn btn-primary">Continuar leyendo &rarr;</a>
+					<a href="<?PHP the_permalink(); ?>" class="btn btn-primary"><?php echo __('Read more...'); ?></a>
 				</div>
 			</div>
 			<br />
