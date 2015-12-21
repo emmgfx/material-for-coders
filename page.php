@@ -12,13 +12,16 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 
+			<?php
+			$post_classes = array('article-wrapper');
+			if($option['sidebar_active'])
+				$post_classes[] = 'sidebar-active';
+			?>
 
-			<div class="article-wrapper">
-
-				<?PHP # include 'context.php'; ?>
+			<div id="post-<?php the_ID(); ?>" <?php post_class($post_classes); ?>>
 
 				<br />
-				
+
 				<?PHP
 				if(has_post_thumbnail())
 					the_post_thumbnail('custom_1', array( 'class'	=> "img-rounded img-responsive center-block featured"));

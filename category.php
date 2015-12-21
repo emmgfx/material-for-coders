@@ -21,7 +21,13 @@ $option = array(
 
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 
-			<div class="article-wrapper <?php echo ($option['sidebar_active'] ? 'sidebar-active' : ''); ?>">
+			<?php
+			$post_classes = array('article-wrapper');
+			if($option['sidebar_active'])
+				$post_classes[] = 'sidebar-active';
+			?>
+
+			<div id="post-<?php the_ID(); ?>" <?php post_class($post_classes); ?>>
 				<?PHP
 				if(has_post_thumbnail() && $option['show_featured_index']):
 					echo '<a href="'.get_the_permalink().'">';
