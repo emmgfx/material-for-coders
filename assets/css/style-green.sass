@@ -1,6 +1,4 @@
-// compileNested: ../../style-green.css, sourceMap: true
-
-@charset "utf-8"
+// compileCompressed: ../../style-green.css, sourceMap: true
 
 @import "wordpress-headers"
 @import "_bootstrap"
@@ -13,8 +11,9 @@ $color-accent: adjust-hue($color-primary, 100)
 $color-menu-1-inactive: lighten($color-primary, 40%)
 $color-menu-1-active: $color-white
 
-@import "bootstrap-importers"
+@charset "utf-8"
 @import "bootstrap-overriders"
+@import "bootstrap-importers"
 @import "header"
 @import "wordpress-core"
 @import "main"

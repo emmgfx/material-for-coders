@@ -14,7 +14,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
-			<div class="article-wrapper">
+			<?php
+			$post_classes = array('article-wrapper');
+			if($option['sidebar_active'])
+				$post_classes[] = 'sidebar-active';
+			?>
+
+			<div id="post-<?php the_ID(); ?>" <?php post_class($post_classes); ?>>
 
 				<div class="article clearfix">
 					<?PHP the_content(); ?>

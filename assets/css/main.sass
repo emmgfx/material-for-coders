@@ -1,8 +1,5 @@
 // main: style.sass
 
-@import url(http://fonts.googleapis.com/css?family=Montserrat:700,400)
-@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700)
-
 body
     margin: 0
     padding: 0
@@ -149,9 +146,12 @@ a:active
 
         a:not(.btn)
             color: $color-primary
+            border-bottom: 1px dotted $color-primary
+            transition: all .2s
 
             &:hover
-                border-bottom: 1px dotted $color-primary
+                color: $color-accent
+                border-bottom: 1px dotted $color-accent
 
     &:not(.sidebar-active)
         pre
