@@ -146,9 +146,12 @@ a:active
 
         a:not(.btn)
             color: $color-primary
+            border-bottom: 1px dotted $color-primary
+            transition: all .2s
 
             &:hover
-                border-bottom: 1px dotted $color-primary
+                color: $color-accent
+                border-bottom: 1px dotted $color-accent
 
     &:not(.sidebar-active)
         pre
