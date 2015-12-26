@@ -33,6 +33,12 @@
     SOFTWARE.
     -->
 
+    <?php
+    $option = array(
+    	'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1,
+    );
+    ?>
+
     <title><?php wp_title(''); ?></title>
     <meta charset="<?php bloginfo('charset'); ?>">
 	<link href="<?PHP echo get_template_directory_uri(); ?>/assets/img/icons/favicon.ico" rel="shortcut icon">
@@ -42,6 +48,12 @@
 	<meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="expires" content="<?php echo gmdate ("D, d M Y H:i:s", time() + 60*60*24*7); ?>">
     <meta http-equiv="Cache-control" content="public">
+
+    <?php if(!$option['procastinate_fonts']): ?>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
+    <?php endif; ?>
 
     <?PHP
     switch(get_option('color-scheme')){

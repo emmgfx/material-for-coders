@@ -1,3 +1,8 @@
+<?php
+$option = array(
+	'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1,
+);
+?>
 
 		<div class="menu-mobile-wrapper">
 			<div class="menu-mobile">
@@ -57,9 +62,11 @@
 	    <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.min.js"></script>
 	    <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/jQuery.headroom.min.js"></script>
 	    <script src="<?PHP echo get_template_directory_uri(); ?>/assets/js/js.js"></script>
+		<?php if($option['procastinate_fonts']): ?>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
+		<?php endif; ?>
 		<?php wp_footer(); ?>
 	</body>
 </html>

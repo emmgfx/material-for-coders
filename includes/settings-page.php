@@ -4,6 +4,7 @@ function register_m4c_settings() {
     register_setting( 'm4c-settings', 'footer-phrase' );
     register_setting( 'm4c-settings', 'color-scheme' );
     register_setting( 'm4c-settings', 'sidebar-active' );
+    register_setting( 'm4c-settings', 'procastinate-fonts' );
     register_setting( 'm4c-settings', 'hide-sidebar-xs-window' );
     register_setting( 'm4c-settings', 'show-featured-index' );
     register_setting( 'm4c-settings', 'show-featured-single' );
@@ -297,7 +298,8 @@ function m4c_settings() {
                 'show_featured_index' => intval(get_option('show-featured-index')) == 1,
                 'show_featured_single' => intval(get_option('show-featured-single')) == 1,
                 'hide_sidebar_xs_window' => intval(get_option('hide-sidebar-xs-window')) == 1,
-                'show_excerpt_in_lists' => intval(get_option('show-excerpt-in-lists')) == 1
+                'show_excerpt_in_lists' => intval(get_option('show-excerpt-in-lists')) == 1,
+                'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1
             );
             ?>
 
@@ -309,6 +311,7 @@ function m4c_settings() {
                     <li><label><input type="checkbox" name="show-featured-index" value="1" <?php echo ($option['show_featured_index'] ? 'checked' : '');?> /> Show featured image in index and other posts list</label></li>
                     <li><label><input type="checkbox" name="show-featured-single" value="1" <?php echo ($option['show_featured_single'] ? 'checked' : '');?> /> Show featured image in post</label></li>
                     <li><label><input type="checkbox" name="show-excerpt-in-lists" value="1" <?php echo ($option['show_excerpt_in_lists'] ? 'checked' : '');?> /> Show excerpt instead of full (or manually clipped) article in lists.</label></li>
+                    <li><label><input type="checkbox" name="procastinate-fonts" value="1" <?php echo ($option['procastinate_fonts'] ? 'checked' : '');?> /> Procastinate non-system fonts loading (great for SEO).</label></li>
     			</ul>
             </div>
 

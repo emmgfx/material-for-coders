@@ -6,6 +6,7 @@ $option = array(
 	'show_featured_index' => intval(get_option('show-featured-index')) == 1,
 	'show_featured_single' => intval(get_option('show-featured-single')) == 1,
 	'show_excerpt_in_lists' => intval(get_option('show-excerpt-in-lists')) == 1,
+	'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1,
 );
 ?>
 
