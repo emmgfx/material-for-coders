@@ -2,6 +2,15 @@
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/simple-lightbox.min.js"></script>
+<script>
+jQuery(function($) {
+	console.log('here comes the gallery');
+	var gallery = $('a.gallery').simpleLightbox();
+	console.log(gallery);
+});
+</script>
+
 <div class="big-title">
 	<div class="container">
 		<h2><?PHP the_title(); ?></h2>
@@ -68,10 +77,18 @@
 				if($attachment_meta == false)
 					continue;
 
-				echo '<p>';
-				echo wp_get_attachment_image( $attachment_id, 'portfolio_2', '', array(
+				$image_m_data = wp_get_attachment_image_src( $attachment_id, 'portfolio_2', '', array(
 					'class' => 'img-responsive'
 				));
+
+				$image_f_data = wp_get_attachment_image_src( $attachment_id, 'full', '', array(
+					'class' => 'img-responsive'
+				));
+
+				echo '<p>';
+				echo '<a href="'.$image_f_data[0].'" class="gallery" title="'.get_the_title().'">';
+				echo '<img src="'.$image_m_data[0].'" width="'.$image_m_data[1].'" height="'.$image_m_data[2].'" alt="'.get_the_title().'" class="img-responsive" />';
+				echo '</a>';
 				echo '</p>';
 				?>
 			<?php endforeach; ?>
