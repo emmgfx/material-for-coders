@@ -5,9 +5,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/simple-lightbox.min.js"></script>
 <script>
 jQuery(function($) {
-	console.log('here comes the gallery');
 	var gallery = $('a.gallery').simpleLightbox();
-	console.log(gallery);
 });
 </script>
 
