@@ -14,6 +14,12 @@ Only download this repo by clicking the __Download ZIP__ button on the Github si
 
 The theme counts with an auto updater, basically sync your theme with this repo. You only have to enter on the theme settings page and follow the link to update. Wordpress validation system is too slow and I preferred to made the update system on my own. You can check the few lines refered to the updates on the [updater.php file](https://github.com/emmgfx/material-for-coders/blob/master/includes/updater.php).
 
+### Languages
+
+Now available in **English**, **French** and **Spanish**.
+
+So, covering the 34,4% of the internet. (Using the [Internet World Stats data](http://www.internetworldstats.com/stats7.htm))
+
 ### Portfolio
 
 You can create projects through the admin panel. Only need to create a new page
@@ -22,8 +28,10 @@ portfolio projects. Remember to add it to your menu.
 
 ### Coming soon
 
- * Better Bootstrap integration.
- * I will implement a clean way to for manage (in the source code, not in the admin) multiple color schemes with the minimum headaches and using only one stylesheet (thinking on this Sitepoint article: http://www.sitepoint.com/dealing-color-schemes-sass/).
+* **More languages**: If you want to translate, check out the .po files in the
+languages folder, you can translate it with the Poedit software.
+* **Home page**: With new widgets to create a home page with latest projects, and/or
+latests posts, etc. Some idea about this? create a issue with the suggestion.
 
 ### Collaborate
 
