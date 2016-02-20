@@ -130,6 +130,7 @@ function m4c_settings() {
                     array('Pink', '#E2105D', '#b20d49', '#fbc3d8'),
                     array('Blue-Grey', '#607d8b', '#2597ae', '#dbf3f7'),
                     array('Green', '#18B576', '#128859', '#a6f3d4'),
+                    array('Yellow', '#f3c43c', '#f3c43c', '#f3c43c')
                 );
                 $default = $schemes[0][0];
                 $selected = get_option('color-scheme');
@@ -148,7 +149,7 @@ function m4c_settings() {
                     padding: 3px;
                     background: #FFF;
                     border: 2px solid transparent;
-                    width: 30%;
+                    width: 47%;
                     border-radius: 5px;
                     transition: all .2s;
                 }
@@ -174,7 +175,7 @@ function m4c_settings() {
                     var $ = jQuery;
 
                     $('input[type="radio"][name="color-scheme"]').change(function(){
-                        $('.logo-wrapper').removeClass('pink blue-grey green').addClass($(this).val().toLowerCase());
+                        $('.logo-wrapper').removeClass('pink blue-grey green yellow').addClass($(this).val().toLowerCase());
                     });
 
                 });
@@ -209,6 +210,9 @@ function m4c_settings() {
                 }
                 .logo-wrapper.green img{
                     background: #18B576;
+                }
+                .logo-wrapper.yellow img{
+                    background: #f3c43c;
                 }
                 </style>
 

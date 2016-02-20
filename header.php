@@ -65,6 +65,10 @@
             echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-bluegrey.css" />';
             echo '<meta name="theme-color" content="#607d8b">';
             break;
+        case 'Yellow':
+            echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-yellow.css" />';
+            echo '<meta name="theme-color" content="#f3c43c">';
+            break;
         default:
             echo '<link rel="stylesheet" href="'.get_stylesheet_uri().'" />';
             echo '<meta name="theme-color" content="#CC1C52">';
