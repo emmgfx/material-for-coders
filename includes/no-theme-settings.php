@@ -24,4 +24,9 @@ add_filter( 'wp_title', 'baw_hack_wp_title_for_home' );
 
 add_theme_support( 'automatic-feed-links' );
 
+add_action('after_setup_theme', 'my_theme_setup');
+
+function my_theme_setup(){
+    load_theme_textdomain('material-for-coders', get_template_directory() . '/languages');
+}
 ?>

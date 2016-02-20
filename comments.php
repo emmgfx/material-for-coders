@@ -6,7 +6,7 @@
 			wp_list_comments(array(
 				'style'             => 'div',
 				'type'              => 'all',
-				'reply_text'        => 'Responder',
+				'reply_text'        => __('Answer', 'material-for-coders'),
 				'avatar_size'       => 60,
 				'format'            => 'html5',
 			));
@@ -19,7 +19,7 @@
 	    </div>
 	<?php else : ?>
 		<br />
-	    <p>Puedes dejar el primero :&nbsp;)</p>
+	    <p><?php echo __('You can leave the first : )', 'material-for-coders'); ?></p>
 		<br />
 		<hr />
 	<?php endif; ?>
