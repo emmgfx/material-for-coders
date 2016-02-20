@@ -1,0 +1,62 @@
+# Translation of Material for Coders in Spanish (Spain)
+# This file is distributed under the same license as the Material for Coders package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-02-20 13:31+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.7\n"
+"Project-Id-Version: Material for Coders\n"
+"POT-Creation-Date: \n"
+"Language-Team: \n"
+"Last-Translator: \n"
+"Language: fr\n"
+
+#. Theme Name of the plugin/theme
+msgid "Material for Coders"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Material for Coders is a free Wordpress Theme developed by Josep Viciana "
+"(@emmgfx). The theme was designed by me, doing my own adaptation of the "
+"material design principles."
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Portfolio Index"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/emmgfx/material-for-coders"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Josep Viciana"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.emm-gfx.net/"
+msgstr ""
+
+#. Continue reading button
+msgid "Read more..."
+msgstr "Lire plus..."
+
+#. Comments: You can leave the first : )
+msgid "You can leave the first : )"
+msgstr "Soyez le premier à commenter :)"
+
+#. Comments: Answer
+msgid "Answer"
+msgstr ""
+
+#. Portfolio: Index
+msgid "Home: Portfolio"
+msgstr ""
+
+#. Portfolio: The last 3 items of the portfolio in the home page.
+msgid "The last 3 items of the portfolio in the home page."
+msgstr ""
