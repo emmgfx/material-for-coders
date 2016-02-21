@@ -11,6 +11,7 @@ function register_m4c_settings() {
     register_setting( 'm4c-settings', 'portfolio_projects_per_page' );
     register_setting( 'm4c-settings', 'show-excerpt-in-lists' );
     register_setting( 'm4c-settings', 'logo-attachment' );
+    register_setting( 'm4c-settings', 'blacked-footer' );
 }
 
 
@@ -303,7 +304,8 @@ function m4c_settings() {
                 'show_featured_single' => intval(get_option('show-featured-single')) == 1,
                 'hide_sidebar_xs_window' => intval(get_option('hide-sidebar-xs-window')) == 1,
                 'show_excerpt_in_lists' => intval(get_option('show-excerpt-in-lists')) == 1,
-                'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1
+                'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1,
+                'blacked_footer' => intval(get_option('blacked-footer', 0)) == 1,
             );
             ?>
 
@@ -316,6 +318,7 @@ function m4c_settings() {
                     <li><label><input type="checkbox" name="show-featured-single" value="1" <?php echo ($option['show_featured_single'] ? 'checked' : '');?> /> Show featured image in post</label></li>
                     <li><label><input type="checkbox" name="show-excerpt-in-lists" value="1" <?php echo ($option['show_excerpt_in_lists'] ? 'checked' : '');?> /> Show excerpt instead of full (or manually clipped) article in lists.</label></li>
                     <li><label><input type="checkbox" name="procastinate-fonts" value="1" <?php echo ($option['procastinate_fonts'] ? 'checked' : '');?> /> Procastinate non-system fonts loading (great for SEO).</label></li>
+                    <li><label><input type="checkbox" name="blacked-footer" value="1" <?php echo ($option['blacked_footer'] ? 'checked' : '');?> /> Blacked footer (on any color scheme)</label></li>
     			</ul>
             </div>
 

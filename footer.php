@@ -1,6 +1,7 @@
 <?php
 $option = array(
 	'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1,
+	'blacked_footer' => intval(get_option('blacked-footer', 0)) == 1,
 );
 ?>
 
@@ -34,7 +35,7 @@ $option = array(
 
 		<div class="footer-wrapper">
 			<?php if ( is_active_sidebar( 'footer' ) ) : ?>
-			<div class="footer">
+			<div class="footer <?php if($option['blacked_footer']){ echo "black"; } ?>">
 				<div class="container">
 					<div class="row">
 						<?php dynamic_sidebar( 'footer' ); ?>
@@ -46,7 +47,7 @@ $option = array(
 			<br />
 			<?php endif; ?>
 
-			<div class="license">
+			<div class="license <?php if($option['blacked_footer']){ echo "black"; } ?>">
 				<div class="container">
 					<?PHP $footer_phrase = get_option('footer-phrase'); ?>
 					<?PHP if( $footer_phrase === false || empty($footer_phrase) ): ?>
