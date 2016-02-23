@@ -28,5 +28,10 @@ add_action('after_setup_theme', 'my_theme_setup');
 
 function my_theme_setup(){
     load_theme_textdomain('material-for-coders', get_template_directory() . '/languages');
+	add_theme_support( 'infinite-scroll', array(
+		'type'           => 'scroll',
+		'container'      => 'articles',
+		'posts_per_page' => 2
+	) );
 }
 ?>
