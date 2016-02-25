@@ -5,6 +5,12 @@ body
     padding: 0
     font-family: Roboto
 
+    &.sidebar-inactive
+        .article-wrapper pre
+            @media (min-width: $screen-md)
+                margin-left: -100px
+                margin-right: -100px
+
 a,
 a:hover,
 a:focus,
@@ -153,11 +159,6 @@ a:active
                 color: $color-accent
                 border-bottom: 1px dotted $color-accent
 
-    &:not(.sidebar-active)
-        pre
-            @media (min-width: $screen-md)
-                margin-left: -100px
-                margin-right: -100px
 
     #comments
         .comments

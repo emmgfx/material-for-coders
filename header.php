@@ -36,6 +36,7 @@
     <?php
     $option = array(
     	'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1,
+        'sidebar_active' => intval(get_option('sidebar-active')) == 1,
     );
     ?>
 
@@ -78,7 +79,8 @@
 	<?php wp_head(); ?>
 
 </head>
-<body <?php body_class(); ?>>
+<?php $sidebar_class = ($option['sidebar_active'] ? 'sidebar-active' : 'sidebar-inactive'); ?>
+<body <?php body_class(array($sidebar_class)); ?>>
 
     <div class="header-placeholder"></div>
     <div class="header">

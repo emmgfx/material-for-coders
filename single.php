@@ -19,14 +19,7 @@ $option = array(
 <div class="container">
 	<div class="row">
 		<div class="<?php echo ($option['sidebar_active'] ? 'col-md-8 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
-
-			<?php
-			$post_classes = array('article-wrapper');
-			if($option['sidebar_active'])
-				$post_classes[] = 'sidebar-active';
-			?>
-
-			<div id="post-<?php the_ID(); ?>" <?php post_class($post_classes); ?>>
+			<div id="post-<?php the_ID(); ?>" <?php post_class(array('article-wrapper')); ?>>
 				<?PHP get_template_part( 'context' ); ?>
 				<?PHP
 				if(has_post_thumbnail() && $option['show_featured_single']):
