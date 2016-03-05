@@ -8,7 +8,8 @@ function register_m4c_settings() {
     register_setting( 'm4c-settings', 'hide-sidebar-xs-window' );
     register_setting( 'm4c-settings', 'show-featured-index' );
     register_setting( 'm4c-settings', 'show-featured-single' );
-    register_setting( 'm4c-settings', 'portfolio_projects_per_page' );
+    register_setting( 'm4c-settings', 'show-featured-single' );
+    register_setting( 'm4c-settings', 'show-author-box' );
     register_setting( 'm4c-settings', 'show-excerpt-in-lists' );
     register_setting( 'm4c-settings', 'logo-attachment' );
     register_setting( 'm4c-settings', 'blacked-footer' );
@@ -302,6 +303,7 @@ function m4c_settings() {
             	'sidebar_active' => intval(get_option('sidebar-active')) == 1,
                 'show_featured_index' => intval(get_option('show-featured-index')) == 1,
                 'show_featured_single' => intval(get_option('show-featured-single')) == 1,
+                'show_author_box' => intval(get_option('show-author-box'), 0) == 1,
                 'hide_sidebar_xs_window' => intval(get_option('hide-sidebar-xs-window')) == 1,
                 'show_excerpt_in_lists' => intval(get_option('show-excerpt-in-lists')) == 1,
                 'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1,
@@ -316,6 +318,7 @@ function m4c_settings() {
                     <li><label><input type="checkbox" name="hide-sidebar-xs-window" value="1" <?php echo ($option['hide_sidebar_xs_window'] ? 'checked' : '');?> /> Hide sidebar on small windows (phones).</label></li>
                     <li><label><input type="checkbox" name="show-featured-index" value="1" <?php echo ($option['show_featured_index'] ? 'checked' : '');?> /> Show featured image in index and other posts list</label></li>
                     <li><label><input type="checkbox" name="show-featured-single" value="1" <?php echo ($option['show_featured_single'] ? 'checked' : '');?> /> Show featured image in post</label></li>
+                    <li><label><input type="checkbox" name="show-author-box" value="1" <?php echo ($option['show_author_box'] ? 'checked' : '');?> /> Show author box after the article single.</li>
                     <li><label><input type="checkbox" name="show-excerpt-in-lists" value="1" <?php echo ($option['show_excerpt_in_lists'] ? 'checked' : '');?> /> Show excerpt instead of full (or manually clipped) article in lists.</label></li>
                     <li><label><input type="checkbox" name="procastinate-fonts" value="1" <?php echo ($option['procastinate_fonts'] ? 'checked' : '');?> /> Procastinate non-system fonts loading (great for SEO).</label></li>
                     <li><label><input type="checkbox" name="blacked-footer" value="1" <?php echo ($option['blacked_footer'] ? 'checked' : '');?> /> Blacked footer (on any color scheme)</label></li>
