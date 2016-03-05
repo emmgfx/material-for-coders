@@ -140,10 +140,9 @@
         </div>
 
     </div>
-
-    <?PHP if ( is_home() || is_category() || is_tag() ){ ?>
+    <?PHP if ( (is_home() || is_category() || is_tag()) && has_nav_menu('blog') ): ?>
         <div class="menu-2">
-            <a href="#" class="menu-2-toggler visible-xs"><i class="material-icons">keyboard_arrow_right</i> Categor&iacute;as</a>
+            <a href="#" class="menu-2-toggler visible-xs"><i class="material-icons">keyboard_arrow_right</i> <?php echo __('Categories', 'material-for-coders'); ?></a>
             <div class="container">
                 <?PHP
                 wp_nav_menu(array(
@@ -167,4 +166,4 @@
                 ?>
             </div>
         </div>
-    <?PHP } ?>
+    <?PHP endif; ?>

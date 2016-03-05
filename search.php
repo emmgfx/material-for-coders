@@ -11,7 +11,7 @@ $option = array(
 
 <div class="big-title">
 	<div class="container">
-		<h2><?php echo sprintf( '%s resultados para ', $wp_query->found_posts ); echo '"'.get_search_query().'"'; ?></h2>
+		<h2><?php echo sprintf( '%s '.__('results for', 'material-for-coders'), $wp_query->found_posts ); echo '"'.get_search_query().'"'; ?></h2>
 	</div>
 </div>
 
@@ -53,7 +53,7 @@ $option = array(
 		</div>
 		<br />
 		<div align="center">
-			<a href="<?php echo home_url(); ?>" class="btn btn-lg btn-primary">&larr; Volver a la portada</a>
+			<a href="<?php echo home_url(); ?>" class="btn btn-lg btn-primary">&larr; <?php echo __('Return home', 'material-for-coders'); ?></a>
 		</div>
 	<?php endif; ?>
 </div>
