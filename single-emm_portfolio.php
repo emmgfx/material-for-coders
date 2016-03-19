@@ -65,7 +65,7 @@ jQuery(function($) {
 		</div>
 		<div class="col-md-7 col-md-offset-1 col-sm-10 col-sm-offset-1">
 			<?php
-			$images_json = get_post_meta( $post->ID, '_m4c_portfolio_images_order', true );
+			$images_json = get_post_meta( $post->ID, 'emm_portfolio_images_order', true );
 			if(!is_array(@json_decode($images_json, true)))
 				$images_json = json_encode(array());
 

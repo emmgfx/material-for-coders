@@ -20,7 +20,7 @@
 		$wp_query = new WP_Query();
 
 		$args = array(
-			'post_type'			=> 'm4c_portfolio',
+			'post_type'			=> 'emm_portfolio',
 			'paged'				=> $paged
 		);
 

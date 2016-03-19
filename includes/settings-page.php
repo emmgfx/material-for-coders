@@ -327,13 +327,19 @@ function m4c_settings() {
 
             <div class="card">
                 <h3><span class="dashicons dashicons-admin-appearance"></span> Portfolio:</h3>
-                <?php
-                $projects_per_page = intval(get_option('portfolio_projects_per_page'));
-                if($projects_per_page == false || $projects_per_page == 0)
-                    $projects_per_page = get_option('posts_per_page');
-                ?>
-    			<p><label>Projects per page:</label></p>
-                <p><input type="text" name="portfolio_projects_per_page" value="<?php echo $projects_per_page; ?>" /></p>
+                <?php if(!is_plugin_active('emm-portfolio/emm-portfolio.php')): ?>
+                    <p>You don't have the portfolio plugin installed.</p>
+                    <p><a target="_blank" class="button" href="https://github.com/emmgfx/emm-portfolio">Download</a></p>
+                    <p>If you have old projects, the plugin can import them and you never lose anything.</p>
+                <?php else: ?>
+                    <?php
+                    $projects_per_page = intval(get_option('portfolio_projects_per_page'));
+                    if($projects_per_page == false || $projects_per_page == 0)
+                        $projects_per_page = get_option('posts_per_page');
+                    ?>
+        			<p><label>Projects per page:</label></p>
+                    <p><input type="text" name="portfolio_projects_per_page" value="<?php echo $projects_per_page; ?>" /></p>
+                <?php endif; ?>
             </div>
 
             <?php submit_button(); ?>
