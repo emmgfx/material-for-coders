@@ -1,0 +1,76 @@
+# This file is distributed under the same license as the Material for Coders package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-04-01 20:28+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.7\n"
+"Project-Id-Version: Material for Coders\n"
+"POT-Creation-Date: \n"
+"Language-Team: \n"
+"Last-Translator: \n"
+"Language: pt_BR\n"
+
+#. Theme Name of the plugin/theme
+msgid "Material for Coders"
+msgstr "Material for Coders"
+
+#. Description of the plugin/theme
+msgid ""
+"Material for Coders is a free Wordpress Theme developed by Josep Viciana "
+"(@emmgfx). The theme was designed by me, doing my own adaptation of the "
+"material design principles."
+msgstr ""
+"Material for Coders é um tema WordPress gratuito desenvolvido por Josep "
+"Viciana (@emmgfx). O tema foi criado por mim, sendo uma adaptação "
+"própria dos princípios do material design."
+
+#. Template Name of the plugin/theme
+msgid "Portfolio Index"
+msgstr "Portfólio"
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/emmgfx/material-for-coders"
+msgstr "https://github.com/emmgfx/material-for-coders"
+
+#. Author of the plugin/theme
+msgid "Josep Viciana"
+msgstr "Josep Viciana"
+
+#. Author URI of the plugin/theme
+msgid "http://www.emm-gfx.net/"
+msgstr "http://www.emm-gfx.net/"
+
+#. Continue reading button
+msgid "Read more..."
+msgstr "Ler mais…"
+
+#. Categories (dropdown button in mobile)
+msgid "Categories"
+msgstr "Categorias"
+
+#. Results title
+msgid "results for"
+msgstr "resultados para"
+
+#. Return home button
+msgid "Return home"
+msgstr "Voltar à página inicial"
+
+#. Comments: You can leave the first : )
+msgid "You can leave the first : )"
+msgstr "Você pode deixar o primeiro : )"
+
+#. Comments: Answer
+msgid "Answer"
+msgstr "Resposta"
+
+#. Portfolio: Index
+msgid "Home: Portfolio"
+msgstr "Início: Portfólio"
+
+#. Portfolio: The last 3 items of the portfolio in the home page.
+msgid "The last 3 items of the portfolio in the home page."
+msgstr "Últimos 3 itens do portfólio na página inicial."
