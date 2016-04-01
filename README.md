@@ -16,7 +16,7 @@ The theme counts with an auto updater, basically sync your theme with this repo.
 
 ### Languages
 
-Now available in **English**, **French** and **Spanish**.
+Now available in **English**, **French**, **Spanish** and **Brazilian Portuguese**.
 
 So, covering the 34,4% of the internet. (Using the [Internet World Stats data](http://www.internetworldstats.com/stats7.htm))
 
