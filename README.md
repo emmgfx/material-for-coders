@@ -3,6 +3,8 @@ Wordpress theme
 
 ---
 
+![Screenshot](https://raw.githubusercontent.com/emmgfx/material-for-coders/master/screenshot.png)
+
 This theme was designed basically showing code and text.
 Images are only a support and not the primary content.
 
