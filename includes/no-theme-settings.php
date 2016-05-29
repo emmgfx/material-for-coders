@@ -43,4 +43,10 @@ function infinite_scroll_render() {
     get_template_part( 'post-loop' );
 }
 
+add_action( 'wp_enqueue_scripts', 'loadMfcJs' );
+function loadMfcJs() {
+	wp_enqueue_script( 'headroom.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/headroom.min.js');
+	wp_enqueue_script( 'jQuery.headroom.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/jQuery.headroom.min.js', array('jquery') );
+	wp_enqueue_script( 'js.js', get_template_directory_uri().'/assets/js/js.js', array('jquery') );
+}
 ?>
