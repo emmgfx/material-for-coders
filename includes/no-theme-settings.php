@@ -1,9 +1,9 @@
 <?php
 
 add_action( 'comment_form_before', 'enqueue_comment_reply' );
-add_filter( 'wp_title', 'hack_wp_title_for_home' );
 add_action( 'after_setup_theme', 'language_setup');
 add_action( 'after_setup_theme', 'init_infinite_scroll' );
+add_action( 'after_setup_theme', 'theme_slug_setup' );
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 600;
@@ -15,16 +15,11 @@ function enqueue_comment_reply() {
     }
 }
 
-function hack_wp_title_for_home( $title ){
-	if( empty( $title ) && ( is_home() || is_front_page() ) ):
-		return get_bloginfo( 'name' ) . ' | ' . get_bloginfo( 'description' );
-	else:
-		return get_bloginfo( 'name' ) . ' | ' . $title;
-	endif;
-	return $title;
-}
-
 add_theme_support( 'automatic-feed-links' );
+
+function theme_slug_setup() {
+   add_theme_support( 'title-tag' );
+}
 
 function language_setup(){
     load_theme_textdomain('material-for-coders', get_template_directory() . '/languages');
