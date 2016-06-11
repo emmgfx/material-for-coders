@@ -8,7 +8,7 @@ $option = array(
 		<div class="menu-mobile-wrapper">
 			<div class="menu-mobile">
 				<form action="<?php echo home_url(); ?>" type="get">
-					<input type="text" class="search form-control" name="s" value="<?PHP echo get_search_query();?>" placeholder="Buscar...">
+					<input type="text" class="search form-control" name="s" value="<?PHP echo get_search_query();?>" placeholder="<?php echo __('Search', 'material-for-coders'); ?>...">
 				</form>
 				<?PHP
 				wp_nav_menu(array(
