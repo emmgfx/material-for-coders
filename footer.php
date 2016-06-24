@@ -1,13 +1,14 @@
 <?php
 $option = array(
 	'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1,
+	'blacked_footer' => intval(get_option('blacked-footer', 0)) == 1,
 );
 ?>
 
 		<div class="menu-mobile-wrapper">
 			<div class="menu-mobile">
 				<form action="<?php echo home_url(); ?>" type="get">
-					<input type="text" class="search form-control" name="s" value="<?PHP echo get_search_query();?>" placeholder="Buscar...">
+					<input type="text" class="search form-control" name="s" value="<?PHP echo get_search_query();?>" placeholder="<?php echo __('Search', 'material-for-coders'); ?>...">
 				</form>
 				<?PHP
 				wp_nav_menu(array(
@@ -34,7 +35,7 @@ $option = array(
 
 		<div class="footer-wrapper">
 			<?php if ( is_active_sidebar( 'footer' ) ) : ?>
-			<div class="footer">
+			<div class="footer <?php if($option['blacked_footer']){ echo "black"; } ?>">
 				<div class="container">
 					<div class="row">
 						<?php dynamic_sidebar( 'footer' ); ?>
@@ -46,7 +47,7 @@ $option = array(
 			<br />
 			<?php endif; ?>
 
-			<div class="license">
+			<div class="license <?php if($option['blacked_footer']){ echo "black"; } ?>">
 				<div class="container">
 					<?PHP $footer_phrase = get_option('footer-phrase'); ?>
 					<?PHP if( $footer_phrase === false || empty($footer_phrase) ): ?>
@@ -59,9 +60,6 @@ $option = array(
 			</div>
 		</div>
 
-	    <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.min.js"></script>
-	    <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/jQuery.headroom.min.js"></script>
-	    <script src="<?PHP echo get_template_directory_uri(); ?>/assets/js/js.js"></script>
 		<?php if($option['procastinate_fonts']): ?>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>

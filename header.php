@@ -36,10 +36,18 @@
     <?php
     $option = array(
     	'procastinate_fonts' => intval(get_option('procastinate-fonts', 1)) == 1,
+        'sidebar_active' => intval(get_option('sidebar-active')) == 1,
     );
     ?>
 
-    <title><?php wp_title(''); ?></title>
+    <?php if ( ! function_exists( '_wp_render_title_tag' ) ) {
+    	function theme_slug_render_title() { ?>
+            <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <?php }
+    	add_action( 'wp_head', 'theme_slug_render_title' );
+    }
+    ?>
+
     <meta charset="<?php bloginfo('charset'); ?>">
 	<link href="<?PHP echo get_template_directory_uri(); ?>/assets/img/icons/favicon.ico" rel="shortcut icon">
 	<link href="<?PHP echo get_template_directory_uri(); ?>/assets/img/icons/touch.png" rel="apple-touch-icon-precomposed">
@@ -78,7 +86,8 @@
 	<?php wp_head(); ?>
 
 </head>
-<body <?php body_class(); ?>>
+<?php $sidebar_class = ($option['sidebar_active'] ? 'sidebar-active' : 'sidebar-inactive'); ?>
+<body <?php body_class(array($sidebar_class)); ?>>
 
     <div class="header-placeholder"></div>
     <div class="header">
@@ -138,10 +147,9 @@
         </div>
 
     </div>
-
-    <?PHP if ( is_home() || is_category() || is_tag() ){ ?>
+    <?PHP if ( (is_home() || is_category() || is_tag()) && has_nav_menu('blog') ): ?>
         <div class="menu-2">
-            <a href="#" class="menu-2-toggler visible-xs"><i class="material-icons">keyboard_arrow_right</i> Categor&iacute;as</a>
+            <a href="#" class="menu-2-toggler visible-xs"><i class="material-icons">keyboard_arrow_right</i> <?php echo __('Categories', 'material-for-coders'); ?></a>
             <div class="container">
                 <?PHP
                 wp_nav_menu(array(
@@ -165,4 +173,4 @@
                 ?>
             </div>
         </div>
-    <?PHP } ?>
+    <?PHP endif; ?>

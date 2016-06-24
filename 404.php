@@ -15,7 +15,7 @@
 		<br />
 
 		<div align="center">
-			<a href="<?php echo home_url(); ?>" class="btn btn-lg btn-primary">&larr; Volver a la portada</a>
+			<a href="<?php echo home_url(); ?>" class="btn btn-lg btn-primary">&larr; <?php echo __('Return home', 'material-for-coders'); ?></a>
 		</div>
 
 	</div>

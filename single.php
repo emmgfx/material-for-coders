@@ -4,7 +4,8 @@
 $option = array(
 	'sidebar_active' => intval(get_option('sidebar-active')) == 1,
 	'show_featured_index' => intval(get_option('show-featured-index')) == 1,
-	'show_featured_single' => intval(get_option('show-featured-single')) == 1
+	'show_featured_single' => intval(get_option('show-featured-single')) == 1,
+	'show_author_box' => intval(get_option('show-author-box', 0)) == 1
 );
 ?>
 
@@ -19,14 +20,7 @@ $option = array(
 <div class="container">
 	<div class="row">
 		<div class="<?php echo ($option['sidebar_active'] ? 'col-md-8 col-sm-8' : 'col-md-8 col-md-offset-2'); ?>">
-
-			<?php
-			$post_classes = array('article-wrapper');
-			if($option['sidebar_active'])
-				$post_classes[] = 'sidebar-active';
-			?>
-
-			<div id="post-<?php the_ID(); ?>" <?php post_class($post_classes); ?>>
+			<div id="post-<?php the_ID(); ?>" <?php post_class(array('article-wrapper')); ?>>
 				<?PHP get_template_part( 'context' ); ?>
 				<?PHP
 				if(has_post_thumbnail() && $option['show_featured_single']):
@@ -54,6 +48,19 @@ $option = array(
 				)); ?>
 				<br />
 				<hr />
+				<?php endif; ?>
+
+				<?php if($option['show_author_box']): ?>
+					<div class="author-box">
+						<div class="author-avatar-container">
+							<?php echo get_avatar( get_the_author_meta('email'), 80, null, null, array("class" => "img-circle author-avatar-image")); ?>
+						</div>
+						<h3><?php the_author_meta('display_name'); ?></h3>
+						<p><?php the_author_meta('description'); ?></p>
+						<?php if(get_the_author_meta('user_url')): ?>
+							<div>- <a href="<?php the_author_meta('user_url'); ?>"><?php the_author_meta('user_url'); ?></a></div>
+						<?php endif; ?>
+					</div>
 				<?php endif; ?>
 
 				<?php comments_template(); ?>

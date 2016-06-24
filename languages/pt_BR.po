@@ -1,18 +1,17 @@
-# Translation of Material for Coders in Spanish (Spain)
 # This file is distributed under the same license as the Material for Coders package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-06-11 14:04+0200\n"
+"PO-Revision-Date: 2016-06-11 13:49+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.8.8\n"
 "Project-Id-Version: Material for Coders\n"
 "POT-Creation-Date: \n"
 "Language-Team: \n"
 "Last-Translator: \n"
-"Language: es_ES\n"
+"Language: pt_BR\n"
 
 #. Theme Name of the plugin/theme
 msgid "Material for Coders"
@@ -24,13 +23,13 @@ msgid ""
 "(@emmgfx). The theme was designed by me, doing my own adaptation of the "
 "material design principles."
 msgstr ""
-"Material for Coders es una plantilla gratuita para WordPress, "
-"desarrollada por Josep Viciana (@emmgfx). La plantilla ha sido diseñada "
-"por mí, haciendo mi propia adaptación de los principios de Material."
+"Material for Coders é um tema WordPress gratuito desenvolvido por Josep "
+"Viciana (@emmgfx). O tema foi criado por mim, sendo uma adaptação "
+"própria dos princípios do material design."
 
 #. Template Name of the plugin/theme
 msgid "Portfolio Index"
-msgstr "Portfolio Index"
+msgstr "Portfólio"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/emmgfx/material-for-coders"
@@ -46,7 +45,7 @@ msgstr "http://www.emm-gfx.net/"
 
 #. Continue reading button
 msgid "Read more..."
-msgstr "Continuar leyendo"
+msgstr "Ler mais…"
 
 #. Categories (dropdown button in mobile)
 msgid "Categories"
@@ -58,24 +57,20 @@ msgstr "resultados para"
 
 #. Return home button
 msgid "Return home"
-msgstr "Volver a la portada"
+msgstr "Voltar à página inicial"
 
 #. Comments: You can leave the first : )
 msgid "You can leave the first : )"
-msgstr "Puedes dejar el primero : )"
+msgstr "Você pode deixar o primeiro : )"
 
 #. Comments: Answer
 msgid "Answer"
-msgstr "Responder"
+msgstr "Resposta"
 
 #. Portfolio: Index
 msgid "Home: Portfolio"
-msgstr "Home: Portfolio"
-
-#. Portfolio: The last 3 items of the portfolio in the home page.
-msgid "The last 3 items of the portfolio in the home page."
-msgstr "Los últimos tres proyectos del portfolio en la portada"
+msgstr "Início: Portfólio"
 
 #. Search (in the mobile menu)
 msgid "Search"
-msgstr "Buscar"
+msgstr "Pesquisa"

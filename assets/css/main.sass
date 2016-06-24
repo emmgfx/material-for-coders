@@ -5,6 +5,12 @@ body
     padding: 0
     font-family: Roboto
 
+    &.sidebar-inactive
+        .article-wrapper pre
+            @media (min-width: $screen-md)
+                margin-left: -100px
+                margin-right: -100px
+
 a,
 a:hover,
 a:focus,
@@ -108,6 +114,7 @@ a:active
             margin-top: 50px
 
     .article
+        padding-bottom: 2em
 
         h1, h2, h3, h4
             color: $color-primary
@@ -120,6 +127,9 @@ a:active
 
             &:first-child
                 margin-top: 0
+
+            &:last-child
+                margin-bottom: 0
 
         ul, ol
             font-size: 16px
@@ -153,11 +163,30 @@ a:active
                 color: $color-accent
                 border-bottom: 1px dotted $color-accent
 
-    &:not(.sidebar-active)
-        pre
-            @media (min-width: $screen-md)
-                margin-left: -100px
-                margin-right: -100px
+    .author-box
+        margin: 60px 0 80px 0
+        padding: 30px
+        border-radius: 4px
+        background-color: $color-grey-05
+
+        .author-avatar-container
+            text-align: center
+            margin-top: -70px
+            img
+                border: 5px solid $color-white
+
+        h3
+            padding: 15px 0 30px 0
+            border-bottom: 1px solid $color-grey-10
+            text-align: center
+            margin: 0px 0 30px 0
+            font-family: Montserrat
+
+        a
+            color: $color-primary
+            font-weight: bold
+            &:hover
+                color: $color-accent
 
     #comments
         .comments
@@ -187,7 +216,6 @@ a:active
 
                 .comment
                     padding-left: 80px
-
 
                 a
                     color: $color-primary
@@ -229,25 +257,29 @@ a:active
                                 border-bottom: none
                                 color: $color-primary
 
-
-
-
-
                 .comment-content
                     padding-left: 80px
                     color: $color-grey-50
                     font-size: 15px
 
+                    pre
+                        background-color: $color-grey-05
+                        color: $color-grey-50
+                        border: none
+                        border-radius: 0
+                        padding: 20px
+                        font-size: 15px
+                        overflow: auto
+                        -ms-word-wrap: normal
+                        word-wrap: normal
+                        overflow-wrap: normal
+                        white-space: pre
 
                 .reply
                     text-align: right
                     border-bottom: 1px solid $color-grey-10
                     margin-left: 80px
                     padding-bottom: 30px
-
-
-
-
 
     .comment-respond
         padding: 30px
@@ -488,6 +520,9 @@ a:active
     background-color: $color-primary
     color: $color-white
 
+    &.black
+        background-color: $color-grey-80
+
     .widget
         margin: 15px 0
 
@@ -547,6 +582,10 @@ a:active
     color: $color-white
     text-align: center
     padding: 20px
+
+    &.black
+        background-color: $color-grey-90
+
 
     p
         margin: 0

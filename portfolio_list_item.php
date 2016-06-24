@@ -5,7 +5,7 @@ if(has_post_thumbnail()):
 
 else:
 
-	$images_json = get_post_meta( get_the_ID(), '_m4c_portfolio_images_order', true );
+	$images_json = get_post_meta( get_the_ID(), 'emm_portfolio_images_order', true );
 
 	if(!is_array(@json_decode($images_json, true)))
 		$images_json = json_encode(array());

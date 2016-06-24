@@ -12,13 +12,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 
-			<?php
-			$post_classes = array('article-wrapper');
-			if($option['sidebar_active'])
-				$post_classes[] = 'sidebar-active';
-			?>
-
-			<div id="post-<?php the_ID(); ?>" <?php post_class($post_classes); ?>>
+			<div id="post-<?php the_ID(); ?>" <?php post_class(array('article-wrapper')); ?>>
 
 				<br />
 
