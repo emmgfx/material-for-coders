@@ -1,0 +1,80 @@
+# Translation of Material for Coders in Spanish (Spain)
+# This file is distributed under the same license as the Material for Coders package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-12-30 11:00+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.11\n"
+"Project-Id-Version: Material for Coders\n"
+"POT-Creation-Date: \n"
+"Language-Team: \n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+
+#. Theme Name of the plugin/theme
+msgid "Material for Coders"
+msgstr "Material for Coders"
+
+#. Description of the plugin/theme
+msgid ""
+"Material for Coders is a free Wordpress Theme developed by Josep Viciana "
+"(@emmgfx). The theme was designed by me, doing my own adaptation of the "
+"material design principles."
+msgstr ""
+"Material for Coders 是由Josep Viciana (@emmgfx)所自造的免费Wordpress皮。"
+"这主题是由我设计，以我对Material设计主义的看法，改编出来。"
+
+#. Template Name of the plugin/theme
+msgid "Portfolio Index"
+msgstr "作品集目录"
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/emmgfx/material-for-coders"
+msgstr "https://github.com/emmgfx/material-for-coders"
+
+#. Author of the plugin/theme
+msgid "Josep Viciana"
+msgstr "Josep Viciana"
+
+#. Author URI of the plugin/theme
+msgid "http://www.emm-gfx.net/"
+msgstr "http://www.emm-gfx.net/"
+
+#. Continue reading button
+msgid "Read more..."
+msgstr "继续阅读。。。"
+
+#. Categories (dropdown button in mobile)
+msgid "Categories"
+msgstr "类别"
+
+#. Results title
+msgid "results for"
+msgstr "结果"
+
+#. Return home button
+msgid "Return home"
+msgstr "回返"
+
+#. Comments: You can leave the first : )
+msgid "You can leave the first : )"
+msgstr "你先离开吧：）"
+
+#. Comments: Answer
+msgid "Answer"
+msgstr "答案"
+
+#. Portfolio: Index
+msgid "Home: Portfolio"
+msgstr "主页：作品集"
+
+#. Portfolio: The last 3 items of the portfolio in the home page.
+msgid "The last 3 items of the portfolio in the home page."
+msgstr "主页里作品集的最后3项目"
+
+#. Search (in the mobile menu)
+msgid "Search"
+msgstr "搜索"
