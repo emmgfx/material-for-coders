@@ -4,11 +4,13 @@ $max_tags = 3;
 ?>
 <ul class="context list-unstyled list-inline">
 
-	<li class="date"><i class="material-icons">&#xE916;</i> <?PHP the_time(get_option( 'date_format' )); ?></li>
+	<li class="date"><i class="material-icons">&#xE878;</i> <?PHP the_time(get_option( 'date_format' )); ?></li>
+	
+	<li class="date"><i class="material-icons">&#xE923;</i> <?PHP the_modified_time('j F Y'); ?></li>
 
 	<?PHP $categories = get_the_category(); ?>
 	<?PHP if($categories){ ?>
-		<li class="categories"><i class="material-icons">&#xE2C8;</i>
+		<li class="categories"><i class="material-icons">&#xE2C7;</i>
 			<?PHP
 			foreach($categories as $index => $category) {
 				if($index < $max_categories){
@@ -26,7 +28,7 @@ $max_tags = 3;
 
 	<?PHP $posttags = get_the_tags(); ?>
 	<?PHP if($posttags){ ?>
-		<li class="tags"><i class="material-icons">&#xE893;</i>
+		<li class="tags"><i class="material-icons">&#xE892;</i>
 			<?PHP
 			foreach($posttags as $index => $tag) {
 				if($index < $max_tags){
