@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Material for Coders\n"
 "POT-Creation-Date: \n"
 "Language-Team: \n"
-"Last-Translator: \n"
+"Last-Translator: Lenny Obez\n"
 "Language: fr\n"
 
 #. Theme Name of the plugin/theme
@@ -76,8 +76,8 @@ msgstr "Accueil: Portfolio"
 
 #. Portfolio: The last 3 items of the portfolio in the home page.
 msgid "The last 3 items of the portfolio in the home page."
-msgstr "Les trois derniers articles de mon portfolio sur la page d'accueil."
+msgstr "Les trois derniers articles du portfolio sur la page d'accueil."
 
 #. Search (in the mobile menu)
 msgid "Search"
-msgstr "Recherche"
+msgstr "Rechercher"
