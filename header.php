@@ -89,8 +89,7 @@
 <?php $sidebar_class = ($option['sidebar_active'] ? 'sidebar-active' : 'sidebar-inactive'); ?>
 <body <?php body_class(array($sidebar_class)); ?>>
 
-    <div class="header-placeholder"></div>
-    <div class="header">
+    <header>
 
         <div class="container">
             <div class="row">
@@ -101,14 +100,14 @@
                         <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="material-icons">&#xE5D2;</i></a>
                         <?php $logo_attachment = get_option('logo-attachment'); ?>
                         <?php if(empty($logo_attachment)): ?>
-                            <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a></h1>
+                            <a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a>
                         <?php else: ?>
-                            <h1><a href="<?php echo home_url(); ?>"><?php
+                            <a href="<?php echo home_url(); ?>"><?php
                                 echo wp_get_attachment_image( $logo_attachment, 'logo_1', false, array(
                                     'alt' => get_bloginfo('name'),
                                     'class' => 'img-responsive'
                                 ));
-                                ?></a></h1>
+                                ?></a>
                         <?php endif; ?>
                     </div>
 
@@ -146,7 +145,7 @@
             </div>
         </div>
 
-    </div>
+    </header>
     <?PHP if ( (is_home() || is_category() || is_tag()) && has_nav_menu('blog') ): ?>
         <div class="menu-2">
             <a href="#" class="menu-2-toggler visible-xs"><i class="material-icons">keyboard_arrow_right</i> <?php echo __('Categories', 'material-for-coders'); ?></a>
