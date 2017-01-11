@@ -4,7 +4,7 @@
 
 <div class="big-title">
 	<div class="container">
-		<h2><?PHP the_title(); ?></h2>
+		<h1><?PHP the_title(); ?></h1>
 	</div>
 </div>
 
