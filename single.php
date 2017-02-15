@@ -27,6 +27,13 @@ $option = array(
 					the_post_thumbnail('custom_1', array( 'class'	=> "img-rounded img-responsive center-block featured"));
 				endif;
 				?>
+				<?PHP
+                    			if ( function_exists('yoast_breadcrumb') ) {
+                        			yoast_breadcrumb('
+                        			<p id="breadcrumbs">','</p>
+                        			');
+                    			}
+               			?>
 				<div class="article clearfix">
 					<?PHP the_content(); ?>
 				</div>
