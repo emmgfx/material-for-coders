@@ -48,14 +48,14 @@
     }
     ?>
 
-    <meta charset="<?php bloginfo('charset'); ?>">
+   	<meta charset="<?php bloginfo('charset'); ?>">
 	<link href="<?PHP echo get_template_directory_uri(); ?>/assets/img/icons/favicon.ico" rel="shortcut icon">
 	<link href="<?PHP echo get_template_directory_uri(); ?>/assets/img/icons/touch.png" rel="apple-touch-icon-precomposed">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?php bloginfo('description'); ?>">
-    <meta name="expires" content="<?php echo gmdate ("D, d M Y H:i:s", time() + 60*60*24*7); ?>">
-    <meta http-equiv="Cache-control" content="public">
+   	<meta name="expires" content="<?php echo gmdate ("D, d M Y H:i:s", time() + 60*60*24*7); ?>">
+   	<meta http-equiv="Cache-control" content="public">
 
     <?php if(!$option['procastinate_fonts']): ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -68,18 +68,26 @@
         case 'Green':
             echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-green.css" />';
             echo '<meta name="theme-color" content="#18B576">';
+	    echo '<meta name="apple-mobile-web-app-status-bar-style" content="#18B576">';
+	    echo '<meta name="msapplication-navbutton-color" content="#18B576">';
             break;
         case 'Blue-Grey':
             echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-bluegrey.css" />';
             echo '<meta name="theme-color" content="#607d8b">';
+	    echo '<meta name="apple-mobile-web-app-status-bar-style" content="#607d8b">';
+	    echo '<meta name="msapplication-navbutton-color" content="#607d8b">';
             break;
         case 'Yellow':
             echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style-yellow.css" />';
             echo '<meta name="theme-color" content="#f3c43c">';
+	    echo '<meta name="apple-mobile-web-app-status-bar-style" content="#f3c43c">';
+	    echo '<meta name="msapplication-navbutton-color" content="#f3c43c">';
             break;
         default:
             echo '<link rel="stylesheet" href="'.get_stylesheet_uri().'" />';
             echo '<meta name="theme-color" content="#CC1C52">';
+	    echo '<meta name="apple-mobile-web-app-status-bar-style" content="#CC1C52">';
+	    echo '<meta name="msapplication-navbutton-color" content="#CC1C52">';
     }
     ?>
 
@@ -89,7 +97,8 @@
 <?php $sidebar_class = ($option['sidebar_active'] ? 'sidebar-active' : 'sidebar-inactive'); ?>
 <body <?php body_class(array($sidebar_class)); ?>>
 
-    <header>
+    <div class="header-placeholder"></div>
+    <div class="header">
 
         <div class="container">
             <div class="row">
@@ -100,14 +109,14 @@
                         <a href="#" class="mobile-menu-toggler hidden-md hidden-lg"><i class="material-icons">&#xE5D2;</i></a>
                         <?php $logo_attachment = get_option('logo-attachment'); ?>
                         <?php if(empty($logo_attachment)): ?>
-                            <a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a>
+                            <h3><a href="<?php echo home_url(); ?>"><?php bloginfo('name');?></a></h3>
                         <?php else: ?>
-                            <a href="<?php echo home_url(); ?>"><?php
+                            <h3><a href="<?php echo home_url(); ?>"><?php
                                 echo wp_get_attachment_image( $logo_attachment, 'logo_1', false, array(
                                     'alt' => get_bloginfo('name'),
                                     'class' => 'img-responsive'
                                 ));
-                                ?></a>
+			    ?></a></h3>
                         <?php endif; ?>
                     </div>
 
@@ -145,7 +154,7 @@
             </div>
         </div>
 
-    </header>
+    </div>
     <?PHP if ( (is_home() || is_category() || is_tag()) && has_nav_menu('blog') ): ?>
         <div class="menu-2">
             <a href="#" class="menu-2-toggler visible-xs"><i class="material-icons">keyboard_arrow_right</i> <?php echo __('Categories', 'material-for-coders'); ?></a>
