@@ -1,0 +1,81 @@
+# Translation of Material for Coders in Polish (Polish)
+# This file is distributed under the same license as the Material for Coders package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-06-15 22:15+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.0.1\n"
+"Project-Id-Version: Material for Coders\n"
+"POT-Creation-Date: \n"
+"Language-Team: \n"
+"Last-Translator: Marcin Mikołajczak <me@m4sk.in>\n"
+"Language: pl_PL\n"
+
+#. Theme Name of the plugin/theme
+msgid "Material for Coders"
+msgstr "Material for Coders"
+
+#. Description of the plugin/theme
+msgid ""
+"Material for Coders is a free Wordpress Theme developed by Josep Viciana "
+"(@emmgfx). The theme was designed by me, doing my own adaptation of the "
+"material design principles."
+msgstr ""
+"Material for Coders jest bezpłatnym motywem WordPressa utowrzonym przez "
+"Josepa Viciana (@emmgfx). Utworzyłem go, adaptując po swojemu zasady "
+"stylu Material Design."
+
+#. Template Name of the plugin/theme
+msgid "Portfolio Index"
+msgstr "Indeks portfolio"
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/emmgfx/material-for-coders"
+msgstr "https://github.com/emmgfx/material-for-coders"
+
+#. Author of the plugin/theme
+msgid "Josep Viciana"
+msgstr "Josep Viciana"
+
+#. Author URI of the plugin/theme
+msgid "http://www.emm-gfx.net/"
+msgstr "http://www.emm-gfx.net/"
+
+#. Continue reading button
+msgid "Read more..."
+msgstr "Czytaj więcej…"
+
+#. Categories (dropdown button in mobile)
+msgid "Categories"
+msgstr "Kategorie"
+
+#. Results title
+msgid "results for"
+msgstr "wyniki dla"
+
+#. Return home button
+msgid "Return home"
+msgstr "Wróć na stronę główną"
+
+#. Comments: You can leave the first : )
+msgid "You can leave the first : )"
+msgstr "Możesz zostawić pierwszy : )"
+
+#. Comments: Answer
+msgid "Answer"
+msgstr "Odpowiedź"
+
+#. Portfolio: Index
+msgid "Home: Portfolio"
+msgstr "Strona główna: Portfolio"
+
+#. Portfolio: The last 3 items of the portfolio in the home page.
+msgid "The last 3 items of the portfolio in the home page."
+msgstr "Ostatnie 3 elementy portfolio na stronie głównej."
+
+#. Search (in the mobile menu)
+msgid "Search"
+msgstr "Szukaj"
