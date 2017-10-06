@@ -24,12 +24,12 @@ msgid ""
 "(@emmgfx). The theme was designed by me, doing my own adaptation of the "
 "material design principles."
 msgstr ""
-"Material for Coders 是由Josep Viciana (@emmgfx)所自造的免费Wordpress皮。"
-"这主题是由我设计，以我对Material设计主义的看法，改编出来。"
+"Material for Coders 是 Josep Viciana (@emmgfx) 开发的免费 WordPress 主题。"
+"这个主题由我自己设计，源于我对 Material 准则的理解。"
 
 #. Template Name of the plugin/theme
 msgid "Portfolio Index"
-msgstr "作品集目录"
+msgstr "作品目录"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/emmgfx/material-for-coders"
@@ -45,7 +45,7 @@ msgstr "http://www.emm-gfx.net/"
 
 #. Continue reading button
 msgid "Read more..."
-msgstr "继续阅读。。。"
+msgstr "阅读全文"
 
 #. Categories (dropdown button in mobile)
 msgid "Categories"
@@ -53,19 +53,19 @@ msgstr "类别"
 
 #. Results title
 msgid "results for"
-msgstr "结果"
+msgstr "个搜索结果："
 
 #. Return home button
 msgid "Return home"
-msgstr "回返"
+msgstr "返回主页"
 
 #. Comments: You can leave the first : )
 msgid "You can leave the first : )"
-msgstr "你先离开吧：）"
+msgstr "抢个沙发吧~"
 
 #. Comments: Answer
 msgid "Answer"
-msgstr "答案"
+msgstr "回应"
 
 #. Portfolio: Index
 msgid "Home: Portfolio"
@@ -73,7 +73,7 @@ msgstr "主页：作品集"
 
 #. Portfolio: The last 3 items of the portfolio in the home page.
 msgid "The last 3 items of the portfolio in the home page."
-msgstr "主页里作品集的最后3项目"
+msgstr "主页作品集的最后 3 项"
 
 #. Search (in the mobile menu)
 msgid "Search"
