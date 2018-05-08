@@ -43,6 +43,7 @@ $max_tags = 3;
 	<?PHP } ?>
 
 	<?PHP if(get_comments_number() > 0){ ?>
-	<li><i class="material-icons">&#xE8AF;</i> <a href="<?php the_permalink() ?>/#comments"><?PHP comments_number( 'Sin comentarios', '1 comentario', '% comentarios' ) ?></a></li>
+	<li><i class="material-icons">&#xE8AF;</i> <a href="<?php the_permalink() ?>/#comments"><?PHP comments_number( __('Sin comentarios', 'material-for-coders'), __('1 comentario', 'material-for-coders'), __('% comentarios', 'material-for-coders') );
+ ?></a></li>
 	<?PHP } ?>
 </ul>
